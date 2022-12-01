@@ -16,9 +16,17 @@ su horario, y asi no tengan que perder tiempo esperando.
 Sitios de referencia
 
 https://buenosairesbarbershop.com/
-por su estetica, se destaca como como peluquería y barbería clásica tradicional de los años
+Por su estetica, se destaca como como peluquería y barbería clásica tradicional de los años
 20.
+
 https://www.bacanbarberia.com.ar/
-por los clientes que apuntan, y su servicio adaptado.
+Por los clientes que apuntan, y su servicio adaptado.
 
+https://www.barberiausa.com/
+Por su diseño más centrado en imagenes.
 
+https://www.barbershop.com.ar/
+Por su catálogo y productos.
+
+http://barbertruck.com.ar/
+Por sus efectos de scroll.
