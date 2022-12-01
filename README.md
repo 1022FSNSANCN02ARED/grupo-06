@@ -1,32 +1,37 @@
 # grupo-06
 
-¿Qué productos o servicios brindará nuestro sitio?
+<strong>¿Qué productos o servicios brindará nuestro sitio?</strong>
+<br>
 Nuestro sitio será del rubro BARBERÍA.
 
-¿Quién será nuestra audiencia
-objetivo?
-El publico objetivo seran personas de entre 18 a 45 años,de la ciudad de (:::), que busquen
+<strong>¿Quién será nuestra audiencia
+objetiva?</strong>
+<br>
+El público objetivo serán personas de entre 18 a 45 años, que busquen
 un sitio cómodo, y adaptado a sus horarios disponibles.
 
-¿Cómo ajustaremos nuestra oferta a ese público?
-Ofreciento tanto como servicio tradicional, como servicios de cortes juveniles a la
-temporada. trabajaremos con una seccion de turnos online para que pueda acomodarse a
-su horario, y asi no tengan que perder tiempo esperando.
+<strong>¿Cómo ajustaremos nuestra oferta a ese público?</strong>
+<br>
+Ofreciendo tanto como servicio tradicional, como servicios de cortes juveniles a la
+temporada. Trabajaremos con una sección de turnos online para que pueda acomodarse a
+su horario, y así no tengan que perder tiempo esperando.
+<br>
+<br>
+<br>
+<strong>Sitios de referencia:</strong>
 
-Sitios de referencia
-
-https://buenosairesbarbershop.com/
-Por su estetica, se destaca como como peluquería y barbería clásica tradicional de los años
+https://buenosairesbarbershop.com/ <br>
+Por su estética, se destaca como peluquería y barbería clásica tradicional de los años
 20.
 
-https://www.bacanbarberia.com.ar/
+https://www.bacanbarberia.com.ar/<br>
 Por los clientes que apuntan, y su servicio adaptado.
 
-https://www.barberiausa.com/
-Por su diseño más centrado en imagenes.
+https://www.barberiausa.com/<br>
+Por su diseño más centrado en imágenes.
 
-https://www.barbershop.com.ar/
+https://www.barbershop.com.ar/<br>
 Por su catálogo y productos.
 
-http://barbertruck.com.ar/
+http://barbertruck.com.ar/<br>
 Por sus efectos de scroll.
