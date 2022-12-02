@@ -15,8 +15,25 @@ un sitio cómodo, y adaptado a sus horarios disponibles.
 Ofreciendo tanto como servicio tradicional, como servicios de cortes juveniles a la
 temporada. Trabajaremos con una sección de turnos online para que pueda acomodarse a
 su horario, y así no tengan que perder tiempo esperando.
+
 <br>
-<br>
+<strong>Integrantes:</strong>
+
+- Gonzalo Costanzi:<br>
+ADM
+
+- Matias Aguirre:<br>
+BE
+
+- Renzo Sotelo:<br>
+DB
+
+- Gonzalo Duch:<br>
+FE
+
+- Tomás Villarreal:<br>
+PA
+
 <br>
 <strong>Sitios de referencia:</strong>
 
