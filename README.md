@@ -21,7 +21,7 @@ su horario, y así no tengan que perder tiempo esperando.
 
 - Gonzalo Costanzi:<br>
 ADM
-
+Tengo 25 años, soy fotografo y entré en la programacion este año por una oportunidad que se dió y continuo con este curso porque realmente me gustó.
 - Matias Aguirre:<br>
 BE
 
