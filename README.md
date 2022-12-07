@@ -32,7 +32,8 @@ DB
 FE
 
 - Tomás Villarreal:<br>
-PA
+PA <br>
+Tengo 24 años, me gustan los videojuegos, la lógica y la programación. En mis tiempos libres suelo aprender cosas nuevas y reforzar las conocidas.
 
 <br>
 <strong>Sitios de referencia:</strong>
