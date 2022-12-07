@@ -33,7 +33,7 @@ FE
 
 - Tomás Villarreal:<br>
 PA <br>
-Tengo 24 años, me gustan los videojuegos, la lógica y la programación. En mis tiempos libres suelo aprender cosas nuevas y reforzar las conocidas.
+Tengo 24 años, me gustan los videojuegos, la lógica y la programación. En mis tiempos libres suelo aprender cosas nuevas y reforzar las ya conocidas.
 
 <br>
 <strong>Sitios de referencia:</strong>
