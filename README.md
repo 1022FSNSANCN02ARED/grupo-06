@@ -27,6 +27,7 @@ BE
 
 - Renzo Sotelo:<br>
 DB
+Tengo 19 años, me gusta hacer ejercicio y jugar a los videojuegos en mi tiempo libre, me interesa mucho seguir aprendiendo y expandiendo el conocimiento que adquiri en la escuela secundaria sobre programacion.
 
 - Gonzalo Duch:<br>
 FE
