@@ -30,7 +30,8 @@ DB
 Tengo 19 años, me gusta hacer ejercicio y jugar a los videojuegos en mi tiempo libre, me interesa mucho seguir aprendiendo y expandiendo el conocimiento que adquiri en la escuela secundaria sobre programacion.
 
 - Gonzalo Duch:<br>
-FE
+FE <br>
+Tengo 26 años, me gusta disfrutar el día haciendo actividades con amigos y familia. Descubrí el mundo de la programación por un amigo y me enamoré, muy aficionado pero con muchas ganas de seguir capacitandome y aprendiendo con mis pares.
 
 - Tomás Villarreal:<br>
 PA <br>
