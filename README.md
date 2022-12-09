@@ -38,7 +38,8 @@ PA <br>
 Tengo 24 años, me gustan los videojuegos, la lógica y la programación. En mis tiempos libres suelo aprender cosas nuevas y reforzar las ya conocidas.
 
 - Gimena Lengert:<br>
-FE <br>
+FE <br> 
+Tengo 29 años, soy Community manager, realicé cursos de copywriting, diseño gráfico digital, publicidad web, entre otros. Este curso me ayuda en mis futuro proyecto propio. 
 
 <br>
 <strong>Sitios de referencia:</strong>
