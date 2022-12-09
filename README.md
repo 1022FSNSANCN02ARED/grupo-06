@@ -39,7 +39,7 @@ Tengo 24 años, me gustan los videojuegos, la lógica y la programación. En mis
 
 - Gimena Lengert:<br>
 FE <br> 
-Tengo 29 años, soy Community manager, realicé cursos de copywriting, diseño gráfico digital, publicidad web, entre otros. Este curso me ayuda en mis futuro proyecto propio. 
+Tengo 29 años, soy Community manager, realicé cursos de copywriting, diseño gráfico digital, publicidad web, entre otros. Este curso me ayuda en mi futuro proyecto propio. 
 
 <br>
 <strong>Sitios de referencia:</strong>
