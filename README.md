@@ -24,6 +24,7 @@ ADM
 Tengo 25 años, soy fotografo y entré en la programacion este año por una oportunidad que se dió y continuo con este curso porque realmente me gustó.
 - Matias Aguirre:<br>
 BE
+Tengo 21 años, me gusta cantar y tocar la guitarra en mis tiempos libres y bueno la programación es algo que amo y que vengo aprendiendo hace 1 año y medio. Soy muy amiguero y me gusta mucho salir a tomar mates con los pibes.
 
 - Renzo Sotelo:<br>
 DB
