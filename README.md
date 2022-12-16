@@ -42,7 +42,7 @@ Tengo 24 años, me gustan los videojuegos, la lógica y la programación. En mis
 FE <br> 
 Tengo 29 años, soy Community manager, realicé cursos de copywriting, diseño gráfico digital, publicidad web, entre otros. Este curso me ayuda en mi futuro proyecto propio. 
 
-<br>
+
 <strong>Sitios de referencia:</strong>
 
 https://buenosairesbarbershop.com/ <br>
@@ -60,3 +60,6 @@ Por su catálogo y productos.
 
 http://barbertruck.com.ar/<br>
 Por sus efectos de scroll.
+
+<strong>Tablero de trabajo:</strong><br>
+https://trello.com/b/HnwEd4RD/barberia
