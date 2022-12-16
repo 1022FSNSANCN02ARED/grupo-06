@@ -1,0 +1,1 @@
+Llegamos a la conclusión de que haremos un tablero estrella de mar, el cual iremos actualizando a medida que pasa el tiempo y surgen (o se resuelven) problemas y/o dificultades.
