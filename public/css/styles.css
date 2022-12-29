@@ -105,6 +105,9 @@
   width: 100%;
   height: 55px;
 }
+
+/* turnos */
+
 .turnos-main {
   width: 100%;
   margin: auto;
@@ -206,6 +209,8 @@
   background-color: #14213d;
   padding: 8px;
   gap: 55%;
+  position: fixed;
+  bottom: 0%;
 }
 
 .footer-h1-logo {

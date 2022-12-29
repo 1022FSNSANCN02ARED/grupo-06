@@ -19,3 +19,7 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
   res.sendFile(path.resolve(__dirname, "views/pages/login.html"));
 });
+
+app.get("/turnos", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "views/pages/turnos.html"));
+});
