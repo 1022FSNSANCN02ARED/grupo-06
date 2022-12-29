@@ -11,10 +11,16 @@
       src="https://kit.fontawesome.com/7cd8dbde5d.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
-      <i class="fa-solid fa-bars header-icon-bars"></i>
+      <i class="fa-solid fa-bars header-icon-bars active-icons"></i>
       <h1 class="header-h1-logo">
         <img
           src="/images/logo-letra-negro.svg"
@@ -23,14 +29,71 @@
         />
       </h1>
       <div class="header-div-icons">
-        <i class="fa-solid fa-user header-user-icon"></i>
-        <i class="fa-solid fa-cart-shopping header-cart"></i>
+        <i class="fa-solid fa-user header-user-icon active-icons"></i>
+        <i class="fa-solid fa-cart-shopping header-cart active-icons"></i>
       </div>
     </header>
-    <main>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolor
-      inventore temporibus animi optio qui nihil in fugit, repudiandae saepe? Ut
-      qui laboriosam, velit aperiam perspiciatis vel temporibus eaque itaque!
+    <main class="turnos-main">
+      <section class="turnos-section">
+        <h1 class="turnos-main-titulo">Reserva tu turno</h1>
+        <p class="turnos-main-p">Horarios: de 9:00 a.m. a 18:00 p.m.</p>
+        <p class="turnos-main-p">Días: Martes a Sábados</p>
+        <form>
+          <label for="date"
+            ><h2 class="turnos-main-h2">Selecciona el día:</h2></label
+          >
+          <input type="date" name="date" class="turnos-select-dia" />
+          <label for="time"
+            ><h2 class="turnos-main-h2">Selecciona el horario:</h2></label
+          >
+          <select name="time" class="turnos-select-time">
+            <option value="9">9:00 a.m.</option>
+            <option value="10">10:00 a.m.</option>
+            <option value="11">11:00 a.m.</option>
+            <option value="12">12:00 a.m.</option>
+            <option value="13">13:00 a.m.</option>
+            <option value="14">14:00 a.m.</option>
+            <option value="15">15:00 a.m.</option>
+            <option value="16">16:00 a.m.</option>
+            <option value="17">17:00 a.m.</option>
+          </select>
+          <div class="turnos-main-particular">
+            <input type="checkbox" name="particular" value="particular" />
+            <label for="particular">
+              <p class="turnos-main-p">
+                ¿Preferís un peluquero en particular?
+              </p></label
+            >
+          </div>
+          <div class="turnos-div-peluqueros">
+            <label>
+              <input class="radio" type="radio" name="test" value="small" />
+              <img
+                class="turnos-img-peluquero"
+                src="https://via.placeholder.com/40x60/0bf/fff&text=A"
+                alt="Option1"
+              />
+            </label>
+            <label class="turnos-label-peluquero">
+              <input class="radio" type="radio" name="test" value="small" />
+              <img
+                class="turnos-img-peluquero"
+                src="https://via.placeholder.com/40x60/b0f/fff&text=B"
+                alt="Option 2"
+              />
+            </label>
+            <label>
+              <input class="radio" type="radio" name="test" value="big" />
+              <img
+                class="turnos-img-peluquero"
+                src="https://via.placeholder.com/40x60/b0f/fff&text=C"
+                alt="Option 3"
+              />
+            </label>
+          </div>
+          <button class="turnos-button" type="submit">Reservar</button>
+        </form>
+      </section>
     </main>
     <footer class="footer">
       <h1 class="footer-h1-logo">
@@ -40,12 +103,12 @@
           class="footer-logo"
         />
       </h1>
-      <p class="footer-p">©Todos los derechos reservados</p>
+      <p class="footer-p">©Todos los derechos reservados.</p>
       <div class="footer-div-icon">
-        <i class="fa-solid fa-envelope footer-icon"></i>
-        <i class="fa-brands fa-whatsapp footer-icon"></i>
-        <i class="fa-brands fa-instagram footer-icon"></i>
-        <i class="fa-brands fa-facebook footer-icon"></i>
+        <i class="fa-solid fa-envelope footer-icon active-icons"></i>
+        <i class="fa-brands fa-whatsapp footer-icon active-icons"></i>
+        <i class="fa-brands fa-instagram footer-icon active-icons"></i>
+        <i class="fa-brands fa-facebook footer-icon active-icons"></i>
       </div>
     </footer>
   </body>
