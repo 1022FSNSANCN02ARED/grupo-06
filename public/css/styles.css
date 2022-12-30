@@ -43,9 +43,11 @@
 /* Body */
 
 /*Registro y Log In*/
+
 .formulario_main {
   margin: 0;
 }
+
 .formulario {
   width: 500px;
   max-width: 100%;
@@ -55,11 +57,13 @@
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
   position: relative;
 }
+
 .formulario_titulo {
   text-align: center;
   margin-top: 0;
   color: hsla(0, 0%, 0%, 0.9);
 }
+
 .formulario_input,
 .formulario_label,
 .formulario_submit .formulario_reset {
@@ -67,18 +71,22 @@
   width: 100%;
   font-size: 1.3em;
 }
+
 .formulario_input {
   padding: 20px;
   background: rgba(253, 163, 18, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin-bottom: 40px;
 }
+
 .formulario_input:focus {
   outline: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 .formulario_input:focus + .formulario_label {
   margin-top: -130px;
 }
+
 .formulario_label {
   padding-left: 15px;
   position: absolute;
@@ -87,6 +95,7 @@
   color: hsla(0, 0%, 0%, 1);
   transition: all 0.8s;
 }
+
 .formulario_submit,
 .formulario_reset {
   background-color: hsla(221, 51%, 16%);
@@ -96,9 +105,11 @@
   width: 100%;
   height: 55px;
 }
+
 .fijar {
   margin-top: -130px;
 }
+
 .button {
   background-color: hsla(221, 51%, 16%);
   color: white;
@@ -129,8 +140,9 @@
   text-align: center;
   justify-content: center;
   padding: 10px 0px;
-  width: 75vw;
+  width: 80vw;
   margin: auto;
+  padding: 10px;
   background-color: #e5e5e5;
   border-radius: 5px;
 }
@@ -153,11 +165,13 @@
 .turnos-select-dia {
   width: 50%;
   text-align: center;
+  background-color: #fca311;
 }
 
 .turnos-select-time {
   width: 50%;
   text-align: center;
+  background-color: #fca311;
 }
 
 .turnos-main-particular {
