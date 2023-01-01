@@ -189,6 +189,7 @@
 .turnos-img-peluquero {
   width: 40%;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .radio {
