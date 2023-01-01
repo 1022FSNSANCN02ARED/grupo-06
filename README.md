@@ -16,7 +16,7 @@ Ofreciendo tanto como servicio tradicional, como servicios de cortes juveniles a
 temporada. Trabajaremos con una sección de turnos online para que pueda acomodarse a
 su horario, y así no tengan que perder tiempo esperando.
 
-<br>
+<br> 
 <strong>Integrantes:</strong>
 
 - Gonzalo Costanzi:<br>
