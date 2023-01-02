@@ -49,7 +49,7 @@
 }
 
 .formulario {
-  width: 500px;
+  width: 80vw;
   max-width: 100%;
   margin: auto;
   margin-top: 30px;
@@ -235,8 +235,9 @@
   height: 10vh;
 }
 
-.price {
+/*.price {
 }
+*/
 
 .cantidad {
   width: 3vw;
