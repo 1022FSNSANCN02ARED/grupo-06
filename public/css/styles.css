@@ -218,34 +218,29 @@
 
 /*Carrito*/
 
-.product-box{
+.product-box {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: white;
   box-shadow: 0px 0px 5px rgb(100, 100, 100);
   width: 100%;
-  
 }
 
-.total-box{
+.total-box {
   text-align: right;
 }
 
-.product-img{
+.product-img {
   width: 10vw;
   height: 10vh;
-  
 }
 
-
-.price{
-  
-  
+.price {
 }
 
-.cantidad{
+.cantidad {
   width: 3vw;
-  text-align:center;
+  text-align: center;
 }
 
 /* Footer */
