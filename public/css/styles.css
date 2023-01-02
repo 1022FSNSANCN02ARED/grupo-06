@@ -216,6 +216,38 @@
   margin: 10px 0;
 }
 
+/*Carrito*/
+
+.product-box{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgb(100, 100, 100);
+  width: 100%;
+  
+}
+
+.total-box{
+  text-align: right;
+}
+
+.product-img{
+  width: 10vw;
+  height: 10vh;
+  
+}
+
+
+.price{
+  
+  
+}
+
+.cantidad{
+  width: 3vw;
+  text-align:center;
+}
+
 /* Footer */
 
 .footer {
