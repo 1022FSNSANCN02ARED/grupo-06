@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hair Cut - Carrito</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/styles-carrito.css" />
+        <script
+          src="https://kit.fontawesome.com/7cd8dbde5d.js"
+          crossorigin="anonymous"
+        ></script>
+      </head>
+<body>
+    <header class="header">
+        <i class="fa-solid fa-bars header-icon-bars active-icons"></i>
+        <h1 class="header-h1-logo">
+          <img
+            src="/images/logo-letra-negro.svg"
+            alt="Logo barberia"
+            class="header-logo"
+          />
+        </h1>
+        <div class="header-div-icons">
+          <i class="fa-solid fa-user header-user-icon active-icons"></i>
+          <i class="fa-solid fa-cart-shopping header-cart active-icons"></i>
+        </div>
+    </header>
+    <main class="turnos-main">
+        <section class="turnos-section">
+            <article> 
+                <h2>Carrito <i class="fa-solid fa-cart-shopping" ></i></h2>
+            </article>
+            <article class="product-box">
+                <div>
+                    <img
+                    src="/images/logo-letra-negro.svg"
+                    alt="Logo barberia"
+                    class="product-img"
+                    />
+                    <span>Nombre del producto</span>
+                    <span class="price">Precio: $4000</span>
+                </div>
+                    <button type="reset">
+                        <i class="fa-solid fa-trash-can"></i>Eliminar
+                    </button>
+                    <!--Boton de sumar/restar cantidad-->
+                    <button type="button" data-quantity="minus" data-field="quantity">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <input type="number" name="quantity" value="0" class="cantidad">
+                    <button type="button" data-quantity="plus" data-field="quantity">
+                            <i class="fa fa-plus"></i>
+                    </button>
+            </article>
+            <article class="product-box">
+                <div>
+                    <p>Tu carrito esta vacío</p>
+                </div>
+            </article>
+            <article class="total-box product-box">
+                <div>
+                    <p>Total: $4000</p>
+                    <button class="turnos-button">Comprar</button>
+                </div>
+            </article>
+        </section>
+   </main>
+   <footer class="footer">
+        <h1 class="footer-h1-logo">
+        <img
+            src="/images/logo-letra-negro.svg"
+            alt="Logo barberia"
+            class="footer-logo"
+        />
+        </h1>
+        <p class="footer-p">©Todos los derechos reservados.</p>
+        <div class="footer-div-icon">
+        <i class="fa-solid fa-envelope footer-icon active-icons"></i>
+        <i class="fa-brands fa-whatsapp footer-icon active-icons"></i>
+        <i class="fa-brands fa-instagram footer-icon active-icons"></i>
+        <i class="fa-brands fa-facebook footer-icon active-icons"></i>
+        </div>
+  </footer>
+</body>
+</html>
