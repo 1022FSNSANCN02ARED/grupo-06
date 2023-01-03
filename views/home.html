@@ -9,7 +9,11 @@
   <link rel="stylesheet" href="/css/styles.css" />
   <link rel="stylesheet" href="/css/normalize.css" />
   <script src="https://kit.fontawesome.com/7cd8dbde5d.js" crossorigin="anonymous"></script>
- 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -27,43 +31,55 @@
     <section>
       <div class="contenedor">
         <img src="/images/backgraund-main.jpg" alt="backgraund-main" class="backgraund-main" />
-        <h1 class="texto-contenedor">hair cut</h1>
+        <h1 class="h1-contenedor-main-home">HAIR CUT</h1>
+        <h2 class="h2-contenedor-main-home">Barber & Shop</h1>
       </div>
 
-      
       <h2 class="titulo-h2">SOBRE NOSOTROS</h2>
       <div class="sobrenosotros">
         <img src="/images/img-sobrenosotros.jpg" alt="foto barberia" class="img-sobrenosotros">
-        <p class="descripcion-sobrenosotros">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit praesentium
-          nesciunt minima id incidunt,
-          quaerat sunt vero dolore eos provident aperiam, vel nisi, enim quo eum laborum iste quasi optio.</p>
-        <button class="btn-sobrenosotros">Reservar Turno</button>
+        <div>
+          <p class="descripcion-sobrenosotros">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+            praesentium
+            nesciunt minima id incidunt,
+            quaerat sunt vero dolore eos provident aperiam, vel nisi, enim quo eum laborum iste quasi optio.</p>
+          <button class="btn-sobrenosotros">Reservar Turno</button>
+        </div>
       </div>
-
       <h2 class="titulo-h2">TURNOS ONLINE</h2>
       <H3 class="h3">Ahora podés reservar con tu peluquero de confianza</H3>
       <section class="peluqueros">
-        <div class="slider" id="slider">
-            <div class="slider__section">
-              <img src="/images/peluquero1.jpg" alt="Barbero Juan" class="slider__img">
-            </div>
-            <div class="slider__section">
-              <img src="/images/peluquero2.jpg" alt="Barbero Marcos" class="slider__img">
-            </div>
-            <div class="slider__section">
-              <img src="/images/peluquero3.jpg" alt="Barbero Pedro" class="slider__img">
-            </div>
-            <div class="slider__section">
-              <img src="/images/peluquero4.jpg" alt="Barbero Thiago" class="slider__img">
-            </div>
-          </div>
-          <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
-          <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+        <div class="container">
+
+          <ul class="slider">
+            <li id="slide1">
+              <img src="/images/peluquero1.jpg" alt="">
+            </li>
+            <li id="slide2">
+              <img src="/images/peluquero2.jpg" alt="">
+            </li>
+            <li id="slide3">
+              <img src="/images/peluquero4.jpg" alt="">
+            </li>
+          </ul>
+          <ul class="btn-slide">
+            <li>
+              <a href="#slide1">1</a>
+            </li>
+            <li>
+              <a href="#slide2">2</a>
+            </li>
+            <li>
+              <a href="#slide3">3</a>
+            </li>
+          </ul>
+
+          <button class="btn-catcompl">Sacar Turno</button>
+
         </div>
-        
       </section>
 
-      <h2 class="titulo-h2">Ofertas semanal</h2>
+      <h2 class="titulo-h2">OFERTAS SEMANAL</h2>
       <div class="home-ofertas">
         <div class="article-block">
           <img class="img-catalogo img-left1" src="/images/aceite-fortalecedor.jpg" alt="aceite fortalecedor">
@@ -77,35 +93,75 @@
           <button class="btn-catalogo2">Ver más</button>
         </div>
 
-        
-        <div class="article-block">
+
+        <div class="article-block article-block3">
           <img class="img-catalogo img-left3" src="/images/pomada.jpg" alt="pomada">
           <p class="description3"><strong>Pomada para barba sir fausto 90ml</strong></p>
           <button class="btn-catalogo3">Ver más</button>
         </div>
-      </article>
-    </div>
-
-    <button class="btn-catcompl">Catálogo completo</button>
-    
-    
-    <h2 class="titulo-h2">Servicios</h2>
-    
-    <h2 class="titulo-h2">Contacto</h2>
-    
-    <script src="slider.js"></script>
-    
-    <footer class="footer">
-      <div class="footer-div-logo">
-        <img src="/images/logo-letra-negro.svg" alt="Logo barberia" class="footer-logo" />
+        </article>
       </div>
-      <p class="footer-p">©Todos los derechos reservados</p>
+
+      <button class="btn-catcompl">Catálogo completo</button>
+
+
+      <h2 class="titulo-h2">SERVICIOS</h2>
+      <section class="servicios-section">
+        <div class="servicio1">
+          <h3 class="servicios-h3">Corte</h3>
+          <p class="servicios-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="servicio2">
+          <h3 class="servicios-h3">Color</h3>
+          <p class="servicios-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="servicio3">
+          <h3 class="servicios-h3">Barba</h3>
+          <p class="servicios-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </section>
+      <section class="img-servicios-sect">
+        <div class="div-img-servicios w-serv-img1">
+          <img class="img-servicios" src="/images/servicios1.jpg" alt="">
+        </div>
+        <div class="div-img-servicios w-serv-img2">
+          <img class="img-servicios" src="/images/servicios2.jpg" alt="">
+        </div>
+        <div class="div-img-servicios w-serv-img3">
+          <img class="img-servicios" src="/images/servicios3.jpg" alt="">
+        </div>
+        <div class="div-img-servicios w-serv-img4">
+          <img class="img-servicios" src="/images/servicios4.jpg" alt="">
+        </div>
+      </section>
+      <h2 class="titulo-h2">CONTACTO</h2>
+      <div class="media-contacto">
+        <div class="margin-maps">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17572.23990533987!2d-60.22072156742301!3d-33.335377962635945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1672416834849!5m2!1ses-419!2sar"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+          <p class="p-contacto-home">Calle De la Nación XX <br>
+            San Nicolás de los Arroyos<br>
+            Buenos Aires-Argentina<br>
+            336-4335555<br>
+            haircut@gmail.com</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-div-logo">
+          <img src="/images/logo-letra-negro.svg" alt="Logo barberia" class="footer-logo" />
+        </div>
+        <p class="footer-p">©Todos los derechos reservados</p>
         <i class="fa-solid fa-envelope footer-icon"></i>
         <i class="fa-brands fa-whatsapp footer-icon"></i>
         <i class="fa-brands fa-instagram footer-icon"></i>
         <i class="fa-brands fa-facebook footer-icon"></i>
       </footer>
-    
+
 </body>
 
 </html>
