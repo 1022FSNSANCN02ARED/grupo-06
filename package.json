@@ -4,7 +4,7 @@
   "description": "<strong>¿Qué productos o servicios brindará nuestro sitio?</strong>\r <br>\r Nuestro sitio será del rubro BARBERÍA.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/1022FSNSANCN02ARED/grupo-06#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

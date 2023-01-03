@@ -1,48 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hair Cut</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <script
-      src="https://kit.fontawesome.com/7cd8dbde5d.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header class="header">
-      <i class="fa-solid fa-bars header-icon-bars"></i>
-      <h1 class="header-h1-logo">
-        <img
-          src="/images/logo-letra-negro.png"
-          alt="Logo barberia"
-          class="header-logo"
-        />
-      </h1>
-      <i class="fa-solid fa-user header-user-icon"></i>
-      <i class="fa-solid fa-cart-shopping header-cart"></i>
-    </header>
-    <main>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolor
-      inventore temporibus animi optio qui nihil in fugit, repudiandae saepe? Ut
-      qui laboriosam, velit aperiam perspiciatis vel temporibus eaque itaque!
-    </main>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hair Cut</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <script src="https://kit.fontawesome.com/7cd8dbde5d.js" crossorigin="anonymous"></script>
+ 
+</head>
+
+<body>
+  <header class="header">
+    <i class="fa-solid fa-bars header-icon-bars"></i>
+    <h1 class="header-h1-logo">
+      <img src="/images/logo-letra-negro.svg" alt="Logo barberia" class="header-logo" />
+    </h1>
+    <i class="fa-solid fa-user header-user-icon"></i>
+    <i class="fa-solid fa-cart-shopping header-cart"></i>
+  </header>
+
+
+  <main>
+    <section>
+      <div class="contenedor">
+        <img src="/images/backgraund-main.jpg" alt="backgraund-main" class="backgraund-main" />
+        <h1 class="texto-contenedor">hair cut</h1>
+      </div>
+
+      
+      <h2 class="titulo-h2">SOBRE NOSOTROS</h2>
+      <div class="sobrenosotros">
+        <img src="/images/img-sobrenosotros.jpg" alt="foto barberia" class="img-sobrenosotros">
+        <p class="descripcion-sobrenosotros">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit praesentium
+          nesciunt minima id incidunt,
+          quaerat sunt vero dolore eos provident aperiam, vel nisi, enim quo eum laborum iste quasi optio.</p>
+        <button class="btn-sobrenosotros">Reservar Turno</button>
+      </div>
+
+      <h2 class="titulo-h2">TURNOS ONLINE</h2>
+      <H3 class="h3">Ahora podés reservar con tu peluquero de confianza</H3>
+      <section class="peluqueros">
+        <div class="slider" id="slider">
+            <div class="slider__section">
+              <img src="/images/peluquero1.jpg" alt="Barbero Juan" class="slider__img">
+            </div>
+            <div class="slider__section">
+              <img src="/images/peluquero2.jpg" alt="Barbero Marcos" class="slider__img">
+            </div>
+            <div class="slider__section">
+              <img src="/images/peluquero3.jpg" alt="Barbero Pedro" class="slider__img">
+            </div>
+            <div class="slider__section">
+              <img src="/images/peluquero4.jpg" alt="Barbero Thiago" class="slider__img">
+            </div>
+          </div>
+          <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+          <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+        </div>
+        
+      </section>
+
+      <h2 class="titulo-h2">Ofertas semanal</h2>
+      <div class="home-ofertas">
+        <div class="article-block">
+          <img class="img-catalogo img-left1" src="/images/aceite-fortalecedor.jpg" alt="aceite fortalecedor">
+          <p class="description1">Aceite fortalecedor de barba sir fausto 30ml</p>
+          <button class="btn-catalogo">Ver más</button>
+        </div>
+
+        <div class="article-block">
+          <img class="img-catalogo img-left2" src="/images/gel.jpg" alt="gel">
+          <p class="description2">Gel de Afeitar Raff Nueva Formula 1L</p>
+          <button class="btn-catalogo2">Ver más</button>
+        </div>
+
+        
+        <div class="article-block">
+          <img class="img-catalogo img-left3" src="/images/pomada.jpg" alt="pomada">
+          <p class="description3"><strong>Pomada para barba sir fausto 90ml</strong></p>
+          <button class="btn-catalogo3">Ver más</button>
+        </div>
+      </article>
+    </div>
+
+    <button class="btn-catcompl">Catálogo completo</button>
+    
+    
+    <h2 class="titulo-h2">Servicios</h2>
+    
+    <h2 class="titulo-h2">Contacto</h2>
+    
+    <script src="slider.js"></script>
+    
     <footer class="footer">
       <div class="footer-div-logo">
-        <img
-          src="/images/logo-letra-negro.png"
-          alt="Logo barberia"
-          class="footer-logo"
-        />
+        <img src="/images/logo-letra-negro.svg" alt="Logo barberia" class="footer-logo" />
       </div>
       <p class="footer-p">©Todos los derechos reservados</p>
-      <i class="fa-solid fa-envelope footer-icon"></i>
-      <i class="fa-brands fa-whatsapp footer-icon"></i>
-      <i class="fa-brands fa-instagram footer-icon"></i>
-      <i class="fa-brands fa-facebook footer-icon"></i>
-    </footer>
-  </body>
+        <i class="fa-solid fa-envelope footer-icon"></i>
+        <i class="fa-brands fa-whatsapp footer-icon"></i>
+        <i class="fa-brands fa-instagram footer-icon"></i>
+        <i class="fa-brands fa-facebook footer-icon"></i>
+      </footer>
+    
+</body>
+
 </html>
