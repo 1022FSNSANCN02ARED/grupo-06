@@ -42,11 +42,11 @@
           <label for="date"
             ><h2 class="turnos-main-h2">Selecciona el día:</h2></label
           >
-          <input type="date" name="date" class="turnos-select-dia" />
+          <input type="date" name="date" class="turnos-select-dia" required />
           <label for="time"
             ><h2 class="turnos-main-h2">Selecciona el horario:</h2></label
           >
-          <select name="time" class="turnos-select-time">
+          <select name="time" class="turnos-select-time" required>
             <option value="9">9:00 a.m.</option>
             <option value="10">10:00 a.m.</option>
             <option value="11">11:00 a.m.</option>
@@ -67,7 +67,13 @@
           </div>
           <div class="turnos-div-peluqueros">
             <label>
-              <input class="radio" type="radio" name="test" value="small" />
+              <input
+                class="radio"
+                type="radio"
+                name="test"
+                value="small"
+                checked
+              />
               <img
                 class="turnos-img-peluquero"
                 src="https://via.placeholder.com/40x60/0bf/fff&text=A"
