@@ -25,3 +25,9 @@ app.get("/carrito", (req, res) => {
 app.get("/turnos", (req, res) => {
   res.sendFile(path.resolve(__dirname, "views/pages/turnos.html"));
 });
+app.get("/catalogue", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "views/pages/catalogue.html"));
+});
+app.get("/product", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "views/pages/product.html"));
+});
