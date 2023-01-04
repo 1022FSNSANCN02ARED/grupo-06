@@ -128,6 +128,19 @@ ul {
   color: #14213d;
 }
 
+.boton-ver-catalogo{
+  margin-left: 41%;
+  background-color: #1ac015;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.boton-ver-catalogo:hover{
+  background-color: rgb(25, 240, 25);
+  
+  
+}
+
 .boton-comprar-calogo:hover {
   background-color:#14213d;
   color: #fca311;
@@ -199,7 +212,7 @@ ul {
 
 .descuento-ctlgo {
   font-size: 16px;
-  color: rgb(4, 181, 4);
+  color: #30E62A;
   width: 68%;
 
 }
@@ -229,6 +242,10 @@ ul {
     left: 40%;
     font-size: 17px;
   }
+
+  .boton-ver-catalogo{
+    margin-left: 44%;
+  }
 }
 
 @media(min-width: 769px) {
@@ -253,6 +270,10 @@ ul {
   }
 
   .articulo-venta-catalogo:hover{box-shadow: 0px 0px 10px #14213d;}
+
+  .boton-ver-catalogo{
+    margin-left: 46%;
+  }
 }
 
 @media (min-width: 1281px) {
@@ -280,6 +301,10 @@ ul {
   .boton-comprar-calogo {
     left: 46%;
     font-size: 20px;
+  }
+
+  .boton-ver-catalogo{
+    margin-left: 48%;
   }
 }
 
