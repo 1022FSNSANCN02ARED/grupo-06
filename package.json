@@ -20,7 +20,8 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-ejs": "^2.0.0",
-    "method-override": "^3.0.0"
+    "method-override": "^3.0.0",
+    "node-modules": "^1.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

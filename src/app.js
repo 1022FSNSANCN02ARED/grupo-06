@@ -19,3 +19,4 @@ app.use((req, res) => {
 });
 
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "./views/pages"));
