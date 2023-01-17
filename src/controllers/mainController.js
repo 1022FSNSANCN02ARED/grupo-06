@@ -5,7 +5,7 @@ module.exports = {
     res.render("home");
   },
   car: (req, res) => {
-    res.render("carrito");
+    res.render("/pages/carrito");
   },
   catalogue: (req, res) => {
     res.render("catalogo");
