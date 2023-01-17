@@ -1,36 +1,21 @@
-const express = require("express");
 const path = require("path");
+const express = require("express");
+const mainRouter = require("./routers/mainRouter");
+const methodOverride = require("method-override");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "public")));
-
 app.listen(3000, () => {
-  console.log("Servidor corriendo");
+  console.log("Servidor funcionando");
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/home.html"));
+app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride("_method"));
+app.use(mainRouter);
+app.use((req, res) => {
+  res.status(404).render("notFound");
 });
 
-app.get("/catalogo", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/pages/catalogo.html"));
-});
-app.get("/register", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/pages/register.html"));
-});
-app.get("/login", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/pages/login.html"));
-});
-app.get("/carrito", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/pages/carrito.html"));
-});
-app.get("/turnos", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/pages/turnos.html"));
-});
-app.get("/catalogue", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/pages/catalogue.html"));
-});
-app.get("/product", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "views/pages/product.html"));
-});
+app.set("view engine", "ejs");
