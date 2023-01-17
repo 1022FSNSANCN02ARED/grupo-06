@@ -4,7 +4,22 @@ module.exports = {
   home: (req, res) => {
     res.render("home");
   },
-  about: (req, res) => {
-    res.render("about");
+  car: (req, res) => {
+    res.render("carrito");
+  },
+  catalogue: (req, res) => {
+    res.render("catalogo");
+  },
+  login: (req, res) => {
+    res.render("login");
+  },
+  product: (req, res) => {
+    res.render("product");
+  },
+  register: (req, res) => {
+    res.render("register");
+  },
+  turns: (req, res) => {
+    res.render("turns");
   },
 };
