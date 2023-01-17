@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(mainRouter);
 app.use((req, res) => {
-  res.status(404).render("notFound");
+  res.status(404).render("pages/notFound");
 });
 
 app.set("views", path.join(__dirname, "./views"));

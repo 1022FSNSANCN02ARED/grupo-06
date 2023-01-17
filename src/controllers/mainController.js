@@ -5,21 +5,21 @@ module.exports = {
     res.render("home");
   },
   car: (req, res) => {
-    res.render("carrito");
+    res.render("pages/carrito");
   },
   catalogue: (req, res) => {
-    res.render("catalogo");
+    res.render("pages/catalogo");
   },
   login: (req, res) => {
-    res.render("login");
+    res.render("pages/login");
   },
   product: (req, res) => {
-    res.render("product");
+    res.render("pages/product");
   },
   register: (req, res) => {
-    res.render("register");
+    res.render("pages/register");
   },
   turns: (req, res) => {
-    res.render("turns");
+    res.render("pages/turns");
   },
 };
