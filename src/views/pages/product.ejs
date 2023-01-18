@@ -2,35 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="/css/normalize.css" as="style">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="preload" href="/css/styles.css" as="style">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/5acb377302.js" crossorigin="anonymous"></script>
-    <title>Producto</title>
+    <%- include('../partials/head') %> 
 </head>
 
 <body>
     <header class="detail-header">
-        <div class="detail-header-content">
-            <div class="logo">
-                <a href="/">
-                    <img src="images/logo/logo-letra-negro.svg" alt="Hair Cut brand">
-                </a>
-            </div>
-            <div class="search-bar">
-                <form>
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="search" placeholder="Ingrese su busqueda">
-                </form>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </div>
+        <%- include('../partials/header') %>
     </header>
 
     <main class="main">
@@ -66,40 +43,7 @@
     </main>
 
     <footer class="product-footer">
-        <div class="product-footer-content">
-            <div class="logo">
-                <img src="images/logo/logo-letra-negro.svg" alt="Hair Cut Brand">
-            </div>
-            <div class="copyright">
-                <p>&copy; Todos los derechos reservados</p>
-            </div>
-            <div class="social">
-                <nav class="ftr-nav">
-                    <ul class="ftr-nav-ul">
-                        <li class="ftr-nav-li">
-                            <a class="ftr-nav-li-a" target="_blank" href="https://gmail.com">
-                                <i class="fa-solid fa-envelope"></i>
-                            </a>
-                        </li>
-                        <li class="ftr-nav-li">
-                            <a class="ftr-nav-li-a" target="_blank" href="https://web.whatsapp.com">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </a>
-                        </li>
-                        <li class="ftr-nav-li">
-                            <a class="ftr-nav-li-a" target="_blank" href="https://instagram.com">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="ftr-nav-li">
-                            <a class="ftr-nav-li-a" target="_blank" href="https://facebook.com">
-                                <i class="fa-brands fa-square-facebook"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        <%- include('../partials/footer') %> 
     </footer>
 </body>
 

@@ -1,32 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hair Cut - Carrito</title>
-        <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/css/normalize.css" />
-        <link rel="stylesheet" href="/css/styles-carrito.css" />
-        <script
-          src="https://kit.fontawesome.com/7cd8dbde5d.js"
-          crossorigin="anonymous"
-        ></script>
-      </head>
+        <%- include('../partials/head') %> 
+    </head>
 <body>
     <header class="header">
-        <i class="fa-solid fa-bars header-icon-bars active-icons"></i>
-        <h1 class="header-h1-logo">
-          <img
-            src="/images/logo-letra-negro.svg"
-            alt="Logo barberia"
-            class="header-logo"
-          />
-        </h1>
-        <div class="header-div-icons">
-          <i class="fa-solid fa-user header-user-icon active-icons"></i>
-          <i class="fa-solid fa-cart-shopping header-cart active-icons"></i>
-        </div>
+      <%- include('../partials/header') %>
     </header>
     <main class="turnos-main">
         <section class="turnos-section">
@@ -93,20 +72,7 @@
         </section>
    </main>
    <footer class="footer">
-        <h1 class="footer-h1-logo">
-        <img
-            src="/images/logo-letra-negro.svg"
-            alt="Logo barberia"
-            class="footer-logo"
-        />
-        </h1>
-        <p class="footer-p">©Todos los derechos reservados.</p>
-        <div class="footer-div-icon">
-        <i class="fa-solid fa-envelope footer-icon active-icons"></i>
-        <i class="fa-brands fa-whatsapp footer-icon active-icons"></i>
-        <i class="fa-brands fa-instagram footer-icon active-icons"></i>
-        <i class="fa-brands fa-facebook footer-icon active-icons"></i>
-        </div>
+    <%- include('../partials/footer') %> 
   </footer>
 </body>
 </html>

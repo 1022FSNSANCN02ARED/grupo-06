@@ -1,25 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <script src="https://kit.fontawesome.com/7cd8dbde5d.js" crossorigin="anonymous"></script>
-    <title>Catalogo</title>
-</head>
+    <head>
+        <%- include('../partials/head') %> 
+    </head>
 <body class="body-catalogo">
     <header class="header">
-        <i class="fa-solid fa-bars header-icon-bars logos-header-catalogo"></i>
-        
-        <img
-          src="/images/logo-letra-negro.svg"
-          alt="Logo barberia"
-          class="header-logo-catalogo"
-          />
-          <i class="fa-solid fa-user header-user-icon logos-header-catalogo"></i>
-      <i class="fa-solid fa-cart-shopping header-cart logos-header-catalogo"></i>
+        <%- include('../partials/header') %>
     </header>
 
     <main class="main-catalogo">
@@ -125,18 +111,7 @@
     </main>
 
     <footer class="footer-catalogo">
-          <img
-            src="/images/logo-letra-negro.svg"
-            alt="Logo barberia"
-            class="footer-logo-catalogo"
-          />
-        <p class="footer-p-catalogo">©Todos los derechos reservados</p>
-        <section class="social-icons-catalogo">
-        <i class="fa-solid fa-envelope footer-icon"></i>
-        <i class="fa-brands fa-whatsapp footer-icon"></i>
-        <i class="fa-brands fa-instagram footer-icon"></i>
-        <i class="fa-brands fa-facebook footer-icon"></i>
-    </section>
+        <%- include('../partials/footer') %> 
       </footer>
 </body>
 </html>
