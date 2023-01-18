@@ -1,0 +1,130 @@
+
+
+.header{
+    display: flex;
+    background-color: #14213d;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  .header-cart {
+    color: #e5e5e5;
+    font-size: 25px;
+  }
+
+
+  .header-icon-bars {
+    color: #e5e5e5;
+    align-self: center;
+    padding: 8px;
+    font-size: 40px;
+  }
+
+  .header-h1-logo {
+    width: 15%;
+    min-width: 50px;
+    padding-top: 8px;
+  }
+
+  .header-div-icons {
+    align-self: center;
+    display: flex;
+    gap: 15px;
+  }
+
+  .header-logo {
+    width: 100%;
+  }
+
+  .lista{display: none;
+    color: white;
+    margin-right: auto;
+  }
+
+  .lista li{list-style: none;
+    margin: 40px 15px 10px 15px;
+    background:linear-gradient(102deg , #fca311  40% , #fff  60%) ;
+    border: 2px  solid #e5e5e5;
+    border-radius: 3px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    padding-top: 3px;
+    cursor: pointer;
+    transition: all 2s;
+  }
+
+
+  .lista li a{text-decoration: none;  color: black;}
+
+  .lista li:hover{
+    animation: link-nav 1.3s infinite;
+    background:linear-gradient(102deg , #000000  40% , #e5e5e5  60%) ;
+    border: 2px solid #fca311;
+  }
+
+  @keyframes link-nav{
+    0%{transform: scale(.99);
+      box-shadow: 0 0 0 0  #ffffff  ;
+    }
+    70%{
+      transform: scale(1);
+      box-shadow: 0 0 0 8px  #ffffff7e  ;
+    }
+    100%{transform: scale(.99);
+      box-shadow: 0 0 0 0  #000000  ;
+    }
+  }
+
+  .lista li:hover a{color: #fca311;transition: all 2s;}
+
+
+
+  @media (hover: hover) {
+    .active-icons:hover {
+      transition: all, 0.5s;
+      color: #fca311;
+    }
+    
+  }
+  
+  .active-icons:active {
+    transition: all, 0.3s;
+    color: #fca311;
+    
+  }
+
+  @media(min-width: 481px){
+    .header-logo {
+      width: 100px;
+    }
+  }
+
+  @media(min-width: 769px){
+    .header-icon-bars{
+        display: none;
+    }
+
+    .header{
+        height: 120px;
+    }
+
+    .div-barra{display: none;}
+
+    .lista{display: flex;}
+
+    .header-logo {
+      margin-left: 20px;
+    }
+
+    .header-cart{font-size: 40px;}
+
+    .header-div-icons{margin-right: 80px;}
+
+    .header-h1-logo{ margin-left: auto}
+  }
+
+  @media (min-width: 1281px){
+   
+  }
