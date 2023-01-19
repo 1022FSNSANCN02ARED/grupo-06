@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+  </head>
 
-<head>
-    <%- include('../partials/head') %> 
-</head>
-
-<body>
-    <header class="detail-header">
-        <%- include('../partials/header') %>
-    </header>
+  <body>
+    <header class="detail-header"><%- include('../partials/header') %></header>
 
     <main class="main">
-        <a href="catalogo"><i class="fa-solid fa-arrow-left"></i></a>
-        <section class="product-detail">
-            <div class="product-header">
-                <img src="images/catalogue/Afeitadora MR Black.webp" alt="product icon">
-                <h4>$10,000 ARS</h4>
-                <a class="button" href="carrito">Comprar ahora</a>
-                <a class="button button--cart" href="carrito">Agregar al carrito</a>
-            </div>
-            <div class="product-additional">
-                <h3>Afeitadora MR BLACK</h3>
-                <p>Potencia: 5W</p>
-                <p>Alimentación: 110V/220V</p>
-                <p>Corte: Hasta 3mm</p>
-                <h4>Más detalles del producto</h4>
-                <ul class="additional-ul">
-                    <li>_ Funciones adicionales: recortadora de pelo.</li>
-                    <li>_ Es inalámbrica y funciona con batería recargable.</li>
-                    <li>_ Corta hasta 3mm.</li>
-                </ul>
-                <div class="valoration">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <p class="people-rate">(90)</p>
-                </div>
-            </div>
-        </section>
+      <a href="catalogo"><i class="fa-solid fa-arrow-left"></i></a>
+      <section class="product-detail">
+        <div class="product-header">
+          <img
+            src="images/catalogue/Afeitadora MR Black.webp"
+            alt="product icon"
+          />
+          <h4>$10,000 ARS</h4>
+          <a class="button" href="carrito">Comprar ahora</a>
+          <a class="button button--cart" href="carrito">Agregar al carrito</a>
+        </div>
+        <div class="product-additional">
+          <h3>Afeitadora MR BLACK</h3>
+          <p>Potencia: 5W</p>
+          <p>Alimentación: 110V/220V</p>
+          <p>Corte: Hasta 3mm</p>
+          <h4>Más detalles del producto</h4>
+          <ul class="additional-ul">
+            <li>_ Funciones adicionales: recortadora de pelo.</li>
+            <li>_ Es inalámbrica y funciona con batería recargable.</li>
+            <li>_ Corta hasta 3mm.</li>
+          </ul>
+          <div class="valoration">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p class="people-rate">(90)</p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="product-footer">
-        <%- include('../partials/footer') %> 
+    <footer class="footer-catalogo">
+      <%- include('../partials/footer') %>
     </footer>
-</body>
-
+  </body>
 </html>
