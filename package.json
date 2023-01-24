@@ -4,7 +4,8 @@
   "description": "<strong>¿Qué productos o servicios brindará nuestro sitio?</strong>\r <br>\r Nuestro sitio será del rubro BARBERÍA.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "start-1": "node src/app.js"
   },
   "repository": {
     "type": "git",
