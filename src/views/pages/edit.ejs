@@ -6,10 +6,21 @@
   <body>
     <header class="header"><%- include('../partials/header') %></header>
     <main class="formulario_main">
-      <h1 class="formulario_titulo">Agrega un producto</h1>
-      <form class="formulario" method="post" enctype="multipart/form-data">
-        <input type="text" name="name" class="formulario_input" required />
-        <label for="" class="formulario_label">Nombre</label>
+      <h1 class="formulario_titulo">Editar <%= product.name %></h1>
+      <form
+        class="formulario"
+        method="post"
+        enctype="multipart/form-data"
+        action="/products/<%= product.id %>?_method=put"
+      >
+        <input
+          type="text"
+          name="name"
+          class="formulario_input"
+          required
+          value="<%= product.name %>"
+        />
+        <label for="" class="formulario_label"> Nombre de producto: </label>
         <input type="number" name="price" class="formulario_input" required />
         <label for="" class="formulario_label">Precio</label>
         <input type="text" name="description" class="formulario_input" />

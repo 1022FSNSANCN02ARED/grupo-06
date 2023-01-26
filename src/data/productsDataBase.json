@@ -1,92 +1,110 @@
 [
   {
     "id": 0,
-    "productName": "Gel Lord Cheseline",
+    "name": "Gel Lord Cheseline",
     "description": "Gel para el cabello, efecto fijador, definición y control.",
-    "Image": "/images/gel-cabello.jpg",
+    "image": "/images/gel-cabello.jpg",
     "category": "Gel",
     "brand": "Lord Cheseline",
     "price": 800
   },
   {
     "id": 1,
-    "productName": "Crema de afeitar Sir Fausto",
+    "name": "Crema de afeitar Sir Fausto",
     "description": "Crema de afeitar, con bálsamo humectante, a base de raíces naturales, del norte de Argentina.",
-    "Image": "/images/crema-afeitar.jpg",
+    "image": "/images/crema-afeitar.jpg",
     "category": "Crema",
     "brand": "Sir Fausto",
     "price": 1200
   },
   {
     "id": 2,
-    "productName": "Oleo fortalecedor Sir Fausto",
+    "name": "Oleo fortalecedor Sir Fausto",
     "description": "Oleo fortalecedor, nutre y fortalece la barba.",
-    "Image": "/images/oleo-fortalecedor.jpg",
+    "image": "/images/oleo-fortalecedor.jpg",
     "category": "Oleo",
     "brand": "Sir Fausto",
     "price": 600
   },
   {
     "id": 3,
-    "productName": "Crema de afeitar Raff",
+    "name": "Crema de afeitar Raff",
     "description": "Crema de afeitar de gran suavidad y perfumada.",
-    "Image": "/images/crema-afeitar-raff.jpg",
+    "image": "/images/crema-afeitar-raff.jpg",
     "category": "Crema",
     "brand": "Raff",
     "price": 1300
   },
   {
     "id": 4,
-    "productName": "Pomada para barba Sir Fausto",
+    "name": "Pomada para barba Sir Fausto",
     "description": "Pomada Sir Fausto, humectante, a base de bálsamo del norte de Argentina.",
-    "Image": "/images/pomada-barba.jpg",
+    "image": "/images/pomada-barba.jpg",
     "category": "Pomada",
     "brand": "Sir Fausto",
     "price": 1100
   },
   {
     "id": 5,
-    "productName": "Tinte para cabello Loreal",
+    "name": "Tinte para cabello Loreal",
     "description": "Tintura para el cabello, colores vivos y radiantes, cabello protegido, sin melanina.",
-    "Image": "/images/tinte-cabello.jpg",
+    "image": "/images/tinte-cabello.jpg",
     "category": "Tinte",
     "brand": "Loreal",
     "price": 1400
   },
   {
     "id": 6,
-    "productName": "Shampoo para barbas Ayalatin",
+    "name": "Shampoo para barbas Ayalatin",
     "description": "Shampoo para barbas Ayalatin, cuidado y reparado de tu barba.",
-    "Image": "/images/shampoo-ayalatin.png",
+    "image": "/images/shampoo-ayalatin.png",
     "category": "shampoo",
     "brand": "Ayalatin",
     "price": 800
   },
   {
     "id": 7,
-    "productName": "Cera Ayalatin",
+    "name": "Cera Ayalatin",
     "description": "Cera color mate wax, cera efecto mate.",
-    "Image": "/images/ceramate-ayala.png",
+    "image": "/images/ceramate-ayala.png",
     "category": "cera",
     "brand": "Ayalatin",
     "price": 1200
   },
   {
     "id": 8,
-    "productName": "Tinte para cabello Loreal",
+    "name": "Tinte para cabello Loreal",
     "description": "Tintura para el cabello, colores vivos y radiantes, cabello protegido, sin melanina.",
-    "Image": "/images/tinte-cabello.jpg",
+    "image": "/images/tinte-cabello.jpg",
     "category": "Tinte",
     "brand": "Loreal",
     "price": 1400
   },
   {
     "id": 9,
-    "productName": "Laca Ayalatin",
+    "name": "Laca Ayalatin",
     "description": "Laca fijadora para el cabello, efecto extremo.",
-    "Image": "/images/laca-ayalatin.png",
+    "image": "/images/laca-ayalatin.png",
     "category": "laca",
     "brand": "Ayalatin",
     "price": 1350
+  },
+  {
+    "id": 1674761681588,
+    "name": "tyu",
+    "description": "ty",
+    "category": "uyt",
+    "price": 33,
+    "discount": null,
+    "image": "image-1674761681584.jpg"
+  },
+  {
+    "id": 1674762015133,
+    "name": "tyu",
+    "description": "ty",
+    "category": "uyt",
+    "price": 33,
+    "discount": null,
+    "image": "image-1674762015121.jpg"
   }
 ]
