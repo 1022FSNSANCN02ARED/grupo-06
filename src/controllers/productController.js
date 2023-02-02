@@ -38,18 +38,18 @@ module.exports = {
   edit: (req, res) => {
     const id = req.params.id;
     const allProducts = products.findAll();
-    const product = allProducts.find((e) => e.id == id);
-    res.render("pages/edit", { product });
+    const productToEdit = allProducts.find((e) => e.id == id);
+    res.render("pages/edit", { productToEdit: productToEdit });
   },
 
   update: (req, res) => {
     let allProducts = products.findAll();
-    let productToEdit = allProducts.find(
-      (product) => product.id == req.params.id
-    );
+    const id = req.params.id;
+    let productToEdit = allProducts.find((product) => product.id == id);
+
     if (productToEdit) {
-      console.log(req.body);
       productToEdit.name = req.body.name;
+      console.log(productToEdit);
       res.render("pages/details", { product: productToEdit });
     }
   },
