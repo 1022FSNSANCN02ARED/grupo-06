@@ -9,8 +9,7 @@ router.get("/login", mainController.login);
 router.get("/register", mainController.register);
 router.get("/turnos", mainController.turns);
 
-const productRouter = require('./productRouter');
-router.use('/products', productRouter);
-router.use('/catalogo', productRouter);
+const productRouter = require("./productRouter");
+router.use("/products", productRouter);
 
 module.exports = router;
