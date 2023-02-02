@@ -1,4 +1,3 @@
-const { findAll } = require("../data/products");
 const products = require("../data/products");
 
 module.exports = {
@@ -10,8 +9,8 @@ module.exports = {
   },
   details: (req, res) => {
     const id = req.params.id;
-    const products = findAll();
-    const productos = products.find((e) => e.id == id);
+    const allProducts = products.findAll();
+    const productos = allProducts.find((e) => e.id == id);
     res.render("pages/details", {
       productos,
     });
@@ -38,19 +37,20 @@ module.exports = {
 
   edit: (req, res) => {
     const id = req.params.id;
-    const products = findAll();
-    const product = products.find((e) => e.id == id);
+    const allProducts = products.findAll();
+    const product = allProducts.find((e) => e.id == id);
     res.render("pages/edit", { product });
   },
 
   update: (req, res) => {
-    let products = findAll();
-    let productToEdit = products.find((product) => product.id == req.params.id);
-    console.log(productToEdit);
+    let allProducts = products.findAll();
+    let productToEdit = allProducts.find(
+      (product) => product.id == req.params.id
+    );
     if (productToEdit) {
+      console.log(req.body);
       productToEdit.name = req.body.name;
+      res.render("pages/details", { product: productToEdit });
     }
-    console.log(productToEdit);
-    res.render("pages/details", { product: productToEdit });
   },
 };
