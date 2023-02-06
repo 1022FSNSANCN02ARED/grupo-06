@@ -1,28 +1,71 @@
 const fs = require("fs");
 const path = require("path");
 
-const productsFilePath = path.join(__dirname, "productsDataBase.json");
+let model = function (tableName) {
+  return {
+    filePath: path.join(__dirname, "../data/" + tableName + ".json"),
+    readFile() {
+      let fileContents = fs.readFileSync(this.filePath, "utf8");
 
-module.exports = {
-  findAll() {
-    const productsFileContent = fs.readFileSync(productsFilePath, "utf-8");
-    const products = JSON.parse(productsFileContent);
-    return products;
-  },
+      if (fileContents) {
+        return JSON.parse(fileContents);
+      }
 
-  saveProduct(product) {
-    const products = this.findAll();
-    products.push(product);
-    const productsFileContent = JSON.stringify(products, null, 4);
-    fs.writeFileSync(productsFilePath, productsFileContent, "utf-8");
-  },
+      return [];
+    },
+    writeFile(contents) {
+      let fileContents = JSON.stringify(contents, null, " ");
+      fs.writeFileSync(this.filePath, fileContents);
+    },
+    nextId() {
+      let rows = this.readFile();
+      let lastRow = rows.pop();
 
-  findById(id) {
-    return products.findAll().find((p) => p.id == id);
-  },
-  saveEdit(productToEdit) {
-    products.push(productToEdit);
-    const productsFileContent = JSON.stringify(products, null, 4);
-    fs.writeFileSync(productsFilePath, productsFileContent, "utf-8");
-  },
+      if (lastRow) {
+        return ++lastRow.id;
+      }
+
+      return 1;
+    },
+    all() {
+      return this.readFile();
+    },
+    find(id) {
+      let products = this.readFile();
+      return products.find((product) => product.id == id);
+    },
+    create(product) {
+      let products = this.readFile();
+      product.id = this.nextId();
+      products.push(product);
+
+      this.writeFile(products);
+
+      return row.id;
+    },
+    update(product) {
+      let products = this.readFile();
+      let updatedProducts = products.map((oneProduct) => {
+        if (oneProduct.id == product.id) {
+          return product;
+        }
+
+        return oneProduct;
+      });
+
+      this.writeFile(updatedProducts);
+
+      return product.id;
+    },
+    delete(id) {
+      let products = this.readFile();
+      let updatedProducts = products.filter(
+        (oneProduct) => oneProduct.id != id
+      );
+
+      this.writeFile(updatedProducts);
+    },
+  };
 };
+
+module.exports = model;

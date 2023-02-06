@@ -1,18 +1,20 @@
-const products = require("../data/products");
+const fs = require("fs");
+const path = require("path");
+const jsonDb = require("../data/products");
+
+const productsModel = jsonDb("productsDataBase");
 
 module.exports = {
   catalogue: (req, res) => {
-    res.render("pages/catalogo");
+    res.render("pages/catalogue");
   },
   cart: (req, res) => {
     res.render("pages/carrito");
   },
   details: (req, res) => {
-    const id = req.params.id;
-    const allProducts = products.findAll();
-    const productos = allProducts.find((e) => e.id == id);
+    let product = productsModel.find(req.params.id);
     res.render("pages/details", {
-      productos,
+      product,
     });
   },
   create: (req, res) => {
@@ -20,37 +22,46 @@ module.exports = {
   },
 
   store: (req, res) => {
-    const product = {
-      id: Date.now(),
-      name: req.body.name,
-      description: req.body.description,
-      category: req.body.category,
-      price: Number(req.body.price),
-      discount: Number(req.body.discount),
-      image: req.file ? req.file.filename : "default-image.png",
-    };
-    // res.send(product);
-    products.saveProduct(product);
+    if (req.file) {
+      let product = req.body;
 
-    res.redirect(product);
+      product.image = req.file.filename;
+
+      productId = productsModel.create(product);
+
+      res.redirect("pages/details" + productId);
+    } else {
+      res.render("pages/create");
+    }
   },
-
   edit: (req, res) => {
-    const id = req.params.id;
-    const allProducts = products.findAll();
-    const productToEdit = allProducts.find((e) => e.id == id);
+    let productToEdit = productsModel.find(req.params.id);
     res.render("pages/edit", { productToEdit: productToEdit });
   },
-
   update: (req, res) => {
-    let allProducts = products.findAll();
-    const id = req.params.id;
-    let productToEdit = allProducts.find((product) => product.id == id);
+    let product = req.body;
 
-    if (productToEdit) {
-      productToEdit.name = req.body.name;
-      console.log(productToEdit);
-      res.render("pages/details", { product: productToEdit });
+    product.id = req.params.id;
+
+    productId = productsModel.update(product);
+
+    res.render("pages/details", {
+      productId,
+    });
+  },
+  delete: (req, res) => {
+    let product = productsModel.find(req.params.id);
+    let imagePath = path.join(
+      __dirname,
+      "../public/images/products/" + product.image
+    );
+
+    productsModel.delete(req.params.id);
+
+    if (fs.existsSync(imagePath)) {
+      fs.unlinkSync(imagePath);
     }
+
+    res.redirect("pages/catalogo");
   },
 };
