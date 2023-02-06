@@ -1173,8 +1173,12 @@ ul.slider li:target {
   gap: 10px;
 }
 
-.product-header img {
+.imageProduct {
+  height: 500px;
+  width: 450px;
   margin-bottom: 20px;
+  border: solid 2px #14213d;
+  border-radius: 5%;
 }
 
 .product-header {

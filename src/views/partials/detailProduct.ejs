@@ -1,0 +1,33 @@
+
+      <section class="product-detail">
+        <div class="product-header">
+          <img
+            src=<%= product.image %> 
+            alt="product icon"
+            class="imageProduct"
+          />
+          <h4> $<%= product.price %>  </h4>
+          <a class="button" href="carrito">Comprar ahora</a>
+          <a class="button button--cart" href="carrito">Agregar al carrito</a>
+        </div>
+        <div class="product-additional">
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          
+          <h4>Más detalles del producto</h4>
+          
+            <% if (product.discount) {%>
+                <p class="descuento-ctlgo">-%<%= product.discount %> de descuento</p>
+                <%}  %> 
+            
+          
+          <div class="valoration">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <p class="people-rate">(90)</p>
+          </div>
+        </div>
+      </section>
