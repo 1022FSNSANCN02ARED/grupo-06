@@ -7,7 +7,7 @@
     <header class="header"><%- include('../partials/header') %></header>
     <main class="formulario_main">
       <h1 class="formulario_titulo">Agrega un producto</h1>
-      <form class="formulario" method="post" enctype="multipart/form-data">
+      <form action="/create" class="formulario" method="post" enctype="multipart/form-data">
         <input type="text" name="name" class="formulario_input" required />
         <label for="" class="formulario_label">Nombre</label>
         <input type="number" name="price" class="formulario_input" required />
