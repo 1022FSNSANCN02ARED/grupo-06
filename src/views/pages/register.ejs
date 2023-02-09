@@ -7,7 +7,7 @@
     <header class="header"><%- include('../partials/header') %></header>
     <main class="formulario_main">
       <h1 class="formulario_titulo">Registrate</h1>
-      <form action="" class="formulario">
+      <form action="" class="formulario" enctype="multipart/form-data">
         <input type="text" class="formulario_input" required />
         <label for="" class="formulario_label">Nombres</label>
         <input type="text" class="formulario_input" required />
@@ -18,6 +18,7 @@
         <label for="" class="formulario_label">E-mail</label>
         <input type="password" class="formulario_input" required />
         <label for="" class="formulario_label">Contraseña</label>
+        <input type="file" name="avatar" class="formulario_input" />
         <p align="center">
           <input type="checkbox" required />Acepto términos y condiciones.
         </p>
