@@ -8,15 +8,15 @@
     <main class="formulario_main">
       <h1 class="formulario_titulo">Registrate</h1>
       <form action="/register" method="post" class="formulario" enctype="multipart/form-data">
-        <input type="text" class="formulario_input" required />
+        <input type="text" name="firstName" class="formulario_input" required />
         <label for="" class="formulario_label">Nombres</label>
-        <input type="text" class="formulario_input" required />
+        <input type="text" name="lastname" class="formulario_input" required />
         <label for="" class="formulario_label">Apellido</label>
-        <input type="number" class="formulario_input" />
-        <label for="" class="formulario_label">Celular</label>
-        <input type="email" class="formulario_input" required />
+        <input type="number" name="cel" class="formulario_input" />
+        <label for=""  class="formulario_label">Celular</label>
+        <input type="email" name="email" class="formulario_input" required />
         <label for="" class="formulario_label">E-mail</label>
-        <input type="password" class="formulario_input" required />
+        <input type="password" name="password" class="formulario_input" required />
         <label for="" class="formulario_label">Contraseña</label>
         <input type="file" name="avatar" class="formulario_input" />
         <p align="center">

@@ -27,7 +27,8 @@ module.exports = {
 
       product.image = req.file.filename;
 
-      productId = productsModel.create(product);
+      productsModel.create(product);
+     
 
       res.redirect("pages/details" + productId);
     } else {

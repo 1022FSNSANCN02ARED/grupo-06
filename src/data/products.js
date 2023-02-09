@@ -18,11 +18,11 @@ let model = function (tableName) {
       fs.writeFileSync(this.filePath, fileContents);
     },
     nextId() {
-      let rows = this.readFile();
-      let lastRow = rows.pop();
+      let products = this.readFile();
+      let lastProduct = products.pop();
 
-      if (lastRow) {
-        return ++lastRow.id;
+      if (lastProduct) {
+        return ++lastProduct.id;
       }
 
       return 1;
@@ -41,7 +41,7 @@ let model = function (tableName) {
 
       this.writeFile(products);
 
-      return row.id;
+      return product.id;
     },
     update(product) {
       let products = this.readFile();
