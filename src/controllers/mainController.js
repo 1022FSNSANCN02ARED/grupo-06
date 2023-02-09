@@ -1,4 +1,8 @@
-const productController = require('./productController');
+const fs = require("fs");
+const path = require("path");
+const jsonDb = require("../data/products");
+
+const usersModel = jsonDb("usersDataBase");
 
 module.exports = {
   home: (req, res) => {
@@ -12,5 +16,5 @@ module.exports = {
   },
   turns: (req, res) => {
     res.render("pages/turns");
-  }
+  },
 };
