@@ -5,7 +5,6 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon src/app.js"
-
   },
   "repository": {
     "type": "git",
@@ -19,12 +18,15 @@
   },
   "homepage": "https://github.com/1022FSNSANCN02ARED/grupo-06#readme",
   "dependencies": {
+    "bootstrap": "^5.3.0-alpha1",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-ejs": "^2.0.0",
+    "install": "^0.13.0",
     "method-override": "^3.0.0",
     "multer": "^1.4.5-lts.1",
-    "node-modules": "^0.0.1"
+    "node-modules": "^0.0.1",
+    "npm": "^9.4.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

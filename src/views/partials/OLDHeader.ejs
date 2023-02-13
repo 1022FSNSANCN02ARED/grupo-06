@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+    <body>
+        <header class="header"><%- include('../partials/header') %></header>
+        <main class="turnos-main">
+            <section class="turnos-section">
+                <h1 class="turnos-main-titulo">Reserva tu turno</h1>
+                <p class="turnos-main-p">Horarios: de 9:00 a.m. a 18:00 p.m.</p>
+                <p class="turnos-main-p">Días: Martes a Sábados</p>
+                <form>
+                    <label for="date"
+                        ><h2 class="turnos-main-h2">
+                            Selecciona el día:
+                        </h2></label
+                    >
+                    <input
+                        type="date"
+                        name="date"
+                        class="turnos-select-dia"
+                        required
+                    />
+                    <label for="time"
+                        ><h2 class="turnos-main-h2">
+                            Selecciona el horario:
+                        </h2></label
+                    >
+                    <select name="time" class="turnos-select-time" required>
+                        <option value="9">9:00 a.m.</option>
+                        <option value="10">10:00 a.m.</option>
+                        <option value="11">11:00 a.m.</option>
+                        <option value="12">12:00 a.m.</option>
+                        <option value="13">13:00 a.m.</option>
+                        <option value="14">14:00 a.m.</option>
+                        <option value="15">15:00 a.m.</option>
+                        <option value="16">16:00 a.m.</option>
+                        <option value="17">17:00 a.m.</option>
+                    </select>
+                    <div class="turnos-main-particular">
+                        <input
+                            type="checkbox"
+                            name="particular"
+                            value="particular"
+                        />
+                        <label for="particular">
+                            <p class="turnos-main-p">
+                                ¿Preferís un peluquero en particular?
+                            </p></label
+                        >
+                    </div>
+                    <div class="turnos-div-peluqueros">
+                        <label>
+                            <input
+                                class="radio"
+                                type="radio"
+                                name="test"
+                                value="small"
+                                checked
+                            />
+                            <img
+                                class="turnos-img-peluquero"
+                                src="https://via.placeholder.com/40x60/0bf/fff&text=A"
+                                alt="Option1"
+                            />
+                        </label>
+                        <label class="turnos-label-peluquero">
+                            <input
+                                class="radio"
+                                type="radio"
+                                name="test"
+                                value="small"
+                            />
+                            <img
+                                class="turnos-img-peluquero"
+                                src="https://via.placeholder.com/40x60/b0f/fff&text=B"
+                                alt="Option 2"
+                            />
+                        </label>
+                        <label>
+                            <input
+                                class="radio"
+                                type="radio"
+                                name="test"
+                                value="big"
+                            />
+                            <img
+                                class="turnos-img-peluquero"
+                                src="https://via.placeholder.com/40x60/b0f/fff&text=C"
+                                alt="Option 3"
+                            />
+                        </label>
+                    </div>
+                    <button class="turnos-button" type="submit">
+                        Reservar
+                    </button>
+                </form>
+            </section>
+        </main>
+        <footer class="footer-catalogo">
+            <%- include('../partials/footer') %>
+        </footer>
+    </body>
+</html>

@@ -1,24 +1,112 @@
-<div class="div-barra">
-  <i class="fa-solid fa-bars active-icons header-icon-bars"></i>
-</div>
-<h1 class="header-h1-logo">
-  <a href="/">
-    <img
-      src="/images/logo-letra-negro.svg"
-      alt="Logo barberia"
-      class="header-logo"
-  /></a>
-</h1>
-<ul class="lista">
-  <li><a href="/products/carrito">Carrito</a></li>
-  <li><a href="/products">Catalogo</a></li>
-  <li><a href="/turnos">Turnos</a></li>
-</ul>
-<div class="header-div-icons">
-  <a href="/login">
-    <i class="fa-solid fa-user header-cart active-icons"></i>
-  </a>
-  <a href="/products/carrito">
-    <i class="fa-solid fa-cart-shopping header-cart active-icons"></i>
-  </a>
-</div>
+<nav
+    class="navbar navbar-dark navbar-expand-md bg-dark fixed-top"
+    style="height: 90px"
+>
+    <div class="container-fluid">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#staticBackdrop"
+            aria-controls="staticBackdrop"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="offcanvas offcanvas-start text-bg-yellow"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            id="staticBackdrop"
+            aria-labelledby="staticBackdropLabel"
+        >
+            <div class="offcanvas-header">
+                <h5
+                    class="offcanvas-title row align-items-center"
+                    id="staticBackdropLabel"
+                >
+                    <img
+                        src="/images/logo-letra-negro.svg"
+                        alt="Logo barberia"
+                        style="width: 75px"
+                    />
+                    Hair Cut
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products/carrito">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/turnos">Turnos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <a class="dropdown-item" href="/products"
+                                    >Productos destacados</a
+                                >
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/products"
+                                    >Productos en oferta</a
+                                >
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/products"
+                                    >Todos los productos</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="/">
+            <img
+                src="/images/logo-letra-negro.svg"
+                alt="Logo barberia"
+                style="width: 75px"
+                class="position-absolute top-50 start-50 translate-middle"
+            />
+        </a>
+        <div>
+            <ul class="navbar-nav justify-content-end flex-row mt-4 mb-4 gap-3">
+                <li class="nav-item">
+                    <a href="/login">
+                        <i
+                            class="fa-solid fa-user header-cart active-icons"
+                        ></i>
+                    </a>
+                </li>
+                <a href="/products/carrito">
+                    <i
+                        class="fa-solid fa-cart-shopping header-cart active-icons"
+                    ></i>
+                </a>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div style="margin-bottom: 85px"></div>
