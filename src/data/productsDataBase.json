@@ -99,5 +99,37 @@
   "brand": "Ayalatin",
   "price": 135,
   "discount": 0
+ },
+ {
+  "name": "dhfg",
+  "price": "1",
+  "description": "ghf",
+  "brand": "fcgh",
+  "category": "dgfh",
+  "oferta": "oferta",
+  "discount": "1",
+  "image": "image-1676676061314.jpg",
+  "id": 10
+ },
+ {
+  "name": "dhfgghjk",
+  "price": "1",
+  "description": "ghf",
+  "brand": "fcgh",
+  "category": "dgfh",
+  "oferta": "oferta",
+  "discount": "1",
+  "image": "/images/image-1676676174558.jpg",
+  "id": 11
+ },
+ {
+  "name": "dhfgghjkghj",
+  "price": "123",
+  "description": "ghjk",
+  "brand": "ghjk",
+  "category": "ghjkgghjk",
+  "oferta": "oferta",
+  "image": "38544-3840x2160.png",
+  "id": "12"
  }
 ]

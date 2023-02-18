@@ -5,53 +5,275 @@
     </head>
     <body>
         <header><%- include('../partials/header') %></header>
-        <main>
-            <form
-                action=""
-                class="container d-flex justify-content-center flex-column"
-            >
-                <div class="mb-3 text-center">
-                    <label for="formGroupExampleInput" class="form-label"
-                        >Elige tu día:</label
+        <main class="d-flex justify-content-center xds vh-150">
+            <div class="w-h-90 text-center mt-5 mb">
+                <form action="" class="container flex-column rounded-top-3 xd">
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Elige tu día:</label
+                        >
+                        <input
+                            type="date"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                            placeholder="Fecha"
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput2"
+                            class="form-label text-primary"
+                            >Elige tu horario:</label
+                        >
+                        <select
+                            class="form-select text-primary bg-black border-primary"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Selecciona tu horario</option>
+                            <option value="9">9:00 a.m.</option>
+                            <option value="10">10:00 a.m.</option>
+                            <option value="11">11:00 a.m.</option>
+                            <option value="12">12:00 a.m.</option>
+                            <option value="13">13:00 a.m.</option>
+                            <option value="14">14:00 a.m.</option>
+                            <option value="15">15:00 a.m.</option>
+                            <option value="16">16:00 a.m.</option>
+                            <option value="17">17:00 a.m.</option>
+                        </select>
+                    </div>
+                    <div class="form-check mb-3">
+                        <p class="text-primary">
+                            ¿Preferís algún peluquero en particular?
+                        </p>
+                    </div>
+
+                    <div
+                        class="row row-cols-1 row-cols-md-3 g-4 mb-3 justify-content-center"
                     >
-                    <input
-                        type="date"
-                        class="form-control"
-                        id="formGroupExampleInput"
-                    />
+                        <div class="col-6">
+                            <div class="card w-100 border-primary bg-black">
+                                <label
+                                    for="peluquero1"
+                                    class="container-fluid w-100 m-0 p-0 xdlol"
+                                >
+                                    <div
+                                        class="hover hover-1 text-white rounded"
+                                    >
+                                        <img
+                                            src="/images/peluqueros/peluquero1.png"
+                                            class="card-img-top"
+                                            alt="peluquero1"
+                                        />
+                                        <div
+                                            class="hover-1-content px-4 py-1 bg-opacity-50 w-100 bg-black"
+                                        >
+                                            <h3
+                                                class="hover-1-title text-uppercase font-weight-bold mb-0 text-primary"
+                                            >
+                                                Frank
+                                            </h3>
+                                            <p
+                                                class="hover-1-description font-weight-light mb-0"
+                                            >
+                                                Nuestro peluquero experto en
+                                                rulos.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="peluquero1"
+                                    name="peluquero"
+                                    class="btn-check lol"
+                                />
+                                <div class="card-body bg-black" id="frank">
+                                    <h5 class="card-title text-primary" id="q">
+                                        Frank
+                                    </h5>
+                                    <p class="card-text text-white" id="w">
+                                        Nuestro peluquero experto en rulos.
+                                    </p>
+                                    <span
+                                        class="badge rounded-circle text-dark bg-primary"
+                                        >✓</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card w-100 border-primary bg-black">
+                                <label
+                                    for="peluquero2"
+                                    class="container-fluid w-100 m-0 p-0"
+                                >
+                                    <div
+                                        class="hover hover-1 text-white rounded"
+                                    >
+                                        <img
+                                            src="/images/peluqueros/peluquero2.png"
+                                            class="card-img-top"
+                                            alt="peluquero2"
+                                        />
+                                        <div
+                                            class="hover-1-content px-4 py-1 bg-opacity-50 w-100 bg-black"
+                                        >
+                                            <h3
+                                                class="hover-1-title text-uppercase font-weight-bold mb-0 text-primary"
+                                            >
+                                                Clara
+                                            </h3>
+                                            <p
+                                                class="hover-1-description font-weight-light mb-0"
+                                            >
+                                                Nuestra peluquera experta en
+                                                alisados.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="peluquero2"
+                                    name="peluquero"
+                                    class="btn-check lol"
+                                />
+                                <div class="card-body bg-black" id="frank">
+                                    <h5 class="card-title text-primary" id="q">
+                                        Clara
+                                    </h5>
+                                    <p class="card-text text-white" id="w">
+                                        Nuestra peluquera experta en alisados.
+                                    </p>
+                                    <span
+                                        class="badge rounded-circle text-dark bg-primary"
+                                        >✓</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card w-100 border-primary bg-black">
+                                <label
+                                    for="peluquero3"
+                                    class="container-fluid w-100 m-0 p-0"
+                                >
+                                    <div
+                                        class="hover hover-1 text-white rounded"
+                                    >
+                                        <img
+                                            src="/images/peluqueros/peluquero3.png"
+                                            class="card-img-top"
+                                            alt="peluquero3"
+                                        />
+                                        <div
+                                            class="hover-1-content px-4 py-1 bg-opacity-50 w-100 bg-black"
+                                        >
+                                            <h3
+                                                class="hover-1-title text-uppercase font-weight-bold mb-0 text-primary"
+                                            >
+                                                Cinthia
+                                            </h3>
+                                            <p
+                                                class="hover-1-description font-weight-light mb-0"
+                                            >
+                                                Nuestra peluquera experta en
+                                                tinturas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </label>
+                                <input
+                                    type="radio"
+                                    id="peluquero3"
+                                    name="peluquero"
+                                    class="btn-check lol"
+                                />
+                                <div class="card-body bg-black" id="frank">
+                                    <h5 class="card-title text-primary" id="q">
+                                        Cinthia
+                                    </h5>
+                                    <p class="card-text text-white" id="w">
+                                        Nuestra peluquera experta en tinturas.
+                                    </p>
+                                    <span
+                                        class="badge rounded-circle text-dark bg-primary"
+                                        >✓</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirm"
+                        class="btn btn-outline-primary m-auto mb-3 mt-5 w-50 d-block"
+                    >
+                        RESERVAR
+                    </button>
+
+                    <div
+                        class="modal fade"
+                        id="confirm"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content bg-black">
+                                <div class="modal-header align-self-center">
+                                    <h1
+                                        class="modal-title fs-5 text-white"
+                                        id="exampleModalLabel"
+                                    >
+                                        ¡Gracias por confiar en nosotros!
+                                    </h1>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body text-white">
+                                    ¡En breve te estará llegando un
+                                    email/WhatsApp con tu confirmación!
+                                </div>
+                                <div class="modal-footer align-self-center">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-outline-primary"
+                                    >
+                                        Confirmar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        type="reset"
+                        class="btn btn-outline-primary m-auto w-25 d-block p-1"
+                    >
+                        Limpiar
+                    </button>
+                </form>
+                <div class="container xd rounded-bottom-3">
+                    <p class="text-primary">¿Cómo llegar?</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53324.636831491596!2d-60.25581565643323!3d-33.35044088537454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b76793f9b400f7%3A0x622348daf45e89b1!2sSan%20Nicol%C3%A1s%20de%20Los%20Arroyos%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1676586360484!5m2!1ses-419!2sar"
+                        class="border-primary w-100"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
-                <div class="mb-3 text-center">
-                    <label for="formGroupExampleInput2" class="form-label"
-                        >Elige tu horario:</label
-                    >
-                    <select
-                        class="form-select"
-                        aria-label="Default select example"
-                    >
-                        <option selected>Selecciona tu horario</option>
-                        <option value="9">9:00 a.m.</option>
-                        <option value="10">10:00 a.m.</option>
-                        <option value="11">11:00 a.m.</option>
-                        <option value="12">12:00 a.m.</option>
-                        <option value="13">13:00 a.m.</option>
-                        <option value="14">14:00 a.m.</option>
-                        <option value="15">15:00 a.m.</option>
-                        <option value="16">16:00 a.m.</option>
-                        <option value="17">17:00 a.m.</option>
-                    </select>
-                </div>
-                <div class="form-check align-self-center">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="flexCheckDefault"
-                    />
-                    <label class="form-check-label" for="flexCheckDefault"
-                        >Preferís algún peluquero en particular?</label
-                    >
-                </div>
-            </form>
+            </div>
         </main>
         <footer class="footer-catalogo">
             <%- include('../partials/footer') %>

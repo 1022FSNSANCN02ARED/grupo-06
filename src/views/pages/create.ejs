@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') %>
-  </head>
-  <body>
-    <header class="header"><%- include('../partials/header') %></header>
-    <main class="formulario_main">
-      <h1 class="formulario_titulo">Agrega un producto</h1>
-      <form action="/create" class="formulario" method="post" enctype="multipart/form-data">
-        <input type="text" name="name" class="formulario_input" required />
-        <label for="" class="formulario_label">Nombre</label>
-        <input type="number" name="price" class="formulario_input" required />
-        <label for="" class="formulario_label">Precio</label>
-        <input type="text" name="description" class="formulario_input" />
-        <label for="" class="formulario_label">Descripcion</label>
-        <input type="text" name="brand" class="formulario_input" required />
-        <label for="" class="formulario_label">Marca</label>
-        <input type="text" name="category" class="formulario_input" required />
-        <label for="" class="formulario_label">Categoria</label>
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+    <body>
+        <header class="header"><%- include('../partials/header') %></header>
+        <main class="formulario_main">
+            <h1 class="formulario_titulo">Agrega un producto</h1>
+            <form
+                action="/products/create"
+                class="formulario"
+                method="post"
+                enctype="multipart/form-data"
+            >
+                <input
+                    type="text"
+                    name="name"
+                    class="formulario_input"
+                    required
+                />
+                <label for="" class="formulario_label">Nombre</label>
+                <input
+                    type="number"
+                    name="price"
+                    class="formulario_input"
+                    required
+                />
+                <label for="" class="formulario_label">Precio</label>
+                <input
+                    type="text"
+                    name="description"
+                    class="formulario_input"
+                />
+                <label for="" class="formulario_label">Descripcion</label>
+                <input
+                    type="text"
+                    name="brand"
+                    class="formulario_input"
+                    required
+                />
+                <label for="" class="formulario_label">Marca</label>
+                <input
+                    type="text"
+                    name="category"
+                    class="formulario_input"
+                    required
+                />
+                <label for="" class="formulario_label">Categoria</label>
 
-        <select name="oferta" id="" class="formulario_input" required>
-          <option value="oferta">En Oferta</option>
-          <option value="nuevo">Nuevo</option>
-        </select>
+                <select name="oferta" id="" class="formulario_input" required>
+                    <option value="oferta">En Oferta</option>
+                    <option value="nuevo">Nuevo</option>
+                </select>
 
-        <input type="number" name="discount" class="formulario_input" />
-        <label for="" class="formulario_label">Descuento</label>
+                <input type="number" name="discount" class="formulario_input" />
+                <label for="" class="formulario_label">Descuento</label>
 
-        <input type="file" name="image" class="formulario_input" />
+                <input type="file" name="image" class="formulario_input" />
 
-        <input type="submit" class="formulario_submit" />
-        <input type="reset" class="formulario_reset" />
-      </form>
-      <script src="scripts/form.js"></script>
-    </main>
-    <footer class="footer-catalogo">
-      <%- include('../partials/footer') %>
-    </footer>
-  </body>
+                <input type="submit" class="formulario_submit" />
+                <input type="reset" class="formulario_reset" />
+            </form>
+            <script src="scripts/form.js"></script>
+        </main>
+        <footer class="footer-catalogo">
+            <%- include('../partials/footer') %>
+        </footer>
+    </body>
 </html>
