@@ -115,5 +115,14 @@
   "password": "$2a$10$I6RyO7aM6sty5NwM6qD41OajS7ttixP3WMAPjTuIesFibwfaZbf72",
   "avatar": "image-1676402924537.jpg",
   "id": 18
+ },
+ {
+  "firstName": "dfgh",
+  "lastname": "dfgh",
+  "cel": "1234",
+  "email": "a@a.com",
+  "password": "$2a$10$C8KCTlXXTipYS42PdA5nIu015pQdw8m9kb3yW2XrpQSGYdWzsF2pa",
+  "avatar": "image-1676404626711.jpg",
+  "id": 19
  }
 ]
