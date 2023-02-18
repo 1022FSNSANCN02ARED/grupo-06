@@ -6,7 +6,8 @@ const productsModel = jsonDb("productsDataBase");
 
 module.exports = {
   catalogue: (req, res) => {
-    res.render("pages/catalogue");
+    let products = productsModel.all();
+    res.render("pages/catalogue",{products });
   },
   cart: (req, res) => {
     res.render("pages/carrito");
