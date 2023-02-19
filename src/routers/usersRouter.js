@@ -1,4 +1,6 @@
-const { Router } = require("express");
+const {
+    Router
+} = require("express");
 const router = Router();
 const mainController = require("../controllers/mainController");
 const uploadUser = require("../middlewares/multerUser");
