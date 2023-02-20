@@ -1,73 +1,57 @@
 <section class="caja-mas-vendido-catalogo">
-    <img
-      src="/images/cera-cabello.jpg"
-      alt="Producto mas vendido"
-      class="img-mas-vendido-catalogo"
-    />
-    <h1 class="txt-mas-vendido-catalogo">Articulo mas vendido</h1>
-    <button class="boton-comprar-calogo">Comprar ahora!</button>
-  </section>
-  <h2 class="titulo-section-catalogo">Destacados</h2>
-  <section class="section-venta-catalogo">
-    <% for (let i = 0; i <3 ; i++) {%>
-      
-      <article class="articulo-venta-catalogo">
-      <img
-        src="<%= products[i].image %>"
-        alt=""
-        class="imagen-articulo-catalogo"
-      />
-      <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= products[i].price %></p>
-        <p class="descuento-ctlgo"><%= products[i].discount %></p>
-        <p class="descripcion-ctlgo"><%= products[i].description %></p>
-      </div>
-    </article>
-      <%} %>
-  </section>
+  <img src="/images/cera-cabello.jpg" alt="Producto mas vendido" class="img-mas-vendido-catalogo" />
+  <h1 class="txt-mas-vendido-catalogo">Articulo mas vendido</h1>
+  <button class="boton-comprar-calogo">Comprar ahora!</button>
+</section>
+<h2 class="titulo-section-catalogo">Destacados</h2>
+<section class="section-venta-catalogo">
+  <% for (let i = 0; i <3 ; i++) {%>
 
-  <h2 class="titulo-section-catalogo">Ofertas</h2>
-  <section class="section-venta-catalogo">
-    <% for (let i = 0; i <products.length ; i++) {%>
-      
-      <%
+  <article class="articulo-venta-catalogo">
+    <img src="<%= products[i].image %>" alt="" class="imagen-articulo-catalogo" />
+    <div class="info-catalogo">
+      <p class="precio-ctlgo"><%= products[i].price %></p>
+      <p class="descuento-ctlgo"><%= products[i].discount %></p>
+      <p class="descripcion-ctlgo"><%= products[i].description %></p>
+    </div>
+  </article>
+  <%} %>
+</section>
+
+<h2 class="titulo-section-catalogo">Ofertas</h2>
+<section class="section-venta-catalogo">
+  <% for (let i = 0; i <products.length ; i++) {%>
+
+  <%
        
       if(products[i].discount > 15){%>
-    <article class="articulo-venta-catalogo">
-      <img
-        src="<%= products[i].image %>"
-        alt=""
-        class="imagen-articulo-catalogo"
-      />
-      <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= products[i].price %></p>
-        <p class="descuento-ctlgo"><%= products[i].discount %></p>
-        <p class="descripcion-ctlgo"><%= products[i].description %></p>
-      </div>
-    </article>
-    <% } %>
+  <article class="articulo-venta-catalogo">
+    <img src="<%= products[i].image %>" alt="" class="imagen-articulo-catalogo" />
+    <div class="info-catalogo">
+      <p class="precio-ctlgo"><%= products[i].price %></p>
+      <p class="descuento-ctlgo"><%= products[i].discount %></p>
+      <p class="descripcion-ctlgo"><%= products[i].description %></p>
+    </div>
+  </article>
+  <% } %>
 
-    <% } %>
-  </section>
+  <% } %>
+</section>
 
-  <h2 class="titulo-section-catalogo">Todos los Productos</h2>
-  <section class="section-venta-catalogo">
-    <% for (let i = 0; i <products.length ; i++) {%>
-      
-     
-    <article class="articulo-venta-catalogo">
-      <img
-        src="<%= products[i].image %>"
-        alt=""
-        class="imagen-articulo-catalogo"
-      />
-      <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= products[i].price %></p>
-        <p class="descuento-ctlgo"><%= products[i].discount %></p>
-        <p class="descripcion-ctlgo"><%= products[i].description %></p>
-      </div>
-    </article>
-    
+<h2 class="titulo-section-catalogo">Todos los Productos</h2>
+<section class="section-venta-catalogo">
+  <% for (let i = 0; i <products.length ; i++) {%>
 
-    <% } %>
-  </section>
+
+  <article class="articulo-venta-catalogo">
+    <img src="<%= products[i].image %>" alt="" class="imagen-articulo-catalogo" />
+    <div class="info-catalogo">
+      <p class="precio-ctlgo"><%= products[i].price %></p>
+      <p class="descuento-ctlgo"><%= products[i].discount %></p>
+      <p class="descripcion-ctlgo"><%= products[i].description %></p>
+    </div>
+  </article>
+
+
+  <% } %>
+</section>
