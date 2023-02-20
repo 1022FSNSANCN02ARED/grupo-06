@@ -1,10 +1,10 @@
 <nav
-    class="navbar navbar-dark navbar-expand-md bg-dark fixed-top"
+    class="navbar navbar-dark navbar-expand-md bg-black fixed-top"
     style="height: 90px"
 >
     <div class="container-fluid">
         <button
-            class="navbar-toggler"
+            class="navbar-toggler border-1 border-primary"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#staticBackdrop"
@@ -13,7 +13,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div
-            class="offcanvas offcanvas-start text-bg-yellow"
+            class="offcanvas offcanvas-start bg-black"
             data-bs-backdrop="static"
             tabindex="-1"
             id="staticBackdrop"
@@ -21,7 +21,7 @@
         >
             <div class="offcanvas-header">
                 <h5
-                    class="offcanvas-title row align-items-center"
+                    class="offcanvas-title row align-items-center text-white"
                     id="staticBackdropLabel"
                 >
                     <img
@@ -91,21 +91,73 @@
                 class="position-absolute top-50 start-50 translate-middle"
             />
         </a>
-        <div>
-            <ul class="navbar-nav justify-content-end flex-row mt-4 mb-4 gap-3">
-                <li class="nav-item">
-                    <a href="/login">
-                        <i
-                            class="fa-solid fa-user header-cart active-icons"
-                        ></i>
-                    </a>
-                </li>
-                <a href="/products/carrito">
-                    <i
-                        class="fa-solid fa-cart-shopping header-cart active-icons"
-                    ></i>
-                </a>
-            </ul>
+        <button
+            class="navbar-toggler-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#loginButton"
+            aria-controls="staticBackdrop"
+        >
+            <i class="fa-solid fa-user header-user active-icons"></i>
+        </button>
+        <div
+            class="offcanvas-xl offcanvas-end bg-black"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            id="loginButton"
+            aria-labelledby="staticBackdropLabel"
+        >
+            <div class="offcanvas-header">
+                <h5
+                    class="offcanvas-title row align-items-center text-white"
+                    id="staticBackdropLabel"
+                >
+                    <img
+                        src="/images/logo-letra-negro.svg"
+                        alt="Logo barberia"
+                        style="width: 75px"
+                    />
+                    Hair Cut
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#loginButton"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav nav-labels flex-grow-1 pe-3">
+                    <form class="navbar-form" role="login">
+                        <input
+                            class="form-control me-2 p-1 navbar-input bg-black text-primary"
+                            type="text"
+                            placeholder="Email / Usuario"
+                            aria-label="login"
+                        />
+                        <input
+                            class="form-control me-2 p-1 navbar-input bg-black text-primary"
+                            type="password"
+                            placeholder="Contraseña"
+                            aria-label="login"
+                        />
+                        <button class="btn btn-outline-primary" type="submit">
+                            Ingresar
+                        </button>
+                        <p class="text-white mt-2 registrate">
+                            ¿No tenés cuenta?
+                            <a href="/register" class="link-primary"
+                                >Regístrate aquí</a
+                            >
+                        </p>
+                    </form>
+                </ul>
+            </div>
+            <p class="text-white m-0 registrate-xl">
+                ¿No tenés cuenta?
+                <a href="/register" class="link-primary">Regístrate aquí</a>
+            </p>
         </div>
     </div>
 </nav>
