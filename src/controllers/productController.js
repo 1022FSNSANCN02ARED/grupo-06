@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const jsonDb = require("../data/products");
-
 const productsModel = jsonDb("productsDataBase");
 
 module.exports = {
@@ -23,10 +22,18 @@ module.exports = {
         res.render("pages/carrito");
     },
     details: (req, res) => {
-        let product = productsModel.find(req.params.id);
-        res.render("pages/details", {
-            product,
-        });
+        let product = {};
+        let productsFile = fs.readFileSync(path.resolve(__dirname, '../data/productsDataBase.json'), 'utf-8');
+        let products = JSON.parse(productsFile);
+
+        let productId = req.params.id;
+
+        for (let i = 0; i < products.length; i++) {
+            if (products[i].id == productId) {
+                product = products[i];
+            }
+        }
+        res.render('pages/details', { product: product });
     },
     create: (req, res) => {
         res.render("pages/create");
@@ -47,7 +54,9 @@ module.exports = {
     },
     edit: (req, res) => {
         let productToEdit = productsModel.find(req.params.id);
-        res.render("pages/edit", { productToEdit: productToEdit });
+        res.render("pages/edit", {
+            productToEdit: productToEdit
+        });
     },
     update: (req, res) => {
         let product = req.body;

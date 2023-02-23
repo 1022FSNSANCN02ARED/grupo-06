@@ -41,27 +41,23 @@
       </div>
     </article>
 
-    <% } %>
-  </section>
+  <% } %>
+</section>
 
-  <h2 class="titulo-section-catalogo">Todos los Productos</h2>
-  <section class="section-venta-catalogo">
-    <% for (let i = 0; i <products.length ; i++) {%>
-      
-     
-    <article class="articulo-venta-catalogo">
-      <img
-        src="<%= products[i].image %>"
-        alt=""
-        class="imagen-articulo-catalogo"
-      />
-      <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= products[i].price %></p>
-        <p class="descuento-ctlgo"><%= products[i].discount %></p>
-        <p class="descripcion-ctlgo"><%= products[i].description %></p>
-      </div>
-    </article>
-    
+<h2 class="titulo-section-catalogo">Todos los Productos</h2>
+<section class="section-venta-catalogo">
+  <% for (let i = 0; i <products.length ; i++) {%>
 
-    <% } %>
-  </section>
+
+  <article class="articulo-venta-catalogo">
+    <img src="<%= products[i].image %>" alt="" class="imagen-articulo-catalogo" />
+    <div class="info-catalogo">
+      <p class="precio-ctlgo"><%= products[i].price %></p>
+      <p class="descuento-ctlgo"><%= products[i].discount %></p>
+      <p class="descripcion-ctlgo"><%= products[i].description %></p>
+    </div>
+  </article>
+
+
+  <% } %>
+</section>
