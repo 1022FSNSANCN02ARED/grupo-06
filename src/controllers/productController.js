@@ -7,7 +7,17 @@ const productsModel = jsonDb("productsDataBase");
 module.exports = {
     catalogue: (req, res) => {
         let products = productsModel.all();
-        res.render("pages/catalogue", { products });
+        const ofertas = products.filter(product => product.discount >= 15)
+        const arrayVacio = [];
+         function x (){while (arrayVacio.length < 3) {
+             let randomProduct = Math.floor(Math.random() * products.length);
+            if(!arrayVacio.includes(randomProduct)){
+                    arrayVacio.push(randomProduct);  
+            }     
+         }     
+        }
+        x()
+        res.render("pages/catalogue", { products, ofertas, arrayVacio });
     },
     cart: (req, res) => {
         res.render("pages/carrito");

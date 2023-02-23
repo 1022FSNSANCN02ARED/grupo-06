@@ -9,18 +9,17 @@
   </section>
   <h2 class="titulo-section-catalogo">Destacados</h2>
   <section class="section-venta-catalogo">
-    <% for (let i = 0; i <3 ; i++) {%>
-      
+    <% for (let i = 0; i < 3 ; i++) {%>
       <article class="articulo-venta-catalogo">
       <img
-        src="<%= products[i].image %>"
+        src="<%= products[arrayVacio[i]].image %>"
         alt=""
         class="imagen-articulo-catalogo"
       />
       <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= products[i].price %></p>
-        <p class="descuento-ctlgo"><%= products[i].discount %></p>
-        <p class="descripcion-ctlgo"><%= products[i].description %></p>
+        <p class="precio-ctlgo"><%= products[arrayVacio[i]].price %></p>
+        <p class="descuento-ctlgo"><%= products[arrayVacio[i]].discount %></p>
+        <p class="descripcion-ctlgo"><%= products[arrayVacio[i]].description %></p>
       </div>
     </article>
       <%} %>
@@ -28,24 +27,19 @@
 
   <h2 class="titulo-section-catalogo">Ofertas</h2>
   <section class="section-venta-catalogo">
-    <% for (let i = 0; i <products.length ; i++) {%>
-      
-      <%
-       
-      if(products[i].discount > 15){%>
+    <% for (let i = 0; i <ofertas.length ; i++) {%>
     <article class="articulo-venta-catalogo">
       <img
-        src="<%= products[i].image %>"
+        src="<%= ofertas[i].image %>"
         alt=""
         class="imagen-articulo-catalogo"
       />
       <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= products[i].price %></p>
-        <p class="descuento-ctlgo"><%= products[i].discount %></p>
-        <p class="descripcion-ctlgo"><%= products[i].description %></p>
+        <p class="precio-ctlgo"><%= ofertas[i].price %></p>
+        <p class="descuento-ctlgo"><%= ofertas[i].discount %></p>
+        <p class="descripcion-ctlgo"><%= ofertas[i].description %></p>
       </div>
     </article>
-    <% } %>
 
     <% } %>
   </section>
