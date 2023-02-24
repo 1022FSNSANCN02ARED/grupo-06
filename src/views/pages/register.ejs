@@ -1,39 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') %>
-  </head>
-  <body>
-    <header class="header"><%- include('../partials/header') %></header>
-    <main class="formulario_main">
-      <h1 class="formulario_titulo">Registrate</h1>
-      <form action="/register" method="post" class="formulario" enctype="multipart/form-data">
-        <input type="text" name="firstName" class="formulario_input" required />
-        <label for="" class="formulario_label">Nombres</label>
-        <input type="text" name="lastname" class="formulario_input" required />
-        <label for="" class="formulario_label">Apellido</label>
-        <input type="number" name="cel" class="formulario_input" />
-        <label for=""  class="formulario_label">Celular</label>
-        <input type="email" name="email" class="formulario_input" required />
-        <label for="" class="formulario_label">E-mail</label>
-        <input type="password" name="password" class="formulario_input" required />
-        <label for="" class="formulario_label">Contraseña</label>
-        <input type="file" name="avatar" class="formulario_input" />
-        <p align="center">
-          <input type="checkbox" required />Acepto términos y condiciones.
-        </p>
-        <input type="submit" class="formulario_submit" />
-        <input type="reset" class="formulario_reset" />
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+    <body>
+        <header class="header"><%- include('../partials/header') %></header>
+        <main class="d-flex justify-content-center bg-image-register w-100">
+            <div class="my-5 text-center w-90">
+                <h1
+                    class="rounded-top-3 text-center container bg-5 mb-0 text-primary"
+                >
+                    ¡Bienvenido!
+                </h1>
+                <form
+                    action="/register"
+                    method="post"
+                    enctype="multipart/form-data"
+                    class="container flex-column bg-5"
+                >
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Ingresa tu nombre:</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                            placeholder="Nombre"
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Ingresa tu apellido:</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                            placeholder="Apellido"
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Ingresa tu nombre de usuario:</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                            placeholder="Usuario"
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Ingresa tu email:</label
+                        >
+                        <input
+                            type="email"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Ingresa tu contraseña:</label
+                        >
+                        <input
+                            type="email"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Ingresa tu número de celular:</label
+                        >¿
+                        <input
+                            type="number"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                            placeholder="Celular"
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="formGroupExampleInput"
+                            class="form-label text-primary"
+                            >Ingresa tu foto de perfil (opcional):</label
+                        >
+                        <input
+                            type="file"
+                            class="form-control text-primary bg-black border-primary"
+                            id="formGroupExampleInput"
+                        />
+                    </div>
 
-        <p align="center">
-          ¿Ya tienes tu cuenta? Logueate
-          <a href="/login">aca! </a>
-        </p>
-      </form>
-      <script src="scripts/form.js"></script>
-    </main>
-    <footer class="footer-catalogo">
-      <%- include('../partials/footer') %>
-    </footer>
-  </body>
+                    <button
+                        type="submit"
+                        class="btn btn-outline-primary m-auto mb-3 mt-5 w-50 d-block"
+                    >
+                        REGISTRARSE
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="btn btn-outline-primary m-auto w-25 d-block p-1"
+                    >
+                        Limpiar
+                    </button>
+                </form>
+            </div>
+        </main>
+        <footer class="footer-catalogo">
+            <%- include('../partials/footer') %>
+        </footer>
+    </body>
 </html>
