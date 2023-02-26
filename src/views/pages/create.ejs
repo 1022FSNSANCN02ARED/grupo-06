@@ -5,63 +5,148 @@
     </head>
     <body>
         <header class="header"><%- include('../partials/header') %></header>
-        <main class="formulario_main">
-            <h1 class="formulario_titulo">Agrega un producto</h1>
-            <form
-                action="/products/create"
-                class="formulario"
-                method="post"
-                enctype="multipart/form-data"
-            >
-                <input
-                    type="text"
-                    name="name"
-                    class="formulario_input"
-                    required
-                />
-                <label for="" class="formulario_label">Nombre</label>
-                <input
-                    type="number"
-                    name="price"
-                    class="formulario_input"
-                    required
-                />
-                <label for="" class="formulario_label">Precio</label>
-                <input
-                    type="text"
-                    name="description"
-                    class="formulario_input"
-                />
-                <label for="" class="formulario_label">Descripcion</label>
-                <input
-                    type="text"
-                    name="brand"
-                    class="formulario_input"
-                    required
-                />
-                <label for="" class="formulario_label">Marca</label>
-                <input
-                    type="text"
-                    name="category"
-                    class="formulario_input"
-                    required
-                />
-                <label for="" class="formulario_label">Categoria</label>
+        <main class="d-flex justify-content-center bg-image-register w-100">
+            <div class="my-5 text-center w-h-90-2">
+                <h1
+                    class="rounded-top-3 text-center container bg-5 mb-0 text-primary"
+                >
+                    Publica un producto:
+                </h1>
+                <form
+                    action="/products/create"
+                    method="post"
+                    enctype="multipart/form-data"
+                    class="container flex-column bg-5 rounded-bottom-3"
+                >
+                    <div class="mb-3 text-center">
+                        <label for="productName" class="form-label text-primary"
+                            >Nombre del producto:</label
+                        >
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control text-primary bg-black border-primary"
+                            id="productName"
+                            placeholder="Ingrese un nombre"
+                            required
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="productPrice"
+                            class="form-label text-primary"
+                            >Precio del producto:</label
+                        >
+                        <input
+                            type="number"
+                            name="price"
+                            class="form-control text-primary bg-black border-primary"
+                            id="productPrice"
+                            placeholder="Ingrese un precio"
+                            required
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="productBrand"
+                            class="form-label text-primary"
+                            >Marca del producto:</label
+                        >
+                        <input
+                            type="text"
+                            name="brand"
+                            class="form-control text-primary bg-black border-primary"
+                            id="productBrand"
+                            placeholder="Ingrese una marca"
+                            required
+                        />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="productCategory"
+                            name="category"
+                            class="form-label text-primary"
+                            >Categoría:</label
+                        >
+                        <select
+                            class="form-select text-primary bg-black border-primary"
+                            aria-label="Default select example"
+                        >
+                            <option value="sinCategoria" selected>
+                                Sin categoría
+                            </option>
+                            <option value="gel">Gel</option>
+                            <option value="crema">Crema</option>
+                            <option value="pomada">Pomada</option>
+                            <option value="tinte">Tinte</option>
+                            <option value="shampoo">Shampoo</option>
+                            <option value="cera">Cera</option>
+                            <option value="shampoo">Laca</option>
+                        </select>
+                    </div>
+                    <div class="my-4 text-center">
+                        <label
+                            for="enOferta"
+                            class="form-check-label text-primary mx-1"
+                            >¿Está en oferta?
+                        </label>
+                        <input
+                            type="checkbox"
+                            name="inSale"
+                            class="form-check-input text-primary bg-black border-primary"
+                            id="enOferta"
+                            placeholder="Ingrese un precio"
+                        />
+                        <div class="mt-3 text-center" id="oferta">
+                            <label
+                                for="productDiscount"
+                                class="form-label text-primary"
+                                >Descuento de oferta:</label
+                            >
+                            <div class="d-flex">
+                                <input
+                                    type="number"
+                                    name="discount"
+                                    class="form-control text-primary bg-black border-primary"
+                                    id="productDiscount"
+                                    placeholder="Ingrese un porcentaje"
+                                />
+                                <p
+                                    class="text-primary position-relative porcentaje"
+                                >
+                                    %
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="productImage"
+                            class="form-label text-primary"
+                            >Imagen del producto:</label
+                        >
+                        <input
+                            type="file"
+                            class="form-control text-primary bg-black border-primary"
+                            id="productImage"
+                        />
+                    </div>
 
-                <select name="oferta" id="" class="formulario_input" required>
-                    <option value="oferta">En Oferta</option>
-                    <option value="nuevo">Nuevo</option>
-                </select>
+                    <button
+                        type="submit"
+                        class="btn btn-outline-primary m-auto mb-3 mt-5 w-50 d-block"
+                    >
+                        PUBLICAR
+                    </button>
 
-                <input type="number" name="discount" class="formulario_input" />
-                <label for="" class="formulario_label">Descuento</label>
-
-                <input type="file" name="image" class="formulario_input" />
-
-                <input type="submit" class="formulario_submit" />
-                <input type="reset" class="formulario_reset" />
-            </form>
-            <script src="scripts/form.js"></script>
+                    <button
+                        type="reset"
+                        class="btn btn-outline-primary m-auto w-25 d-block p-1"
+                    >
+                        Limpiar
+                    </button>
+                </form>
+            </div>
         </main>
         <footer class="footer-catalogo">
             <%- include('../partials/footer') %>

@@ -1568,3 +1568,38 @@ al soltar el click */
 .w-90 {
     width: 90%;
 }
+
+/* Create and edit product */
+
+.w-h-90-2 {
+    width: 90%;
+    min-height: 900px;
+}
+
+#enOferta + #oferta {
+    display: none;
+    transition: all 0.4s;
+}
+
+#enOferta:checked + #oferta {
+    display: block;
+    transition: all 0.4s;
+    border-radius: 5%;
+}
+
+.porcentaje {
+    right: 1.5rem;
+    font-size: 1.25rem;
+    margin: 0;
+    top: 0.25rem;
+}
+
+.productImage {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+}
+
+.border-product {
+    border: 3px solid #fca311;
+}

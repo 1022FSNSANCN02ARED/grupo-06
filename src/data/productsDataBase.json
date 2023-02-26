@@ -1,116 +1,115 @@
 [
- {
-  "id": 0,
-  "name": "Gel Lord Cheseline",
-  "description": "Gel para el cabello, efecto fijador, definición y control.",
-  "image": "/images/gel-cabello.jpg",
-  "category": "Gel",
-  "brand": "Lord Cheseline",
-  "discount": 20,
-  "price": 800
- },
- {
-  "id": 1,
-  "name": "Crema de afeitar Sir Fausto",
-  "description": "Crema de afeitar, con bálsamo humectante, a base de raíces naturales, del norte de Argentina.",
-  "image": "/images/crema-afeitar.jpg",
-  "category": "Crema",
-  "brand": "Sir Fausto",
-  "price": 120,
-  "discount": 25
- },
- {
-  "name": "Oleo fortalecedor Sir Fausto",
-  "price": 850,
-  "description": "jhgk",
-  "brand": "ghjk",
-  "category": "ghjk",
-  "oferta": "oferta",
-  "image": "/images/aceite-fortalecedor.jpg",
-  "id": 2,
-  "discount": 15
- },
- {
-  "id": 3,
-  "name": "Crema de afeitar Raff",
-  "description": "Crema de afeitar de gran suavidad y perfumada.",
-  "image": "/images/crema-afeitar-raff.jpeg",
-  "category": "Crema",
-  "brand": "Raff",
-  "price": 1300,
-  "discount": 5
- },
- {
-  "id": 4,
-  "name": "Pomada para barba Sir Fausto",
-  "description": "Pomada Sir Fausto, humectante, a base de bálsamo del norte de Argentina.",
-  "image": "/images/pomada-barba.jpeg",
-  "category": "Pomada",
-  "brand": "Sir Fausto",
-  "price": 110,
-  "discount": 0
- },
- {
-  "id": 5,
-  "name": "Tinte para cabello Loreal",
-  "description": "Tintura para el cabello, colores vivos y radiantes, cabello protegido, sin melanina.",
-  "image": "/images/tinte-cabello.jpg",
-  "category": "Tinte",
-  "brand": "Loreal",
-  "price": 140,
-  "discount": 25
- },
- {
-  "id": 6,
-  "name": "Shampoo para barbas Ayalatin",
-  "description": "Shampoo para barbas Ayalatin, cuidado y reparado de tu barba.",
-  "image": "/images/shampoo-ayalatin.png",
-  "category": "shampoo",
-  "brand": "Ayalatin",
-  "price": 800,
-  "discount": 15
- },
- {
-  "id": 7,
-  "name": "Cera Ayalatin",
-  "description": "Cera color mate wax, cera efecto mate.",
-  "image": "/images/ceramate-ayala.png",
-  "category": "cera",
-  "brand": "Ayalatin",
-  "price": 120,
-  "discount": 10
- },
- {
-  "id": 8,
-  "name": "Laca Ayalatin",
-  "description": "Laca fijadora para el cabello, efecto extremo.",
-  "image": "/images/laca-ayalatin.png",
-  "category": "laca",
-  "brand": "Ayalatin",
-  "price": 135,
-  "discount": 0
- },
- {
-  "name": "dhfg",
-  "price": "1",
-  "description": "ghf",
-  "brand": "fcgh",
-  "category": "dgfh",
-  "oferta": "oferta",
-  "discount": "1",
-  "image": "/images/products/image-1676676061314.jpg",
-  "id": 9
- },
- {
-  "name": "dhfgghjk",
-  "price": "1",
-  "description": "ghf",
-  "brand": "fcgh",
-  "category": "dgfh",
-  "oferta": "oferta",
-  "discount": "1",
-  "image": "/images/products/image-1676676174558.jpg",
-  "id": 10
- }
-
+    {
+        "id": 0,
+        "name": "Gel Lord Cheseline",
+        "description": "Gel para el cabello, efecto fijador, definición y control.",
+        "image": "/images/gel-cabello.jpg",
+        "category": "gel",
+        "brand": "Lord Cheseline",
+        "discount": 20,
+        "price": 800
+    },
+    {
+        "id": 1,
+        "name": "Crema de afeitar Sir Fausto",
+        "description": "Crema de afeitar, con bálsamo humectante, a base de raíces naturales, del norte de Argentina.",
+        "image": "/images/crema-afeitar.jpg",
+        "category": "crema",
+        "brand": "Sir Fausto",
+        "price": 120,
+        "discount": 25
+    },
+    {
+        "name": "Oleo fortalecedor Sir Fausto",
+        "price": 850,
+        "description": "jhgk",
+        "brand": "ghjk",
+        "category": "ghjk",
+        "oferta": "oferta",
+        "image": "/images/aceite-fortalecedor.jpg",
+        "id": 2,
+        "discount": 15
+    },
+    {
+        "id": 3,
+        "name": "Crema de afeitar Raff",
+        "description": "Crema de afeitar de gran suavidad y perfumada.",
+        "image": "/images/crema-afeitar-raff.jpeg",
+        "category": "crema",
+        "brand": "Raff",
+        "price": 1300,
+        "discount": 5
+    },
+    {
+        "id": 4,
+        "name": "Pomada para barba Sir Fausto",
+        "description": "Pomada Sir Fausto, humectante, a base de bálsamo del norte de Argentina.",
+        "image": "/images/pomada-barba.jpeg",
+        "category": "pomada",
+        "brand": "Sir Fausto",
+        "price": 110,
+        "discount": 0
+    },
+    {
+        "id": 5,
+        "name": "Tinte para cabello Loreal",
+        "description": "Tintura para el cabello, colores vivos y radiantes, cabello protegido, sin melanina.",
+        "image": "/images/tinte-cabello.jpg",
+        "category": "tinte",
+        "brand": "Loreal",
+        "price": 140,
+        "discount": 25
+    },
+    {
+        "id": 6,
+        "name": "Shampoo para barbas Ayalatin",
+        "description": "Shampoo para barbas Ayalatin, cuidado y reparado de tu barba.",
+        "image": "/images/shampoo-ayalatin.png",
+        "category": "shampoo",
+        "brand": "Ayalatin",
+        "price": 800,
+        "discount": 15
+    },
+    {
+        "id": 7,
+        "name": "Cera Ayalatin",
+        "description": "Cera color mate wax, cera efecto mate.",
+        "image": "/images/ceramate-ayala.png",
+        "category": "cera",
+        "brand": "Ayalatin",
+        "price": 120,
+        "discount": 10
+    },
+    {
+        "id": 8,
+        "name": "Laca Ayalatin",
+        "description": "Laca fijadora para el cabello, efecto extremo.",
+        "image": "/images/laca-ayalatin.png",
+        "category": "laca",
+        "brand": "Ayalatin",
+        "price": 135,
+        "discount": 0
+    },
+    {
+        "name": "dhfg",
+        "price": "1",
+        "description": "ghf",
+        "brand": "fcgh",
+        "category": "dgfh",
+        "oferta": "oferta",
+        "discount": "1",
+        "image": "/images/products/image-1676676061314.jpg",
+        "id": 9
+    },
+    {
+        "name": "dhfgghjk",
+        "price": "1",
+        "description": "ghf",
+        "brand": "fcgh",
+        "category": "dgfh",
+        "oferta": "oferta",
+        "discount": "1",
+        "image": "/images/products/image-1676676174558.jpg",
+        "id": 10
+    }
 ]
