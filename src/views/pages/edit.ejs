@@ -6,7 +6,7 @@
     <body>
         <header class="header"><%- include('../partials/header') %></header>
         <main class="d-flex justify-content-center bg-image-register w-100">
-            <div class="my-5 text-center w-h-90-2">
+            <div class="my-5 text-center w-h-edit">
                 <h1
                     class="rounded-top-3 text-center container bg-5 mb-0 text-primary"
                 >
@@ -22,9 +22,9 @@
                     </div>
                 </div>
                 <form
-                    action="/products/<%= productToEdit.id %>?_method=put"
                     method="post"
                     enctype="multipart/form-data"
+                    action="/products/<%= productToEdit.id %>?_method=put"
                     class="container flex-column bg-5 rounded-bottom-3"
                 >
                     <div class="mb-3 text-center">
@@ -53,6 +53,7 @@
                             class="form-control text-primary bg-black border-primary"
                             id="productPrice"
                             placeholder="Ingrese un precio"
+                            value="<%= productToEdit.price %>"
                             required
                         />
                     </div>
@@ -68,6 +69,7 @@
                             class="form-control text-primary bg-black border-primary"
                             id="productBrand"
                             placeholder="Ingrese una marca"
+                            value="<%= productToEdit.brand %>"
                             required
                         />
                     </div>
@@ -120,6 +122,7 @@
                                     class="form-control text-primary bg-black border-primary"
                                     id="productDiscount"
                                     placeholder="Ingrese un porcentaje"
+                                    value="<%= productToEdit.discount %>"
                                 />
                                 <p
                                     class="text-primary position-relative porcentaje"
@@ -139,7 +142,26 @@
                             type="file"
                             class="form-control text-primary bg-black border-primary"
                             id="productImage"
+                            name="image"
                         />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="productDescription"
+                            class="form-label text-primary"
+                            >Descripción del producto:</label
+                        >
+                        <textarea
+                            name="description"
+                            class="form-control text-primary bg-black border-primary"
+                            id="productDescription"
+                            cols="30"
+                            rows="5"
+                            placeholder="Ingrese una descripción del producto"
+                            required
+                        >
+<%= productToEdit.description %></textarea
+                        >
                     </div>
 
                     <button
@@ -154,6 +176,13 @@
                         class="btn btn-outline-primary m-auto w-25 d-block p-1"
                     >
                         Limpiar
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="btn btn-outline-danger m-auto w-25 mt-3 d-block p-1"
+                    >
+                        Borrar
                     </button>
                 </form>
             </div>

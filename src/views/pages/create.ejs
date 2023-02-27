@@ -6,7 +6,7 @@
     <body>
         <header class="header"><%- include('../partials/header') %></header>
         <main class="d-flex justify-content-center bg-image-register w-100">
-            <div class="my-5 text-center w-h-90-2">
+            <div class="my-5 text-center w-h-create">
                 <h1
                     class="rounded-top-3 text-center container bg-5 mb-0 text-primary"
                 >
@@ -64,13 +64,13 @@
                     <div class="mb-3 text-center">
                         <label
                             for="productCategory"
-                            name="category"
                             class="form-label text-primary"
                             >Categoría:</label
                         >
                         <select
                             class="form-select text-primary bg-black border-primary"
                             aria-label="Default select example"
+                            name="category"
                         >
                             <option value="sinCategoria" selected>
                                 Sin categoría
@@ -129,7 +129,24 @@
                             type="file"
                             class="form-control text-primary bg-black border-primary"
                             id="productImage"
+                            name="image"
                         />
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label
+                            for="productDescription"
+                            class="form-label text-primary"
+                            >Descripción del producto:</label
+                        >
+                        <textarea
+                            name="description"
+                            class="form-control text-primary bg-black border-primary"
+                            id="productDescription"
+                            cols="30"
+                            rows="5"
+                            placeholder="Ingrese una descripción del producto"
+                            required
+                        ></textarea>
                     </div>
 
                     <button

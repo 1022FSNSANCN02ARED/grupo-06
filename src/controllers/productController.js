@@ -6,16 +6,17 @@ const productsModel = jsonDb("productsDataBase");
 module.exports = {
     catalogue: (req, res) => {
         let products = productsModel.all();
-        const ofertas = products.filter(product => product.discount >= 15)
+        const ofertas = products.filter((product) => product.discount >= 15);
         const arrayVacio = [];
-         function x (){while (arrayVacio.length < 3) {
-             let randomProduct = Math.floor(Math.random() * products.length);
-            if(!arrayVacio.includes(randomProduct)){
-                    arrayVacio.push(randomProduct);  
-            }     
-         }     
+        function x() {
+            while (arrayVacio.length < 3) {
+                let randomProduct = Math.floor(Math.random() * products.length);
+                if (!arrayVacio.includes(randomProduct)) {
+                    arrayVacio.push(randomProduct);
+                }
+            }
         }
-        x()
+        x();
         res.render("pages/catalogue", { products, ofertas, arrayVacio });
     },
     cart: (req, res) => {
@@ -23,7 +24,10 @@ module.exports = {
     },
     details: (req, res) => {
         let product = {};
-        let productsFile = fs.readFileSync(path.resolve(__dirname, '../data/productsDataBase.json'), 'utf-8');
+        let productsFile = fs.readFileSync(
+            path.resolve(__dirname, "../data/productsDataBase.json"),
+            "utf-8"
+        );
         let products = JSON.parse(productsFile);
 
         let productId = req.params.id;
@@ -33,7 +37,7 @@ module.exports = {
                 product = products[i];
             }
         }
-        res.render('pages/details', { product: product });
+        res.render("pages/details", { product: product });
     },
     create: (req, res) => {
         res.render("pages/create");
@@ -55,17 +59,18 @@ module.exports = {
     edit: (req, res) => {
         let productToEdit = productsModel.find(req.params.id);
         res.render("pages/edit", {
-            productToEdit: productToEdit
+            productToEdit: productToEdit,
         });
     },
     update: (req, res) => {
+        console.log(req.body);
         let product = req.body;
 
         product.id = req.params.id;
 
         productId = productsModel.update(product);
 
-        res.render("pages/details", {
+        return res.render("pages/turns", {
             productId,
         });
     },
@@ -82,6 +87,6 @@ module.exports = {
             fs.unlinkSync(imagePath);
         }
 
-        res.redirect("pages/catalogo");
+        return res.redirect("pages/catalogo");
     },
 };

@@ -1,6 +1,6 @@
 const jsonDb = require("../data/products");
 const bcryptjs = require("bcryptjs");
-const model = require("../data/products");
+const { validationResult } = require("express-validator");
 
 const usersModel = jsonDb("usersDataBase");
 
@@ -12,6 +12,16 @@ module.exports = {
         res.render("pages/login");
     },
     loginProcess: (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render("pages/register", {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
+        }
+        return res.send(resultValidation);
+        /*
         let userToLogin = usersModel.find("email", req.body.email);
 
         if (userToLogin) {
@@ -21,7 +31,6 @@ module.exports = {
                 userToLogin.password
             );
             if (validationPassword) {
-                return res.redirect("/");
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
 
@@ -34,11 +43,22 @@ module.exports = {
                 return res.redirect("/user/profile");
             }
         }
+        */
     },
     register: (req, res) => {
         res.render("pages/register");
     },
     processRegister: (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render("pages/register", {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
+        }
+        return res.send(resultValidation);
+        /*
         if (req.body) {
             let user = req.body;
             user.avatar = req.file.filename;
@@ -48,6 +68,7 @@ module.exports = {
         } else {
             res.render("home");
         }
+        */
     },
     turns: (req, res) => {
         res.render("pages/turns");

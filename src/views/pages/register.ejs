@@ -24,13 +24,16 @@
                             class="form-label text-primary"
                             >Ingresa tu nombre:</label
                         >
-                        <input
-                            type="text"
-                            class="form-control text-primary bg-black border-primary"
-                            id="registerName"
-                            placeholder="Nombre"
-                            required
-                        />
+                        <input type="text" class="form-control text-primary
+                        bg-black border-primary <%= locals.errors && errors.name
+                        ? "is-invalid" : null %>" id="registerName"
+                        placeholder="Nombre" name="name" value="<%=
+                        locals.oldData ? oldData.name : null %>"/> <% if
+                        (locals.errors && errors.name) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.name.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -38,13 +41,17 @@
                             class="form-label text-primary"
                             >Ingresa tu apellido:</label
                         >
-                        <input
-                            type="text"
-                            class="form-control text-primary bg-black border-primary"
-                            id="registerLastname"
-                            placeholder="Apellido"
-                            required
-                        />
+                        <input type="text" class="form-control text-primary
+                        bg-black border-primary <%= locals.errors &&
+                        errors.lastname ? "is-invalid" : null %>"
+                        id="registerLastname" placeholder="Apellido"
+                        name="lastname" value="<%= locals.oldData ?
+                        oldData.lastname : null %>"/> <% if (locals.errors &&
+                        errors.lastname) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.lastname.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -52,13 +59,16 @@
                             class="form-label text-primary"
                             >Ingresa tu nombre de usuario:</label
                         >
-                        <input
-                            type="text"
-                            class="form-control text-primary bg-black border-primary"
-                            id="registerUser"
-                            placeholder="Usuario"
-                            required
-                        />
+                        <input type="text" class="form-control text-primary
+                        bg-black border-primary <%= locals.errors &&
+                        errors.username ? "is-invalid" : null %>"
+                        id="registerUser" placeholder="Usuario" name="username"
+                        value="<%= locals.oldData ? oldData.username : null %>"
+                        /> <% if (locals.errors && errors.username) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.username.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -66,13 +76,16 @@
                             class="form-label text-primary"
                             >Ingresa tu email:</label
                         >
-                        <input
-                            type="email"
-                            class="form-control text-primary bg-black border-primary"
-                            id="registerEmail"
-                            placeholder="Email"
-                            required
-                        />
+                        <input type="email" class="form-control text-primary
+                        bg-black border-primary <%= locals.errors &&
+                        errors.email ? "is-invalid" : null %>"
+                        id="registerEmail" placeholder="Email" name="email"
+                        value="<%= locals.oldData ? oldData.email : null %>"/>
+                        <% if (locals.errors && errors.email) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.email.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -80,13 +93,16 @@
                             class="form-label text-primary"
                             >Ingresa tu contraseña:</label
                         >
-                        <input
-                            type="password"
-                            class="form-control text-primary bg-black border-primary"
-                            id="registerPassword"
-                            placeholder="Password"
-                            required
-                        />
+                        <input type="password" class="form-control text-primary
+                        bg-black border-primary <%= locals.errors &&
+                        errors.password ? "is-invalid" : null %>"
+                        id="registerPassword" placeholder="Contraseña"
+                        name="password" /> <% if (locals.errors &&
+                        errors.password) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.password.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -94,13 +110,16 @@
                             class="form-label text-primary"
                             >Ingresa tu número de celular:</label
                         >
-                        <input
-                            type="number"
-                            class="form-control text-primary bg-black border-primary"
-                            id="registerNumber"
-                            placeholder="Celular"
-                            required
-                        />
+                        <input type="number" class="form-control text-primary
+                        bg-black border-primary <%= locals.errors &&
+                        errors.phone ? "is-invalid" : null %>"
+                        id="registerNumber" placeholder="Número de teléfono"
+                        name="phone" value="<%= locals.oldData ? oldData.phone :
+                        null %>" /> <% if (locals.errors && errors.phone) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.phone.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -112,7 +131,13 @@
                             type="file"
                             class="form-control text-primary bg-black border-primary"
                             id="registerImage"
+                            name="avatar"
                         />
+                        <% if (locals.errors && errors.avatar) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.avatar.msg %>
+                        </p>
+                        <% } %>
                     </div>
 
                     <button

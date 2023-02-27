@@ -1571,9 +1571,14 @@ al soltar el click */
 
 /* Create and edit product */
 
-.w-h-90-2 {
+.w-h-edit {
     width: 90%;
-    min-height: 900px;
+    min-height: 1600px;
+}
+
+.w-h-create {
+    width: 90%;
+    min-height: 1100px;
 }
 
 #enOferta + #oferta {
@@ -1596,7 +1601,7 @@ al soltar el click */
 
 .productImage {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     background-color: white;
 }
 
