@@ -1,63 +1,77 @@
 <section class="caja-mas-vendido-catalogo">
-    <img
-      src="/images/cera-cabello.jpg"
-      alt="Producto mas vendido"
-      class="img-mas-vendido-catalogo"
-    />
-    <h1 class="txt-mas-vendido-catalogo">Articulo mas vendido</h1>
-    <button class="boton-comprar-calogo">Comprar ahora!</button>
-  </section>
-  <h2 class="titulo-section-catalogo">Destacados</h2>
-  <section class="section-venta-catalogo">
-    <% for (let i = 0; i < 3 ; i++) {%>
-      <article class="articulo-venta-catalogo">
-      <img
-        src="<%= products[arrayVacio[i]].image %>"
-        alt=""
-        class="imagen-articulo-catalogo"
-      />
-      <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= products[arrayVacio[i]].price %></p>
-        <p class="descuento-ctlgo"><%= products[arrayVacio[i]].discount %></p>
-        <p class="descripcion-ctlgo"><%= products[arrayVacio[i]].description %></p>
-      </div>
-    </article>
-      <%} %>
-  </section>
+  <img src="/images/cera-cabello.jpg" alt="Producto mas vendido" class="img-mas-vendido-catalogo" />
+  <h1 class="txt-mas-vendido-catalogo">Articulo mas vendido</h1>
+  <button class="boton-comprar-calogo">Comprar ahora!</button>
+</section>
+<h2 class="titulo-section-catalogo">Destacados</h2>
+<section class="section-venta-catalogo">
+  <% for (let i=0; i < 3 ; i++) {%>
 
-  <h2 class="titulo-section-catalogo">Ofertas</h2>
-  <section class="section-venta-catalogo">
-    <% for (let i = 0; i <ofertas.length ; i++) {%>
     <article class="articulo-venta-catalogo">
-      <img
-        src="<%= ofertas[i].image %>"
-        alt=""
-        class="imagen-articulo-catalogo"
-      />
-      <div class="info-catalogo">
-        <p class="precio-ctlgo"><%= ofertas[i].price %></p>
-        <p class="descuento-ctlgo"><%= ofertas[i].discount %></p>
-        <p class="descripcion-ctlgo"><%= ofertas[i].description %></p>
-      </div>
+      <a href=" /products/details/<%= products[arrayVacio[i]].id %>">
+        <img src="<%= products[arrayVacio[i]].image %>" alt="" class="imagen-articulo-catalogo" />
+        <div class="info-catalogo">
+          <p class="precio-ctlgo">
+            <%= products[arrayVacio[i]].price %>
+          </p>
+          <p class="descuento-ctlgo">
+            <%= products[arrayVacio[i]].discount %>
+          </p>
+          <p class="descripcion-ctlgo">
+            <%= products[arrayVacio[i]].description %>
+          </p>
+        </div>
+      </a>
     </article>
 
-  <% } %>
+    <%} %>
+</section>
+
+<h2 class="titulo-section-catalogo">Ofertas</h2>
+<section class="section-venta-catalogo">
+  <% for (let i=0; i <ofertas.length ; i++) {%>
+    <article class="articulo-venta-catalogo">
+      <a href=" /products/details/<%= ofertas[i].id %>">
+      <img src="<%= ofertas[i].image %>" alt="" class="imagen-articulo-catalogo" />
+      <div class="info-catalogo">
+        <p class="precio-ctlgo">
+          <%= ofertas[i].price %>
+        </p>
+        <p class="descuento-ctlgo">
+          <%= ofertas[i].discount %>
+        </p>
+        <p class="descripcion-ctlgo">
+          <%= ofertas[i].description %>
+        </p>
+      </div>
+    </a>
+    </article>
+
+    <% } %>
 </section>
 
 <h2 class="titulo-section-catalogo">Todos los Productos</h2>
 <section class="section-venta-catalogo">
-  <% for (let i = 0; i <products.length ; i++) {%>
+  <% for (let i=0; i <products.length ; i++) {%>
 
 
-  <article class="articulo-venta-catalogo">
-    <img src="<%= products[i].image %>" alt="" class="imagen-articulo-catalogo" />
-    <div class="info-catalogo">
-      <p class="precio-ctlgo"><%= products[i].price %></p>
-      <p class="descuento-ctlgo"><%= products[i].discount %></p>
-      <p class="descripcion-ctlgo"><%= products[i].description %></p>
-    </div>
-  </article>
+    <article class="articulo-venta-catalogo">
+      <a href=" /products/details/<%= products[i].id %>">
+      <img src="<%= products[i].image %>" alt="" class="imagen-articulo-catalogo" />
+      <div class="info-catalogo">
+        <p class="precio-ctlgo">
+          <%= products[i].price %>
+        </p>
+        <p class="descuento-ctlgo">
+          <%= products[i].discount %>
+        </p>
+        <p class="descripcion-ctlgo">
+          <%= products[i].description %>
+        </p>
+      </div>
+      </a>
+    </article>
 
 
-  <% } %>
+    <% } %>
 </section>
