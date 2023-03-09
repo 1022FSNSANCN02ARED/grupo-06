@@ -32,7 +32,7 @@
   <% for (let i=0; i <ofertas.length ; i++) {%>
     <article class="articulo-venta-catalogo">
       <a href=" /products/details/<%= ofertas[i].id %>">
-      <img src="<%= ofertas[i].image %>" alt="" class="imagen-articulo-catalogo" />
+      <img src="/images/products/<%= ofertas[i].image %>" alt="" class="imagen-articulo-catalogo" />
       <div class="info-catalogo">
         <p class="precio-ctlgo">
           <%= ofertas[i].price %>
