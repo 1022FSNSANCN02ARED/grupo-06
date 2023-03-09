@@ -34,7 +34,7 @@
         "id": 3,
         "name": "Crema de afeitar Raff",
         "description": "Crema de afeitar de gran suavidad y perfumada.",
-        "image": "/images/products/products/crema-afeitar-raff.jpeg",
+        "image": "/images/products/crema-afeitar.jpg",
         "category": "crema",
         "brand": "Raff",
         "price": 1300,
@@ -44,7 +44,7 @@
         "id": 4,
         "name": "Pomada para barba Sir Fausto",
         "description": "Pomada Sir Fausto, humectante, a base de bálsamo del norte de Argentina.",
-        "image": "/images/products/pomada-barba.jpeg",
+        "image": "/images/products/pomada.jpg",
         "category": "pomada",
         "brand": "Sir Fausto",
         "price": 110,
@@ -89,37 +89,5 @@
         "brand": "Ayalatin",
         "price": 135,
         "discount": 0
-    },
-    {
-        "name": "dhfg",
-        "price": "1",
-        "description": "ghf",
-        "brand": "fcgh",
-        "category": "dgfh",
-        "oferta": "oferta",
-        "discount": "1",
-        "image": "/images/products/products/image-1676676061314.jpg",
-        "id": 9
-    },
-    {
-        "name": "dhfgghjk",
-        "price": "1",
-        "description": "ghf",
-        "brand": "fcgh",
-        "category": "dgfh",
-        "oferta": "oferta",
-        "discount": "1",
-        "image": "/images/products/products/image-1676676174558.jpg",
-        "id": 10
-    },
-    {
-        "name": "1",
-        "price": "1",
-        "brand": "1",
-        "category": "cera",
-        "discount": "",
-        "description": "1",
-        "image": "/images/products/image-1677440601397.jpg",
-        "id": 11
     }
 ]
