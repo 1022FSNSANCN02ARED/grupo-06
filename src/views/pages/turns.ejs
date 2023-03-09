@@ -16,38 +16,52 @@
                     action=""
                     method="post"
                     class="container flex-column bg-5"
+                    id="turns-form"
                 >
                     <div class="mb-3 text-center">
                         <label for="turnsDay" class="form-label text-primary"
                             >Elige tu día:</label
                         >
-                        <input
-                            type="date"
-                            class="form-control text-primary bg-black border-primary"
-                            id="turnsDay"
-                            placeholder="Fecha"
-                        />
+                        <input type="date" class="form-control text-primary
+                        bg-black border-primary <%= locals.errors &&
+                        errors.date ? "is-invalid" : null %>" id="turnsDay"
+                        placeholder="Fecha" name="date" value="<%=
+                        locals.oldData ? oldData.date : null %>" /> <% if
+                        (locals.errors && errors.date) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.date.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label for="turnsTime" class="form-label text-primary"
                             >Elige tu horario:</label
                         >
                         <select
-                            class="form-select text-primary bg-black border-primary"
+                            class="form-select text-primary bg-black border-primary  <%= locals.errors &&
+                        errors.turnsTime ? "is-invalid" : null %>"
                             aria-label="Default select example"
                             id="turnsTime"
+                            name="turnsTime"
                         >
-                            <option selected>Selecciona tu horario</option>
-                            <option value="9">9:00 a.m.</option>
-                            <option value="10">10:00 a.m.</option>
-                            <option value="11">11:00 a.m.</option>
-                            <option value="12">12:00 a.m.</option>
-                            <option value="13">13:00 a.m.</option>
-                            <option value="14">14:00 a.m.</option>
-                            <option value="15">15:00 a.m.</option>
-                            <option value="16">16:00 a.m.</option>
-                            <option value="17">17:00 a.m.</option>
+                            <option selected value="" disabled>
+                                Selecciona tu horario
+                            </option>
+                            <% let times = [9, 10,
+                            11, 12, 13, 14,
+                            15, 16, 17]; %> <%
+                            for (const oneTime of times) { %>
+                            <option 
+                                    value="<%= oneTime %>"
+                                    <%= locals.oldData && (oneTime == oldData.turnsTime) ? "selected" : null %>
+                                > <%= oneTime %>:00 hs. </option>
+                            <% } %>
                         </select>
+                        <% if (locals.errors && errors.turnsTime) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.turnsTime.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="form-check mb-3">
                         <p class="text-primary">
@@ -62,7 +76,7 @@
                             <div class="card w-100 border-primary bg-black">
                                 <label
                                     for="peluquero1"
-                                    class="container-fluid w-100 m-0 p-0 xdlol"
+                                    class="container-fluid w-100 m-0 p-0"
                                 >
                                     <div
                                         class="hover hover-1 text-white rounded"
@@ -93,7 +107,8 @@
                                     type="radio"
                                     id="peluquero1"
                                     name="peluquero"
-                                    class="btn-check lol"
+                                    class="btn-check peluqueros-check"
+                                    value="peluquero1"
                                 />
                                 <div class="card-body bg-black" id="frank">
                                     <h5 class="card-title text-primary" id="q">
@@ -145,7 +160,8 @@
                                     type="radio"
                                     id="peluquero2"
                                     name="peluquero"
-                                    class="btn-check lol"
+                                    class="btn-check peluqueros-check"
+                                    value="peluquero2"
                                 />
                                 <div class="card-body bg-black" id="frank">
                                     <h5 class="card-title text-primary">
@@ -197,7 +213,8 @@
                                     type="radio"
                                     id="peluquero3"
                                     name="peluquero"
-                                    class="btn-check lol"
+                                    class="btn-check peluqueros-check"
+                                    value="peluquero3"
                                 />
                                 <div class="card-body bg-black" id="frank">
                                     <h5 class="card-title text-primary" id="q">
@@ -219,6 +236,7 @@
                         data-bs-toggle="modal"
                         data-bs-target="#confirm"
                         class="btn btn-outline-primary m-auto mb-3 mt-5 w-50 d-block"
+                        form="turns-form"
                     >
                         RESERVAR
                     </button>

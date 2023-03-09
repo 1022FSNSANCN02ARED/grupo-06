@@ -5,7 +5,7 @@
     </head>
     <body>
         <header class="header"><%- include('../partials/header') %></header>
-        <main class="d-flex justify-content-center bg-image-register w-100">
+        <main class="d-flex justify-content-center bg-image-create w-100">
             <div class="my-5 text-center w-h-create">
                 <h1
                     class="rounded-top-3 text-center container bg-5 mb-0 text-primary"
@@ -72,16 +72,17 @@
                             aria-label="Default select example"
                             name="category"
                         >
-                            <option value="sinCategoria" selected>
+                            <option value="" selected disabled>
                                 Sin categoría
                             </option>
-                            <option value="gel">Gel</option>
-                            <option value="crema">Crema</option>
-                            <option value="pomada">Pomada</option>
-                            <option value="tinte">Tinte</option>
-                            <option value="shampoo">Shampoo</option>
-                            <option value="cera">Cera</option>
-                            <option value="shampoo">Laca</option>
+
+                             <% let categories = ["Gel", "Crema", "Pomada", "Tinte", "Shampoo", "Cera", "Laca"]; %> <%
+                            for (const oneCategory of categories) { %>
+                            <option 
+                                    value="<%= oneCategory %>"
+                                    <%= locals.oldData && (oneCategory == oldData.category) ? "selected" : null %>
+                                > <%= oneCategory %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div class="my-4 text-center">

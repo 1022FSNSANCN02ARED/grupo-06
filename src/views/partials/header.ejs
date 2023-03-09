@@ -134,6 +134,7 @@
                         role="login"
                         action="/login"
                         method="post"
+                        id="login-form"
                     >
                         <input class="form-control me-2 p-1 navbar-input
                         bg-black text-primary <%= locals.errors && errors.login
@@ -145,7 +146,11 @@
                         errors.loginPassword ? "is-invalid" : null %>"
                         type="password" placeholder="Contraseña"
                         aria-label="login" name="password" />
-                        <button class="btn btn-outline-primary" type="submit">
+                        <button
+                            class="btn btn-outline-primary"
+                            type="submit"
+                            form="login-form"
+                        >
                             Ingresar
                         </button>
                         <p class="text-white mt-2 registrate">

@@ -15,7 +15,7 @@ module.exports = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-            return res.render("pages/register", {
+            return res.render("home", {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
             });
@@ -48,7 +48,7 @@ module.exports = {
     register: (req, res) => {
         res.render("pages/register");
     },
-    processRegister: (req, res) => {
+    registerProcess: (req, res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -72,5 +72,17 @@ module.exports = {
     },
     turns: (req, res) => {
         res.render("pages/turns");
+    },
+    turnsProcess: (req, res) => {
+        console.log(JSON.parse(JSON.stringify(req.body)));
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render("pages/turns", {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
+        }
+        return res.redirect("/");
     },
 };

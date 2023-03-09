@@ -1444,16 +1444,16 @@ al soltar el click */
     }
 }
 
-.lol + #frank,
-.lol + #ashley,
-.lol + #sam {
+.peluqueros-check + #frank,
+.peluqueros-check + #ashley,
+.peluqueros-check + #sam {
     display: none;
     transition: all 0.4s;
 }
 
-.lol:checked + #frank,
-.lol:checked + #ashley,
-.lol:checked + #sam {
+.peluqueros-check:checked + #frank,
+.peluqueros-check:checked + #ashley,
+.peluqueros-check:checked + #sam {
     display: block;
     transition: all 0.4s;
     border-radius: 5%;
@@ -1570,6 +1570,12 @@ al soltar el click */
 }
 
 /* Create and edit product */
+
+.bg-image-create {
+    background-image: url("../images/backgrounds/background-create.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
 .w-h-edit {
     width: 90%;
