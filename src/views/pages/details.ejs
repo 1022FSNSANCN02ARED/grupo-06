@@ -9,13 +9,13 @@
   <header class="header"><%- include('../partials/header') %></header>
 
   <main class="main">
-    <a href="/"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="/products"><i class="fa-solid fa-arrow-left"></i></a>
     <section class="product-detail">
       <div class="product-header">
-        <img class="imageProduct" src="images/avatars/<%= product.image %>" alt=" product icon" />
+        <img class="imageProduct" src="images/<%= product.image %>" alt=" product icon" />
         <h4>$<%= product.price %></h4>
-        <a class="button" href="carrito">Comprar ahora</a>
-        <a class="button button--cart" href="carrito">Agregar al carrito</a>
+        <a class="button" href="/products/carrito">Comprar ahora</a>
+        <a class="button button--cart" href="/products/carrito">Agregar al carrito</a>
       </div>
       <div class="product-additional">
         <h3><%= product.name %></h3>
