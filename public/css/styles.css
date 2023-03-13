@@ -1399,6 +1399,15 @@ al soltar el click */
 
 */
 
+/* Turns */
+
+.bg-image-turns {
+    background-image: url("../images/backgraund-main.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1.5s ease;
+}
+
 .hover {
     overflow: hidden;
     position: relative;
@@ -1426,7 +1435,7 @@ al soltar el click */
 }
 .w-h-90 {
     width: 90%;
-    min-height: 1300px;
+    min-height: 1350px;
 }
 
 @media (min-width: 769px) {
@@ -1461,12 +1470,6 @@ al soltar el click */
 
 .bg-5 {
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-.bg-image-turns {
-    background-image: url("../images/backgraund-main.jpg");
-    background-size: cover;
-    background-position: center;
 }
 
 /* Header */

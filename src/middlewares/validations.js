@@ -67,7 +67,7 @@ const validations = {
         body("date").notEmpty().withMessage("Selecciona una fecha."),
         body("turnsTime").notEmpty().withMessage("Selecciona un horario."),
     ],
-    store: [
+    products: [
         body("name")
             .notEmpty()
             .withMessage("Ingresa el nombre del producto.")
@@ -84,8 +84,17 @@ const validations = {
         body("category").notEmpty().withMessage("Selecciona una categoría."),
         body("discount")
             .optional()
-            .isInt({ min: 1, max: 100 })
-            .withMessage("Debe ingresar un número entre 1 y 100"),
+            .custom((value, { req }) => {
+                discount = req.body.discount;
+                if (!value) {
+                    return true;
+                } else if (discount >= 1 && discount <= 100) {
+                    return true;
+                } else {
+                    throw new Error("Debe ingresar un número entre 1 y 100");
+                }
+            }),
+
         body("image").custom((value, { req }) => {
             let file = req.file;
             let acceptedExtensions = [".jpg", ".png"];
@@ -103,7 +112,7 @@ const validations = {
         }),
         body("description")
             .notEmpty()
-            .withMessage("Ingresa el nombre del producto."),
+            .withMessage("Ingresa la descripción del producto."),
     ],
 };
 

@@ -106,9 +106,10 @@
                                 <input
                                     type="radio"
                                     id="peluquero1"
-                                    name="peluquero"
+                                    name="hairdresser"
                                     class="btn-check peluqueros-check"
-                                    value="peluquero1"
+                                    value="1"
+                                    <%= locals.oldData && (oldData.hairdresser == "1") ? "checked" : null %>
                                 />
                                 <div class="card-body bg-black" id="frank">
                                     <h5 class="card-title text-primary" id="q">
@@ -159,9 +160,10 @@
                                 <input
                                     type="radio"
                                     id="peluquero2"
-                                    name="peluquero"
+                                    name="hairdresser"
                                     class="btn-check peluqueros-check"
-                                    value="peluquero2"
+                                    value="2"
+                                    <%= locals.oldData && (oldData.hairdresser == "2") ? "checked" : null %>
                                 />
                                 <div class="card-body bg-black" id="frank">
                                     <h5 class="card-title text-primary">
@@ -212,9 +214,10 @@
                                 <input
                                     type="radio"
                                     id="peluquero3"
-                                    name="peluquero"
+                                    name="hairdresser"
                                     class="btn-check peluqueros-check"
-                                    value="peluquero3"
+                                    value="3"
+                                    <%= locals.oldData && (oldData.hairdresser == "3") ? "checked" : null %>
                                 />
                                 <div class="card-body bg-black" id="frank">
                                     <h5 class="card-title text-primary" id="q">

@@ -124,5 +124,24 @@
   "password": "$2a$10$C8KCTlXXTipYS42PdA5nIu015pQdw8m9kb3yW2XrpQSGYdWzsF2pa",
   "avatar": "image-1676404626711.jpg",
   "id": 19
+ },
+ {
+  "name": "qweqw",
+  "lastname": "sdf",
+  "username": "sdf",
+  "email": "a@a.com",
+  "password": "$2a$10$K7be4blgELhofcqxIhz/NOnQTp3XltxA.4hzy2YF7461Iu2x9/cCe",
+  "phone": "123320",
+  "id": 20
+ },
+ {
+  "name": "qweqw",
+  "lastname": "sdf",
+  "username": "sdf",
+  "email": "a@a.com",
+  "password": "$2a$10$BTRqKoNonjr8S6zzCi8ji.QdFkQ9GXsorzl8NLiNU67MLxYx1Pe1m",
+  "phone": "123320",
+  "avatar": "default",
+  "id": 21
  }
 ]

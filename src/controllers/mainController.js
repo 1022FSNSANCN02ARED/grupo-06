@@ -49,40 +49,47 @@ module.exports = {
         res.render("pages/register");
     },
     registerProcess: (req, res) => {
-        const resultValidation = validationResult(req);
-
-        if (resultValidation.errors.length > 0) {
-            return res.render("pages/register", {
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-            });
-        }
-        return res.send(resultValidation);
-        /*
         if (req.body) {
+            const resultValidation = validationResult(req);
+
+            if (resultValidation.errors.length > 0) {
+                return res.render("pages/register", {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                });
+            }
+
             let user = req.body;
-            user.avatar = req.file.filename;
+            if (!user.avatar) {
+                user.avatar = "default";
+            }
             (user.password = bcryptjs.hashSync(req.body.password, 10)),
                 usersModel.create(user);
             res.redirect("/");
         } else {
             res.render("home");
         }
-        */
     },
     turns: (req, res) => {
         res.render("pages/turns");
     },
     turnsProcess: (req, res) => {
-        console.log(JSON.parse(JSON.stringify(req.body)));
-        const resultValidation = validationResult(req);
+        if (req.body) {
+            const resultValidation = validationResult(req);
 
-        if (resultValidation.errors.length > 0) {
-            return res.render("pages/turns", {
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-            });
+            if (resultValidation.errors.length > 0) {
+                return res.render("pages/turns", {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                });
+            }
+
+            let user = req.body;
+            if (!user.hairdresser) {
+                user.hairdresser = "0";
+            }
+
+            return res.redirect("/");
         }
-        return res.redirect("/");
     },
 };
