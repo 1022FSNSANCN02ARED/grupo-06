@@ -143,5 +143,195 @@
   "phone": "123320",
   "avatar": "default",
   "id": 21
+ },
+ {
+  "name": "ásd",
+  "lastname": "qwdas",
+  "username": "asdas",
+  "email": "asd@a.com",
+  "password": "$2a$10$hfz1E4FBqIU0pFMvV1igVO9f6LhLX53bjzjsLgxPfGARpHfKlIcRO",
+  "phone": "123123123",
+  "avatar": "default",
+  "id": 22
+ },
+ {
+  "name": "ásd",
+  "lastname": "qwdas",
+  "username": "asdas",
+  "email": "asd@a.com",
+  "password": "$2a$10$gr1oUXkLvFlUDgtGJMEyIeEqCgRrtP04hN5qhYxcyi6PVSwgyCG2m",
+  "phone": "123123123",
+  "avatar": "default",
+  "id": 23
+ },
+ {
+  "name": "ásd",
+  "lastname": "qwdas",
+  "username": "asdas",
+  "email": "asd@a.com",
+  "password": "$2a$10$QdEVUp8vKWRGvULu0Ci4hOKNxEEXvzvkvCeJEXjDA8RAqKUY4iWCq",
+  "phone": "123123123",
+  "avatar": "default",
+  "id": 24
+ },
+ {
+  "name": "Tinte para cabello Lorealasdf",
+  "lastname": "asdf",
+  "username": "asdf",
+  "email": "a@a.com",
+  "password": "$2a$10$g63ejrBFgS1MYv1UwROikO/fiwlk0Uwb6bJJVgXZtRW4ZJ2onJptq",
+  "phone": "12312312",
+  "avatar": "default",
+  "id": 25
+ },
+ {
+  "name": "Tinte para cabello Lorealasdf",
+  "lastname": "asdf",
+  "username": "asdf",
+  "email": "a@a.com",
+  "password": "$2a$10$ToVpzx0WYirlJjZNuvTC4utz/987TPASU/cVHDNZtRG2qP8w00DRy",
+  "phone": "12312312",
+  "avatar": "default",
+  "id": 26
+ },
+ {
+  "name": "Tinte para cabello Lorealasdf",
+  "lastname": "asdf",
+  "username": "asdf",
+  "email": "a@a.com",
+  "password": "$2a$10$NHs4DOUwhMki/WD4AEiPk.lag8RM7ywbEFuGpJ.gjJnmofa0C2XQ2",
+  "phone": "12312312",
+  "avatar": "default",
+  "id": 27
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$4o8ExDYrkpYE2e2ZIHMwbekaEAMU51wLAQd45smof5QTOwUMFg/7W",
+  "phone": "123123123",
+  "avatar": "/images/avatars/default.jpg",
+  "id": 28
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$9ocsp2tzBBSloel/b5Bluegf/rS2pP.u6vR.x8Ke8GBwxVhTwEZni",
+  "phone": "123123123",
+  "avatar": "/images/avatars/default.jpg",
+  "id": 29
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$duo670TW3LWGmbiDw1RgE.uSFMp2xYEuvzM3JJ8vdzlEs3sKXC43G",
+  "phone": "123123123",
+  "avatar": "avatar-1678722851569.jpg",
+  "id": 30
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$z.DOP2fDZYdeF9qUOUrfA.IZ/2LGihp/6z.cL1Hhnnfmq9K9b4HG6",
+  "phone": "123123123",
+  "avatar": "avatar-1678722888624.jpg",
+  "id": 31
+ },
+ {
+  "name": "gfhjgf",
+  "lastname": "fhgj",
+  "username": "fghj",
+  "email": "a@a.com",
+  "password": "$2a$10$2QAom/C0qsHcZ5uZW29H3O1e0H1inf0/A0ry5lc4lRri3iU8dToJS",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 32
+ },
+ {
+  "name": "gfhjgf",
+  "lastname": "fhgj",
+  "username": "fghj",
+  "email": "a@a.com",
+  "password": "$2a$10$D8xTpqPv62AIqaG09hBqTuG1P4xvUZCtsMOhzSd.NENrNJ8WMOgo2",
+  "phone": "234242",
+  "avatar": "avatar-1678723102442.jpg",
+  "id": 33
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdasdasda.com",
+  "password": "$2a$10$H1ND77tBf35zmpyqRhaJYO6n9Y0vUyqoVAU9Zthepb6ny22u7vAx2",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 34
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdasdasdaaa.com",
+  "password": "$2a$10$mHTdksX/5QzYpHf78nlNR.v5pJD0oPBy2CLvlh7LCmFg1Mb.I70r6",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 35
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdasdasdfaaa.com",
+  "password": "$2a$10$iAhI2Vv8wtxelf0H1gYF4uBgMqEXvtkIzWHRW/kUl1EhsdCEC9ukq",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 36
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdfffasdasdfaaa.com",
+  "password": "$2a$10$Ty0qoJbHpjS5qy7plQ2Pj.pON8SU1PRP13ekSluKYzbHpSBvmq2n2",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 37
+ },
+ {
+  "name": "asd",
+  "lastname": "sdfg",
+  "username": "asd",
+  "email": "12321a@a.com",
+  "password": "$2a$10$egE1SeGR42a6Avnv31a07uP2YINbEfD8Ex5y.F71Bg7h62kstX6A2",
+  "phone": "1231231",
+  "avatar": "default.jpg",
+  "id": 38
+ },
+ {
+  "name": "asd",
+  "lastname": "sdfg",
+  "username": "asdxcxcx",
+  "email": "121321a@a.com",
+  "password": "$2a$10$KpUxCSTYPmcWA5I0qpGuB.F.mVTTw.s9NlWjiAZyXp6pf6R.GYflK",
+  "phone": "1231231",
+  "avatar": "default.jpg",
+  "id": 39
+ },
+ {
+  "name": "qwe",
+  "lastname": "qwe",
+  "username": "tomas123",
+  "email": "tomas123@gmail.com",
+  "password": "$2a$10$xVZg4X7w6tWsRWszJDOUfu6AUDYV.jDUSWNER5osYtbbSSODfjW2q",
+  "phone": "123123123",
+  "avatar": "default.jpg",
+  "id": 40
  }
 ]

@@ -1402,7 +1402,7 @@ al soltar el click */
 /* Turns */
 
 .bg-image-turns {
-    background-image: url("../images/backgraund-main.jpg");
+    background-image: url("../images/backgrounds/background-turns.jpg");
     background-size: cover;
     background-position: center;
     animation: fadeIn 1.5s ease;
@@ -1530,6 +1530,7 @@ al soltar el click */
 }
 
 /* Footer */
+
 .footer-section-m-r {
     margin-right: 0;
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+
+    <body class="bg-black">
+        <header><%- include('../partials/header') %></header>
+
+        <main style="border: 3px ridge red">
+            <div
+                class="container"
+                style="
+                    margin-top: 40px;
+                    border: 3px ridge red;
+                    background-color: gray;
+                "
+            >
+                <div class="row">
+                    <div class="col-md-3">
+                        <h2>Hola <%= user.name %> <%= user.lastname %></h2>
+                        <img
+                            src="/images/avatars/<%= user.avatar %>"
+                            class="rounded-circle"
+                            style="width: 100px; height: 100px"
+                        />
+                        <br />
+                        <br />
+                        <div class="alert alert-success"><%= user.email %></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer-catalogo">
+            <%- include('../partials/footer') %>
+        </footer>
+    </body>
+</html>

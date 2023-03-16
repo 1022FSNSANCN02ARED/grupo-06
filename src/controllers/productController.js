@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const jsonDb = require("../data/products");
+const jsonDb = require("../data/models.js");
 const productsModel = jsonDb("productsDataBase");
 const { validationResult } = require("express-validator");
 
@@ -45,18 +45,16 @@ module.exports = {
     },
 
     store: (req, res) => {
-        if (req.body) {
-            const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
 
-            if (resultValidation.errors.length > 0) {
-                return res.render("pages/create", {
-                    errors: resultValidation.mapped(),
-                    oldData: req.body,
-                });
-            }
-
-            return res.redirect("/");
+        if (resultValidation.errors.length > 0) {
+            return res.render("pages/create", {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
         }
+
+        return res.send("Validaciones correctas");
 
         /*
         if (req.file) {
@@ -93,6 +91,8 @@ module.exports = {
                 productToEdit,
             });
         }
+
+        return res.send("Validaciones correctas");
 
         /*
         console.log(req.body);

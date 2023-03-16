@@ -25,7 +25,7 @@
                     id="staticBackdropLabel"
                 >
                     <img
-                        src="/images/logo-letra-negro.svg"
+                        src="/images/icons/logo-letra-negro.svg"
                         alt="Logo Hair Cut"
                         style="width: 75px"
                     />
@@ -85,8 +85,8 @@
         </div>
         <a href="/">
             <img
-                src="/images/logo-letra-negro.svg"
-                alt="Logo barberia"
+                src="/images/icons/logo-letra-negro.svg"
+                alt="Logo barbería"
                 style="width: 75px"
                 class="position-absolute top-50 start-50 translate-middle"
             />
@@ -113,8 +113,8 @@
                     id="staticBackdropLabel"
                 >
                     <img
-                        src="/images/logo-letra-negro.svg"
-                        alt="Logo barberia"
+                        src="/images/icons/logo-letra-negro.svg"
+                        alt="Logo barbería"
                         style="width: 75px"
                     />
                     Hair Cut
@@ -127,56 +127,120 @@
                     aria-label="Close"
                 ></button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav nav-labels flex-grow-1 pe-3">
-                    <form
-                        class="navbar-form"
-                        role="login"
-                        action="/login"
-                        method="post"
-                        id="login-form"
-                    >
-                        <input class="form-control me-2 p-1 navbar-input
-                        bg-black text-primary <%= locals.errors && errors.login
-                        ? "is-invalid" : null %>" type="text"
-                        placeholder="Email/Usuario" aria-label="login"
-                        name="login" value="<%= locals.oldData ? oldData.login :
-                        null %>"/> <input class="form-control me-2 p-1
-                        navbar-input bg-black text-primary <%= locals.errors &&
-                        errors.loginPassword ? "is-invalid" : null %>"
-                        type="password" placeholder="Contraseña"
-                        aria-label="login" name="password" />
-                        <button
-                            class="btn btn-outline-primary"
-                            type="submit"
-                            form="login-form"
+            <form role="login" action="/login" method="post" id="login-form">
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav nav-labels flex-grow-1 pe-3">
+                        <% if (locals.isLogged) { %>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="dropUser"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <img
+                                    src="/images/avatars/<%= userLogged.avatar %>"
+                                    width="40"
+                                    style="border-radius: 100%"
+                                />
+                                Hi <%= userLogged.name %>
+                            </a>
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <a class="dropdown-item" href="/profile"
+                                    >My profile</a
+                                >
+                                <li><hr class="dropdown-divider" /></li>
+                                <a class="dropdown-item" href="/logout"
+                                    >Logout</a
+                                >
+                            </ul>
+                        </li>
+                        <% } else { %>
+                        <div class="navbar-form">
+                            <input class="form-control me-2 p-1 navbar-input
+                            bg-black text-primary <%= locals.errors &&
+                            errors.login ? "is-invalid" : null %>" type="text"
+                            placeholder="Email/Usuario" aria-label="login"
+                            name="login" required value="<%= locals.oldData ?
+                            oldData.login : null %>"/> <input
+                            class="form-control me-2 p-1 navbar-input bg-black
+                            text-primary <%= locals.errors &&
+                            errors.loginPassword ? "is-invalid" : null %>"
+                            type="password" required placeholder="Contraseña"
+                            aria-label="login" name="loginPassword" />
+                            <button
+                                class="btn btn-outline-primary"
+                                type="submit"
+                                form="login-form"
+                            >
+                                Ingresar
+                            </button>
+                            <div class="text-white mt-2 registrate">
+                                <input
+                                    id="RememberUser"
+                                    name="session"
+                                    type="checkbox"
+                                    class="form-check-input text-primary bg-black border-primary mt-1 p-2"
+                                />
+                                <label for="RememberUser"
+                                    >Recordar usuario</label
+                                >
+                                <p class="mt-3">
+                                    ¿No tenés cuenta?
+                                    <a href="/register" class="link-primary"
+                                        >Regístrate aquí</a
+                                    >
+                                </p>
+                                <% if (locals.errors && errors.login) { %>
+                                <span class="text-danger d-block">
+                                    *<%= errors.login.msg %>
+                                </span>
+                                <% } %> <% if (locals.errors &&
+                                errors.loginPassword) { %>
+                                <span class="text-danger d-block">
+                                    *<%= errors.loginPassword.msg %>
+                                </span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <% } %>
+                    </ul>
+                </div>
+                <% if (!locals.isLogged) { %>
+                <div class="d-flex">
+                    <p class="text-white m-0 registrate-xl">
+                        <% if (locals.errors && errors.login) { %>
+                        <span class="text-danger d-block">
+                            *<%= errors.login.msg %></span
                         >
-                            Ingresar
-                        </button>
-                        <p class="text-white mt-2 registrate">
-                            ¿No tenés cuenta?
-                            <a href="/register" class="link-primary"
-                                >Regístrate aquí</a
-                            >
-                            <% if (locals.errors && errors.login ||
-                            locals.errors && errors.loginPassword) { %>
-                            <span class="text-danger d-block">
-                                * Email/Usuario o contraseña incorrectos.</span
-                            >
-                            <% } %>
-                        </p>
-                    </form>
-                </ul>
-            </div>
-            <p class="text-white m-0 registrate-xl">
-                <% if (locals.errors && errors.login || locals.errors &&
-                errors.loginPassword) { %>
-                <span class="text-danger d-block">
-                    * Email/Usuario o contraseña incorrectos.</span
-                >
-                <% } %> ¿No tenés cuenta?
-                <a href="/register" class="link-primary">Regístrate aquí</a>
-            </p>
+                        <% } %> <% if (locals.errors && errors.loginPassword) {
+                        %>
+                        <span class="text-danger d-block">
+                            *<%= errors.loginPassword.msg %></span
+                        >
+                        <% } %>
+                        <input
+                            id="RememberUser2"
+                            name="session2"
+                            type="checkbox"
+                            class="form-check-input text-primary bg-black border-primary mt-1 p-2"
+                        />
+                        <label for="RememberUser2">Recordar usuario</label>
+                    </p>
+                    <p class="text-white m-0 registrate-xl m-auto">
+                        ¿No tenés cuenta?
+                        <a href="/register" class="link-primary"
+                            >Regístrate aquí</a
+                        >
+                    </p>
+                </div>
+                <% } %>
+            </form>
         </div>
     </div>
 </nav>

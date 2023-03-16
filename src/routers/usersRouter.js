@@ -3,17 +3,20 @@ const router = Router();
 const mainController = require("../controllers/mainController");
 const uploadUser = require("../middlewares/multerUser");
 const validations = require("../middlewares/validations");
+const guest = require("../middlewares/guest");
+const auth = require("../middlewares/auth");
 
 router.get("/", mainController.home);
-router.get("/login", mainController.login);
 router.post("/login", validations.login, mainController.loginProcess);
-router.get("/register", mainController.register);
+router.get("/register", guest, mainController.register);
 router.post(
     "/register",
     uploadUser.single("avatar"),
     validations.register,
     mainController.registerProcess
 );
+router.get("/profile", auth, mainController.profile);
+router.get("/logout", mainController.logout);
 router.get("/turnos", mainController.turns);
 router.post("/turnos", validations.turns, mainController.turnsProcess);
 

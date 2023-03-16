@@ -35,7 +35,7 @@ let model = function (tableName) {
             return products.find((product) => product.id == id);
         },
         findByField: function (field, text) {
-            let allUsers = this.findAll();
+            let allUsers = this.readFile();
             let userFound = allUsers.find((oneUser) => oneUser[field] === text);
             return userFound;
         },
