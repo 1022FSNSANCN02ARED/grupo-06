@@ -1,6 +1,8 @@
 const jsonDb = require("../data/models.js");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const path = require("path");
+const fs = require("fs");
 
 const usersModel = jsonDb("usersDataBase");
 
@@ -160,5 +162,24 @@ module.exports = {
         }
 
         return res.send("Validaciones correctas");
+    },
+    userDelete: (req, res) => {
+        let user = req.session.userLogged;
+        let userInModel = usersModel.find(user.id);
+        let imagePath = path.join(
+            __dirname,
+            "../public/images/avatars/" + userInModel.avatar
+        );
+
+        usersModel.delete(userInModel.id);
+
+        if (fs.existsSync(imagePath)) {
+            fs.unlinkSync(imagePath);
+        }
+
+        res.clearCookie("userCookie");
+        req.session.destroy();
+
+        return res.redirect("/");
     },
 };

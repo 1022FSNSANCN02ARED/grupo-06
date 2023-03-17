@@ -11,7 +11,7 @@ function userLogged(req, res, next) {
     }
 
     if (userFromCookie) {
-        res.locals.userLogged = userFromCookie;
+        req.session.userLogged = userFromCookie;
     }
 
     if (req.session.userLogged) {

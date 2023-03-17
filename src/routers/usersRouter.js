@@ -19,5 +19,6 @@ router.get("/profile", auth, mainController.profile);
 router.get("/logout", mainController.logout);
 router.get("/turnos", mainController.turns);
 router.post("/turnos", validations.turns, mainController.turnsProcess);
+router.delete("/profile", mainController.userDelete);
 
 module.exports = router;
