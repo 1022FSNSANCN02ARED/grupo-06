@@ -9,14 +9,6 @@
   <header class="header"><%- include('../partials/header') %></header>
 
   <main class="product-main">
-    <!-- back-button -->
-    <div class="back-button">
-      <a href="/">
-        <i class="fa-solid fa-arrow-left"></i>
-      </a>
-    </div>
-    <!-- back-button -->
-
     <!-- product-detail -->
     <section class="products">
       <article class="product-detail">
@@ -29,6 +21,9 @@
         </div>
 
         <div class="product-info">
+          <h3 class="product-title-desktop">
+            <%= product.name %>
+          </h3>
           <div class="product-price">
           <p>$<%= product.price %> <span class="product-discount">-<%= product.discount %>%</span></p>
           </div>
@@ -48,6 +43,10 @@
               </ul>
               <h4 class="description-title">Descripción del producto</h4>
               <p><%= product.description %></p>
+          </div>
+          <div class="product-buttons-desktop">
+            <a href="/shop" class="button">Comprar ahora</a>
+            <a href="/cart" class="button button--cart">Agregar al carrito</a>
           </div>
         </div>
       </article>
