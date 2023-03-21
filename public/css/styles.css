@@ -1045,8 +1045,9 @@ ul.slider li:target {
 
 .footer {
     background-color: var(--black);
-    padding: 20px;
+    padding: 10px;
     width: 100%;
+    margin-top: 50px;
 }
 
 .footer-content {
@@ -1123,7 +1124,7 @@ ul.slider li:target {
 }
 
 .product-title {
-    display: block;;
+    display: block;
 }
 
 .product-title-desktop {
@@ -1279,7 +1280,7 @@ al soltar el click */
     .products {
         display: grid;
         place-items: center;
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     .product-detail {
