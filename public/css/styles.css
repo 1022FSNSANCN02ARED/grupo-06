@@ -1042,7 +1042,7 @@ ul.slider li:target {
 }
 
 /* pie de página */
-
+/*
 .footer {
     background-color: var(--black);
     padding: 10px;
@@ -1079,7 +1079,7 @@ ul.slider li:target {
     color: var(--white);
     font-size: 20px;
 }
-
+*/
 /* .product-footer {
     background-color: var(--oxford-blue);
     padding: 20px;
@@ -1308,10 +1308,10 @@ al soltar el click */
     }
 
     /* footer */
-    .footer-content {
+    /*.footer-content {
         flex-direction: row;
         justify-content: space-between;
-    }
+    }*/
 
     /* Catalogo */
     .articulo-venta-catalogo {
@@ -1614,15 +1614,12 @@ al soltar el click */
 
 /* Footer */
 
-/* .footer-section-m-r {
+.footer-section-m-r {
     margin-right: 0;
 }
 
 .footer-icon {
     width: 30%;
-}
-
-.footer-icon {
     transition: all 0.3s linear;
 }
 
@@ -1632,16 +1629,16 @@ al soltar el click */
 
 .footer-icon:active {
     transform: scale(0.3);
-} */
+}
 
 @media (min-width: 481px) {
-    /* .footer-icon {
+    .footer-icon {
         width: 15%;
     }
 
     .footer-section-m-r {
         margin-right: 1rem;
-    } */
+    }
 }
 
 /* Register */
