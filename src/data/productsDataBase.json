@@ -20,15 +20,7 @@
         "discount": 25
     },
     {
-        "name": "Oleo fortalecedor Sir Fausto",
-        "price": 850,
-        "description": "jhgk",
-        "brand": "ghjk",
-        "category": "ghjk",
-        "oferta": "oferta",
-        "image": "/images/products/aceite-fortalecedor.jpg",
-        "id": 2,
-        "discount": 15
+        "id": "2"
     },
     {
         "id": 3,
@@ -55,9 +47,10 @@
         "name": "Tinte para cabello Loreal",
         "description": "Tintura para el cabello, colores vivos y radiantes, cabello protegido, sin melanina.",
         "image": "/images/products/tinte-cabello.jpg",
-        "category": "tinte",
+        "category": "Tinte",
         "brand": "Loreal",
         "price": 140,
+        "inSale": "on",
         "discount": 25
     },
     {

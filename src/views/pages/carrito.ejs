@@ -7,46 +7,55 @@
     <header class="header">
       <%- include('../partials/header') %>
     </header>
-    <main class="turnos-main">
-        <section class="turnos-section">
-            <article> 
-                <h2>Carrito <i class="fa-solid fa-cart-shopping" ></i></h2>
-            </article>
-            <article class="product-box">
-                <div>
-                    <img
-                    src="/images/logo-letra-negro.svg"
-                    alt="Logo barberia"
-                    class="product-img"
-                    />
-                    <span>Nombre del producto</span>
-                    <span class="price">Precio: $4000</span>
-                </div>
-                    <button type="reset">
-                        <i class="fa-solid fa-trash-can"></i>Eliminar
-                    </button>
-                    <!--Boton de sumar/restar cantidad-->
-                    <button type="button" data-quantity="minus" data-field="quantity">
-                        <i class="fa fa-minus"></i>
-                    </button>
-                    <input type="number" name="quantity" value="0" class="cantidad">
-                    <button type="button" data-quantity="plus" data-field="quantity">
-                            <i class="fa fa-plus"></i>
-                    </button>
-            </article>
-            <article class="product-box">
-                <div>
-                    <p>Tu carrito esta vacío</p>
-                </div>
-            </article>
-            <article class="total-box product-box">
-                <div>
-                    <p>Total: $4000</p>
-                    <button class="turnos-button">Comprar</button>
-                </div>
-            </article>
-        </section>
-        <%- include('../partials/oferta-semanal') %> 
+    <main class="d-flex justify-content-center bg-image-turns w-100">
+        <div class="w-h-90 text-center mt-5 mb">
+            <section class="rounded-top-3 text-center container bg-5 mb-0 text-primary">
+                <article> 
+                    <h2 >Carrito <i class="fa-solid fa-cart-shopping" ></i></h2>
+                </article>
+                <article class="container flex-column bg-5">
+                    <div class="form-control text-primary
+                    bg-black border-primary">
+                        <div>
+                            <img
+                            src="/images/logo-letra-negro.svg"
+                            alt="Logo barberia"
+                            class="card-img-top"
+                            />
+                            <span>Nombre del producto</span>
+                            <span class="price">Precio: $4000</span>
+                        </div>
+                        <div>
+                            <button type="reset">
+                                <i class="fa-solid fa-trash-can"></i>Eliminar
+                            </button>
+                            <!--Boton de sumar/restar cantidad-->
+                            <button type="button" data-quantity="minus" data-field="quantity">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <input type="number" name="quantity" value="0" class="cantidad">
+                            <button type="button" data-quantity="plus" data-field="quantity">
+                                    <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <article class="container flex-column bg-5">
+                    <div class="form-control text-primary
+                    bg-black border-primary">
+                        <p>Tu carrito esta vacío</p>
+                    </div>
+                </article>
+                <article class="container flex-column bg-5">
+                    <div class="form-control text-primary
+                    bg-black border-primary">
+                        <p>Total: $4000</p>
+                        <button class="turnos-button">Comprar</button>
+                    </div>
+                </article>
+            </section>
+            <%- include('../partials/oferta-semanal') %> 
+        </div>
    </main>
    <footer class="footer-catalogo">
     <%- include('../partials/footer') %> 

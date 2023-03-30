@@ -5,7 +5,7 @@
     </head>
     <body>
         <header class="header"><%- include('../partials/header') %></header>
-        <main class="d-flex justify-content-center bg-image-register w-100">
+        <main class="d-flex justify-content-center bg-image-create w-100">
             <div class="my-5 text-center w-h-edit">
                 <h1
                     class="rounded-top-3 text-center container bg-5 mb-0 text-primary"
@@ -15,7 +15,7 @@
                 <div class="container bg-5 align-content-center">
                     <div class="w-75 m-auto">
                         <img
-                            src="<%= productToEdit.image %>"
+                            src="<%= productToEdit.image%>"
                             alt="Imagen del producto"
                             class="productImage rounded-3 border-product"
                         />
@@ -24,22 +24,23 @@
                 <form
                     method="post"
                     enctype="multipart/form-data"
-                    action="/products/<%= productToEdit.id %>?_method=put"
+                    action="/products/<%= productToEdit.id %>?_method=patch"
                     class="container flex-column bg-5 rounded-bottom-3"
                 >
                     <div class="mb-3 text-center">
                         <label for="productName" class="form-label text-primary"
                             >Nombre del producto:</label
                         >
-                        <input
-                            type="text"
-                            name="name"
-                            class="form-control text-primary bg-black border-primary"
-                            id="productName"
-                            placeholder="Ingrese un nombre"
-                            value="<%= productToEdit.name %>"
-                            required
-                        />
+                        <input type="text" name="name" class="form-control
+                        text-primary bg-black border-primary <%= locals.errors
+                        && errors.name ? "is-invalid" : null %>"
+                        id="productName" placeholder="Ingrese un nombre"
+                        required value="<%= productToEdit.name %>"/> <% if
+                        (locals.errors && errors.name) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.name.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -47,15 +48,16 @@
                             class="form-label text-primary"
                             >Precio del producto:</label
                         >
-                        <input
-                            type="number"
-                            name="price"
-                            class="form-control text-primary bg-black border-primary"
-                            id="productPrice"
-                            placeholder="Ingrese un precio"
-                            value="<%= productToEdit.price %>"
-                            required
-                        />
+                        <input type="number" name="price" class="form-control
+                        text-primary bg-black border-primary <%= locals.errors
+                        && errors.price ? "is-invalid" : null %>"
+                        id="productPrice" placeholder="Ingrese un precio"
+                        required step="0.01" value="<%= productToEdit.price %>"/> <% if
+                        (locals.errors && errors.price) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.price.msg %>
+                        </p>
+                        <% } %> />
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -63,15 +65,16 @@
                             class="form-label text-primary"
                             >Marca del producto:</label
                         >
-                        <input
-                            type="text"
-                            name="brand"
-                            class="form-control text-primary bg-black border-primary"
-                            id="productBrand"
-                            placeholder="Ingrese una marca"
-                            value="<%= productToEdit.brand %>"
-                            required
-                        />
+                        <input type="text" name="brand" class="form-control
+                        text-primary bg-black border-primary <%= locals.errors
+                        && errors.brand ? "is-invalid" : null %>"
+                        id="productBrand" placeholder="Ingrese una marca"
+                        required value="<%= productToEdit.brand %>"/> <% if
+                        (locals.errors && errors.brand) { %>
+                        <p class="text-danger text-start">
+                            *<%= errors.brand.msg %>
+                        </p>
+                        <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -81,20 +84,27 @@
                             >Categoría:</label
                         >
                         <select
-                            class="form-select text-primary bg-black border-primary"
+                             class="form-select text-primary bg-black border-primary <%= locals.errors && errors.category
+                        ? "is-invalid" : null %>"
                             aria-label="Default select example"
+                            name="category"
                         >
-                            <option value="sinCategoria" selected>
+                            <option value="" selected disabled>
                                 Sin categoría
                             </option>
-                            <option value="gel">Gel</option>
-                            <option value="crema">Crema</option>
-                            <option value="pomada">Pomada</option>
-                            <option value="tinte">Tinte</option>
-                            <option value="shampoo">Shampoo</option>
-                            <option value="cera">Cera</option>
-                            <option value="shampoo">Laca</option>
+
+                             <% let categories = ["Gel", "Crema", "Pomada", "Tinte", "Shampoo", "Cera", "Laca"]; %> <%
+                            for (const oneCategory of categories) { %>
+                            <option <%= productToEdit && (oneCategory == productToEdit.category) ? "selected" : null %>
+                                > <%= oneCategory %></option>
+                            <% } %>
                         </select>
+
+                        <% if(locals.errors && errors.category) { %>
+                            <p class="text-danger text-start">
+                                *<%= errors.category.msg %>
+                            </p>
+                        <% } %>
                     </div>
                     <div class="my-4 text-center">
                         <label
@@ -107,7 +117,7 @@
                             name="inSale"
                             class="form-check-input text-primary bg-black border-primary"
                             id="enOferta"
-                            placeholder="Ingrese un precio"
+                            <%= productToEdit && (productToEdit.inSale == "on") ? "checked" : null %>
                         />
                         <div class="mt-3 text-center" id="oferta">
                             <label
@@ -119,16 +129,23 @@
                                 <input
                                     type="number"
                                     name="discount"
-                                    class="form-control text-primary bg-black border-primary"
+                                    class="form-control text-primary bg-black border-primary <%= locals.errors && errors.discount
+                        ? "is-invalid" : null %>"
                                     id="productDiscount"
                                     placeholder="Ingrese un porcentaje"
-                                    value="<%= productToEdit.discount %>"
-                                />
+                                    value="<%=
+                                    productToEdit ? productToEdit.discount : "" %>"/> 
                                 <p
                                     class="text-primary position-relative porcentaje"
                                 >
                                     %
                                 </p>
+                                <% if
+                                    (locals.errors && errors.discount) { %>
+                                    <p class="text-danger text-start ">
+                                        *<%= errors.discount.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                         </div>
                     </div>
@@ -138,12 +155,22 @@
                             class="form-label text-primary"
                             >Imagen del producto:</label
                         >
+                        <div style="display: none;">
+                        <input type="text" name="img_old" value="<%=productToEdit.image%>">
+                        </div>
                         <input
                             type="file"
                             class="form-control text-primary bg-black border-primary"
                             id="productImage"
+                            multiple
                             name="image"
                         />
+                         <% if
+                                (locals.errors && errors.image) { %>
+                                <p class="text-danger-emphasis text-start">
+                                    *<%= errors.image.msg %>
+                                </p>
+                                <% } %>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -153,15 +180,19 @@
                         >
                         <textarea
                             name="description"
-                            class="form-control text-primary bg-black border-primary"
+                            class="form-control text-primary bg-black border-primary <%= locals.errors && errors.description
+                        ? "is-invalid" : null %>"
                             id="productDescription"
                             cols="30"
                             rows="5"
                             placeholder="Ingrese una descripción del producto"
                             required
-                        >
-<%= productToEdit.description %></textarea
-                        >
+                            /><%=productToEdit ? productToEdit.description : null %></textarea> <% if
+                            (locals.errors && errors.description) { %>
+                            <p class="text-danger text-start">
+                                *<%= errors.description.msg %>
+                            </p>
+                            <% } %>
                     </div>
 
                     <button

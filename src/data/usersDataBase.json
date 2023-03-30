@@ -1,128 +1,211 @@
 [
  {
-  "id": 1,
-  "firstName": "tellus nulla",
-  "lastName": "eget tincidunt",
-  "email": "cmacane0@state.gov",
-  "password": "KeFkMD",
-  "type": "Admin",
-  "avatar": "/images/avatars/polloCorazon.jpg"
- },
- {
-  "id": 2,
-  "firstName": "vestibulum sed",
-  "lastName": "et ultrices",
-  "email": "rpittford1@multiply.com",
-  "password": "XVCShO1",
-  "type": "Admin",
-  "avatar": "/images/avatars/tostada.jpg"
- },
- {
-  "id": 3,
-  "firstName": "urna ut",
-  "lastName": "a",
-  "email": "acarlett2@networksolutions.com",
-  "password": "rQq0mrVufu",
-  "type": "Admin",
-  "avatar": "/images/avatars/pretzel.jpg"
- },
- {
-  "id": 4,
-  "firstName": "ipsum",
-  "lastName": "sit",
-  "email": "cbramwell3@msu.edu",
-  "password": "upC405uS",
-  "type": "Customer",
-  "avatar": "/images/avatars/kipa.jpg"
- },
- {
-  "id": 5,
-  "firstName": "quam pharetra",
-  "lastName": "etiam justo",
-  "email": "jbiggadyke4@google.com",
-  "password": "jKoufNzDX",
-  "type": "Customer",
-  "avatar": "/images/avatars/kipa.jpg"
- },
- {
-  "id": 6,
-  "firstName": "faucibus orci",
-  "lastName": "lorem quisque",
-  "email": "cllewelyn5@mlb.com",
-  "password": "aMhfZEp89b2",
-  "type": "Admin",
-  "avatar": "/images/avatars/polloCorazon.jpg"
- },
- {
-  "id": 7,
-  "firstName": "non",
-  "lastName": "ultrices libero",
-  "email": "dmarfell6@bloglovin.com",
-  "password": "fUPSgV0",
-  "type": "Customer",
-  "avatar": ""
- },
- {
-  "id": 8,
-  "firstName": "eget nunc",
-  "lastName": "aliquam sit",
-  "email": "kmeredith7@oracle.com",
-  "password": "uMO94Bw",
-  "type": "Admin",
-  "avatar": "/images/avatars/kipa.jpg"
- },
- {
-  "id": 9,
-  "firstName": "sapien",
-  "lastName": "morbi",
-  "email": "rthyer8@livejournal.com",
-  "password": "dlTu7mgR46",
-  "type": "Customer",
-  "avatar": "/images/avatars/jala.jpg"
- },
- {
-  "id": 10,
-  "firstName": "mauris non",
-  "lastName": "nunc",
-  "email": "gforsyth9@sina.com.cn",
-  "password": "uauJCXJ",
-  "type": "Customer",
-  "avatar": "/images/avatars/tostada.jpg"
- },
- {
-  "firstName": "regdgdf",
-  "lastname": "dsfsdfsd",
-  "cel": "23423423",
-  "email": "renzosotelo10@gmail.com",
-  "password": "asdasdasda",
-  "avatar": "image-1675976149030.jpeg",
-  "id": 16
- },
- {
-  "firstName": "tomas",
-  "lastname": "villarreal",
-  "cel": "1540219323",
-  "email": "tomascrack123@gmail.com",
-  "password": "2342423",
-  "avatar": "image-1675976224339.jpeg",
-  "id": 17
- },
- {
-  "firstName": "fdgh",
-  "lastname": "dfgh",
-  "cel": "1232123",
-  "email": "x@x.com",
-  "password": "$2a$10$I6RyO7aM6sty5NwM6qD41OajS7ttixP3WMAPjTuIesFibwfaZbf72",
-  "avatar": "image-1676402924537.jpg",
-  "id": 18
- },
- {
-  "firstName": "dfgh",
-  "lastname": "dfgh",
-  "cel": "1234",
+  "name": "qweqw",
+  "lastname": "sdf",
+  "username": "sdf",
   "email": "a@a.com",
-  "password": "$2a$10$C8KCTlXXTipYS42PdA5nIu015pQdw8m9kb3yW2XrpQSGYdWzsF2pa",
-  "avatar": "image-1676404626711.jpg",
-  "id": 19
+  "password": "$2a$10$K7be4blgELhofcqxIhz/NOnQTp3XltxA.4hzy2YF7461Iu2x9/cCe",
+  "phone": "123320",
+  "id": 20
+ },
+ {
+  "name": "qweqw",
+  "lastname": "sdf",
+  "username": "sdf",
+  "email": "a@a.com",
+  "password": "$2a$10$BTRqKoNonjr8S6zzCi8ji.QdFkQ9GXsorzl8NLiNU67MLxYx1Pe1m",
+  "phone": "123320",
+  "avatar": "default",
+  "id": 21
+ },
+ {
+  "name": "ásd",
+  "lastname": "qwdas",
+  "username": "asdas",
+  "email": "asd@a.com",
+  "password": "$2a$10$hfz1E4FBqIU0pFMvV1igVO9f6LhLX53bjzjsLgxPfGARpHfKlIcRO",
+  "phone": "123123123",
+  "avatar": "default",
+  "id": 22
+ },
+ {
+  "name": "ásd",
+  "lastname": "qwdas",
+  "username": "asdas",
+  "email": "asd@a.com",
+  "password": "$2a$10$gr1oUXkLvFlUDgtGJMEyIeEqCgRrtP04hN5qhYxcyi6PVSwgyCG2m",
+  "phone": "123123123",
+  "avatar": "default",
+  "id": 23
+ },
+ {
+  "name": "ásd",
+  "lastname": "qwdas",
+  "username": "asdas",
+  "email": "asd@a.com",
+  "password": "$2a$10$QdEVUp8vKWRGvULu0Ci4hOKNxEEXvzvkvCeJEXjDA8RAqKUY4iWCq",
+  "phone": "123123123",
+  "avatar": "default",
+  "id": 24
+ },
+ {
+  "name": "Tinte para cabello Lorealasdf",
+  "lastname": "asdf",
+  "username": "asdf",
+  "email": "a@a.com",
+  "password": "$2a$10$g63ejrBFgS1MYv1UwROikO/fiwlk0Uwb6bJJVgXZtRW4ZJ2onJptq",
+  "phone": "12312312",
+  "avatar": "default",
+  "id": 25
+ },
+ {
+  "name": "Tinte para cabello Lorealasdf",
+  "lastname": "asdf",
+  "username": "asdf",
+  "email": "a@a.com",
+  "password": "$2a$10$ToVpzx0WYirlJjZNuvTC4utz/987TPASU/cVHDNZtRG2qP8w00DRy",
+  "phone": "12312312",
+  "avatar": "default",
+  "id": 26
+ },
+ {
+  "name": "Tinte para cabello Lorealasdf",
+  "lastname": "asdf",
+  "username": "asdf",
+  "email": "a@a.com",
+  "password": "$2a$10$NHs4DOUwhMki/WD4AEiPk.lag8RM7ywbEFuGpJ.gjJnmofa0C2XQ2",
+  "phone": "12312312",
+  "avatar": "default",
+  "id": 27
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$4o8ExDYrkpYE2e2ZIHMwbekaEAMU51wLAQd45smof5QTOwUMFg/7W",
+  "phone": "123123123",
+  "avatar": "/images/avatars/default.jpg",
+  "id": 28
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$9ocsp2tzBBSloel/b5Bluegf/rS2pP.u6vR.x8Ke8GBwxVhTwEZni",
+  "phone": "123123123",
+  "avatar": "/images/avatars/default.jpg",
+  "id": 29
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$duo670TW3LWGmbiDw1RgE.uSFMp2xYEuvzM3JJ8vdzlEs3sKXC43G",
+  "phone": "123123123",
+  "avatar": "avatar-1678722851569.jpg",
+  "id": 30
+ },
+ {
+  "name": "Tomás",
+  "lastname": "Villarreal",
+  "username": "tomasvi",
+  "email": "a@a.com",
+  "password": "$2a$10$z.DOP2fDZYdeF9qUOUrfA.IZ/2LGihp/6z.cL1Hhnnfmq9K9b4HG6",
+  "phone": "123123123",
+  "avatar": "avatar-1678722888624.jpg",
+  "id": 31
+ },
+ {
+  "name": "gfhjgf",
+  "lastname": "fhgj",
+  "username": "fghj",
+  "email": "a@a.com",
+  "password": "$2a$10$2QAom/C0qsHcZ5uZW29H3O1e0H1inf0/A0ry5lc4lRri3iU8dToJS",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 32
+ },
+ {
+  "name": "gfhjgf",
+  "lastname": "fhgj",
+  "username": "fghj",
+  "email": "a@a.com",
+  "password": "$2a$10$D8xTpqPv62AIqaG09hBqTuG1P4xvUZCtsMOhzSd.NENrNJ8WMOgo2",
+  "phone": "234242",
+  "avatar": "avatar-1678723102442.jpg",
+  "id": 33
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdasdasda.com",
+  "password": "$2a$10$H1ND77tBf35zmpyqRhaJYO6n9Y0vUyqoVAU9Zthepb6ny22u7vAx2",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 34
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdasdasdaaa.com",
+  "password": "$2a$10$mHTdksX/5QzYpHf78nlNR.v5pJD0oPBy2CLvlh7LCmFg1Mb.I70r6",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 35
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdasdasdfaaa.com",
+  "password": "$2a$10$iAhI2Vv8wtxelf0H1gYF4uBgMqEXvtkIzWHRW/kUl1EhsdCEC9ukq",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 36
+ },
+ {
+  "name": "gfhjgf1111",
+  "lastname": "fhgj",
+  "username": "asd",
+  "email": "asdasdasda@asdfffasdasdfaaa.com",
+  "password": "$2a$10$Ty0qoJbHpjS5qy7plQ2Pj.pON8SU1PRP13ekSluKYzbHpSBvmq2n2",
+  "phone": "234242",
+  "avatar": "default.jpg",
+  "id": 37
+ },
+ {
+  "name": "asd",
+  "lastname": "sdfg",
+  "username": "asd",
+  "email": "12321a@a.com",
+  "password": "$2a$10$egE1SeGR42a6Avnv31a07uP2YINbEfD8Ex5y.F71Bg7h62kstX6A2",
+  "phone": "1231231",
+  "avatar": "default.jpg",
+  "id": 38
+ },
+ {
+  "name": "asd",
+  "lastname": "sdfg",
+  "username": "asdxcxcx",
+  "email": "121321a@a.com",
+  "password": "$2a$10$KpUxCSTYPmcWA5I0qpGuB.F.mVTTw.s9NlWjiAZyXp6pf6R.GYflK",
+  "phone": "1231231",
+  "avatar": "default.jpg",
+  "id": 39
+ },
+ {
+  "name": "qwe",
+  "lastname": "qwe",
+  "username": "tomas123",
+  "email": "tomas123@gmail.com",
+  "password": "$2a$10$IjHSP3PxvG0zh91BnaN1vuYJea0dd244adIQx8I.7MLxYybe5v3cy",
+  "phone": "123123123",
+  "avatar": "default.jpg",
+  "id": 40
  }
 ]
