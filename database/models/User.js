@@ -1,39 +1,38 @@
 module.exports = function (sequelize, DataTypes) {
     const alias = "Users";
     const cols = {
-        id:{
+        id: {
             type: DataTypes.STRING,
             primaryKey: true,
         },
-        firstName:{
+        firstName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        lastName:{
+        lastName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        userName:{
+        userName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        email:{
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        password:{
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        cellphone:{
+        cellphone: {
             type: DataTypes.BIGINT,
             allowNull: false,
         },
-        avatar:{
+        avatar: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-
     };
     const config = {
         tableName: "users",
@@ -48,9 +47,15 @@ module.exports = function (sequelize, DataTypes) {
         users.hasMany(models.cart_products, {
             foreignKey: "user_id",
             as: "cart_product",
-        })
+        });
+    };
+
+    users.associate = (models) => {
+        (users.belongsTo = models.turns),
+            {
+                as: "turns",
+                foreignKey: "user_id",
+            };
     };
     return users;
 };
-
-

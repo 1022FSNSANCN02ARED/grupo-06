@@ -73,7 +73,7 @@ const validations = {
             .withMessage("Email/usuario o contraseña inválidos."),
     ],
     turns: [
-        body("date").notEmpty().withMessage("Selecciona una fecha."),
+        body("date").notEmpty().isDate().withMessage("Selecciona una fecha."),
         body("turnsTime").notEmpty().withMessage("Selecciona un horario."),
     ],
     products: [
