@@ -3,10 +3,15 @@ const path = require("path");
 const jsonDb = require("../data/models.js");
 const productsModel = jsonDb("productsDataBase");
 const { validationResult } = require("express-validator");
+const db = require("../../database/models")
 
 module.exports = {
     catalogue: (req, res) => {
-        let products = productsModel.all();
+        let products = db.Product.findAll()
+        .then(function(products){
+            console.log(products)
+        })
+        
         const ofertas = products.filter((product) => product.discount >= 15);
         const arrayVacio = [];
         function x() {
@@ -54,9 +59,6 @@ module.exports = {
             });
         }
 
-        return res.send("Validaciones correctas");
-
-        /*
         if (req.file) {
             let product = req.body;
 
@@ -68,7 +70,7 @@ module.exports = {
         } else {
             res.render("pages/create");
         }
-        */
+        
     },
     edit: (req, res) => {
         let productToEdit = productsModel.find(req.params.id);

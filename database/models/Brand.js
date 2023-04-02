@@ -21,15 +21,10 @@ module.exports= function (sequelize, DataTypes){
         timestamps: false
     }
     let brands = sequelize.define(alias, cols, config);
-    brands.associate= function(models){
+    brands.associate = function(models){
+    
         brands.belongsTo(models.Product, {
-            as: 'product',
-            foreignKey: 'brand_id',
-            timestamps: false
-        });
-        
-        Product.hasMany(models.product, {
-            as: "brand",
+            as: "product",
             foreignKey: "brand_id"
         })
     }

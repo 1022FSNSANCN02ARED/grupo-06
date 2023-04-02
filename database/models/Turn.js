@@ -9,19 +9,19 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         fecha: {
-            DataTypes: DataTypes.DATEONLY,
+            type: DataTypes.DATEONLY,
             allowNull: false,
         },
         horario: {
-            DataTypes: DataTypes.TIME,
+            type: DataTypes.TIME,
             allowNull: false,
         },
         user_id: {
-            DataTypes: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         peluquero_id: {
-            DataTypes: DataTypes.INTEGER.UNSIGNED,
+            type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false,
         },
     };

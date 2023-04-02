@@ -17,7 +17,6 @@ module.exports= function (sequelize, DataTypes){
         product_id:{
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
-            autoIncrement: true,
         }
     }
     let config= {
@@ -25,17 +24,11 @@ module.exports= function (sequelize, DataTypes){
         timestamps: false
     }
     let images = sequelize.define(alias, cols, config);
-    images.associate= function(models){
+    images.associate = function(models){
         images.belongsTo(models.Product, {
             as: 'product',
             foreignKey: 'product_id',
-            timestamps: false
         });
-        
-        Product.hasMany(models.Image, {
-            as: "image",
-            foreignKey: "product_id"
-        })
     }
     return images;
 }

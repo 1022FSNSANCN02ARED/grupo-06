@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         nombre: {
-            DataTypes: DataTypes.STRING(200),
+            type: DataTypes.STRING,
         },
     };
 
@@ -19,9 +19,8 @@ module.exports = (sequelize, DataTypes) => {
 
     const Hairdresser = sequelize.define(alias, cols, config);
 
-    Hairdresser.associate = () => {
-        Hairdresser.hasMany =
-            (models.turns,
+    Hairdresser.associate = (models) => {
+        Hairdresser.hasMany(models.turns,
             {
                 as: "turns",
                 foreignKey: "peluquero_id",
