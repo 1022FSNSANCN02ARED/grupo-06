@@ -1,9 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const jsonDb = require("../data/models.js");
-const productsModel = jsonDb("productsDataBase");
 const { validationResult } = require("express-validator");
-const db = require("../../database/models");
+const db = require("../database/models");
 
 module.exports = {
     catalogue: (req, res) => {
@@ -58,16 +56,24 @@ module.exports = {
             });
         }
 
-        if (req.file) {
-            let product = req.body;
+        let product = req.body;
+        console.log(req.files);
 
-            product.image = "/images/products/" + req.file.filename;
+        if (req.files.length > 0) {
+            product.image = [];
 
-            const productId = productsModel.create(product);
+            for (let i = 0; i < req.files.length; i++) {
+                let image = "/images/products/" + req.files[i].filename;
+                product.image.push(image);
+            }
 
-            res.redirect("/products/" + productId);
+            console.log(product);
+            /*db.Product.create(product);*/
+
+            res.redirect("/products/" + product.id);
         } else {
             res.render("pages/create");
+            console.log(product);
         }
     },
     edit: (req, res) => {

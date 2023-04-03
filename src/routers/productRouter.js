@@ -9,7 +9,7 @@ router.get("/carrito", productController.cart);
 router.get("/create", productController.create);
 router.post(
     "/create",
-    upload.array("image"),
+    upload.any("image"),
     validations.products,
     productController.store
 );
