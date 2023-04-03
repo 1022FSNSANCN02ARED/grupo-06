@@ -57,6 +57,11 @@ module.exports = {
         }
 
         let product = req.body;
+
+        if (!product.discount) {
+            product.discount = 0;
+        }
+
         console.log(req.files);
 
         if (req.files.length > 0) {
