@@ -26,6 +26,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false,
         },
+        image_id: {
+            type: DataTypes.INTEGER.UNSIGNED,
+            allowNull: false,
+        },
     };
     let config = {
         tableName: "products",
