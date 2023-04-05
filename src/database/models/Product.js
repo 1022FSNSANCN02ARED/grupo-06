@@ -45,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
             otherKey: "category_id",
             timestamps: false,
         });
-        Product.hasMany(models.brands, {
+        Product.belongsTo(models.brands, {
             as: "brand",
             foreignKey: "brand_id",
         });

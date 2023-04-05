@@ -10,10 +10,7 @@ module.exports= function (sequelize, DataTypes){
             type: DataTypes.STRING(200),
             allowNull: false,
           },
-        imageLogo: {
-            type: DataTypes.STRING(200),
-            allowNull: false,
-          },
+
         
     }
     let config= {
@@ -23,7 +20,7 @@ module.exports= function (sequelize, DataTypes){
     let brands = sequelize.define(alias, cols, config);
     brands.associate = function(models){
     
-        brands.belongsTo(models.Product, {
+        brands.hasMany(models.Product, {
             as: "product",
             foreignKey: "brand_id"
         })

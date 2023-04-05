@@ -6,18 +6,10 @@ module.exports= function (sequelize, DataTypes){
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING(200),
-            allowNull: false,
-          },
         fileRoute: {
             type: DataTypes.STRING(200),
             allowNull: false,
           },
-        product_id:{
-            type: DataTypes.INTEGER.UNSIGNED,
-            primaryKey: true,
-        }
     }
     let config= {
         tableName: "images",

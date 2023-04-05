@@ -43,7 +43,13 @@ module.exports = {
         res.render("pages/details", { product: product });
     },
     create: (req, res) => {
-        res.render("pages/create");
+        
+        let brands = db.brands.findAll().then(function () {
+            
+            console.log(brands); 
+           res.render("pages/create",{brand: brands} );
+        });
+       
     },
 
     store: (req, res) => {
@@ -64,6 +70,8 @@ module.exports = {
 
         console.log(req.files);
 
+        
+
         if (req.files.length > 0) {
             product.image = [];
 
@@ -73,12 +81,16 @@ module.exports = {
             }
 
             console.log(product);
-            /*db.Product.create(product);*/
+            db.Product.create(product);
 
             res.redirect("/products/" + product.id);
         } else {
-            res.render("pages/create");
-            console.log(product);
+
+            product.image = 1
+
+            db.Product.create(product);
+
+            res.redirect("/products/" + product.id);
         }
     },
     edit: (req, res) => {
