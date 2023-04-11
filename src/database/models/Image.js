@@ -1,7 +1,7 @@
-module.exports= function (sequelize, DataTypes){
-    let alias = 'images'
-    let cols={
-        id:{
+module.exports = function (sequelize, DataTypes) {
+    let alias = "images";
+    let cols = {
+        id: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
@@ -9,26 +9,25 @@ module.exports= function (sequelize, DataTypes){
         name: {
             type: DataTypes.STRING(200),
             allowNull: false,
-          },
+        },
         fileRoute: {
             type: DataTypes.STRING(200),
             allowNull: false,
-          },
-        product_id:{
+        },
+        product_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            primaryKey: true,
-        }
-    }
-    let config= {
+        },
+    };
+    let config = {
         tableName: "images",
-        timestamps: false
-    }
+        timestamps: false,
+    };
     let images = sequelize.define(alias, cols, config);
-    images.associate = function(models){
+    images.associate = function (models) {
         images.belongsTo(models.Product, {
-            as: 'product',
-            foreignKey: 'product_id',
+            as: "product",
+            foreignKey: "product_id",
         });
-    }
+    };
     return images;
-}
+};

@@ -4,10 +4,9 @@ const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
 module.exports = {
-    catalogue: (req, res) => {
-        let products = db.Product.findAll().then(function (products) {
-            console.log(products);
-        });
+    catalogue: async (req, res) => {
+        let products = await db.Product.findAll();
+        console.log(products);
 
         const ofertas = products.filter((product) => product.discount >= 15);
         const arrayVacio = [];
@@ -42,8 +41,9 @@ module.exports = {
         }
         res.render("pages/details", { product: product });
     },
-    create: (req, res) => {
-        res.render("pages/create");
+    create: async (req, res) => {
+        let brands = await db.brands.findAll();
+        res.render("pages/create", { brand: brands });
     },
 
     store: (req, res) => {
