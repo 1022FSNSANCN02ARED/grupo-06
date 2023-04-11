@@ -42,11 +42,11 @@ module.exports = {
         res.render("pages/details", { product: product });
     },
     create: async (req, res) => {
-        let brands = await db.brands.findAll();
-        res.render("pages/create", { brand: brands });
+        let brand = await db.brands.findAll();
+        res.render("pages/create", { brand: brand });
     },
 
-    store: (req, res) => {
+    store: async (req, res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -62,8 +62,6 @@ module.exports = {
             product.discount = 0;
         }
 
-        console.log(req.files);
-
         if (req.files.length > 0) {
             product.image = [];
 
@@ -73,12 +71,15 @@ module.exports = {
             }
 
             console.log(product);
-            /*db.Product.create(product);*/
+            db.Product.create(product);
 
             res.redirect("/products/" + product.id);
         } else {
-            res.render("pages/create");
-            console.log(product);
+            product.image_id = 1;
+
+            await db.Product.create(product).then(
+                res.redirect("/products/" + product.id)
+            );
         }
     },
     edit: (req, res) => {
