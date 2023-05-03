@@ -46,12 +46,16 @@
                     <select type="text" name="brand_id" class="form-control text-primary bg-black border-primary <%= locals.errors && errors.brand
                         ? " is-invalid" : null %>"
                         id="productBrand"
-                        placeholder="seleccione una marca"
                         required
-                        value="<%= locals.oldData ? oldData.brand : null %>"> 
-                        <option value="" selected disabled>Seleccione una marca</option>
+                        > 
+                        <option value="" <% if (!locals.errors) { %>
+                            <%= "selected" %>
+                            <% } %> disabled>Seleccione una marca</option>
                         <% for (let i = 0; i < brand.length; i++) { %>
-                            <option value="<%= brand[i].id %>"><%= brand[i].name %></option>
+                            <option value="<%= brand[i].id %>" <% if (locals.errors && brand[i].id == oldData.brand_id) { %> 
+                                <%="selected"%> 
+                                <% } %>> <%= brand[i].name %>
+                            </option>
                             
                             <% } %>
                        
@@ -89,26 +93,31 @@
 
                 <div class="mb-3 text-center">
                     <label for="productCategory" class="form-label text-primary">Categoría:</label>
-                    <select class="form-select text-primary bg-black border-primary <%= locals.errors && errors.category
+                    <select class="form-select text-primary bg-black border-primary <%= locals.errors && errors.categories
                         ? " is-invalid" : null %>"
                         aria-label="Default select example"
-                        name="category"
+                        name="category_id"
+                        required
                         >
-                        <option value="" selected disabled>
+                        <option value="" <% if (!locals.errors) { %>
+                            <%= "selected" %>
+                            <% } %> disabled>
                             Sin categoría
                         </option>
 
-                        <% let categories=["Gel", "Crema" , "Pomada" , "Tinte" , "Shampoo" , "Cera" , "Laca" ]; %>
-                            <% for (const oneCategory of categories) { %>
-                                <option <%=locals.oldData && (oneCategory==oldData.category) ? "selected" : null %>
-                                    > <%= oneCategory %>
-                                </option>
-                                <% } %>
+                        <<% for (let i = 0; i < categories.length; i++) { %>
+                            <option value="<%= categories[i].id %>" <% if (locals.errors && categories[i].id == oldData.category_id) { %> 
+                                <%="selected"%> 
+                                <% } %> 
+                                ><%= categories[i].name %></option>
+                            
+                            <% } %>
+                                
                     </select>
 
-                    <% if(locals.errors && errors.category) { %>
+                    <% if(locals.errors && errors.categories) { %>
                         <p class="text-danger text-start">
-                            *<%= errors.category.msg %>
+                            *<%= errors.categories.msg %>
                         </p>
                         <% } %>
 
@@ -127,7 +136,7 @@
                         ? " is-invalid" : null %>"
                             id="productDiscount"
                             placeholder="Ingrese un porcentaje"
-                            value="<%= locals.oldData ? oldData.discount : "" %>"/>
+                            value="<%= locals.oldData ? oldData.discount : 0 %>"/>
                                 <p class="text-primary position-relative porcentaje">
                                     %
                                 </p>

@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+    </head>
 
-<head>
-  <%- include('../partials/head') %>
-</head>
+    <body>
+        <header class="header"><%- include('../partials/header') %></header>
 
-<body>
-  <header class="header"><%- include('../partials/header') %></header>
+        <main class="product-main">
+            <!-- product-detail -->
+            <section class="products">
+                <article class="product-detail">
+                    <h3 class="product-title"><%= product.name %></h3>
 
-  <main class="product-main">
-    <!-- product-detail -->
-    <section class="products">
-      <article class="product-detail">
-        <h3 class="product-title">
-          <%= product.name %>
-        </h3>
+                    <div class="product-icon">
+                        <img src="<%= product.image %>" alt="product image" />
+                    </div>
 
-        <div class="product-icon">
-          <img src="/images/products/laca-ayalatin.png" alt="product icon">
-        </div>
+                    <div class="product-info">
+                        <h3 class="product-title-desktop">
+                            <%= product.name %>
+                        </h3>
+                        <div class="product-price">
+                            <p>
+                                $<%= product.price %>
+                                <span class="product-discount"
+                                    >-<%= product.discount %>%</span
+                                >
+                            </p>
+                        </div>
+                        <div class="product-buttons">
+                            <a href="/shop" class="button">Comprar ahora</a>
+                            <a href="/cart" class="button button--cart"
+                                >Agregar al carrito</a
+                            >
+                        </div>
+                        <div class="product-description">
+                            <h4 class="features-title">
+                                Características de <%= product.name %>
+                            </h4>
+                            <ul class="product-features">
+                                <li>
+                                    <strong>Marca: </strong><%= product.brand %>
+                                </li>
+                                <li>
+                                    <strong>Categoría: </strong><%=
+                                    product.category %>
+                                </li>
+                            </ul>
+                            <h4 class="description-title">
+                                Descripción del producto
+                            </h4>
+                            <p><%= product.description %></p>
+                        </div>
+                        <div class="product-buttons-desktop">
+                            <a href="/shop" class="button">Comprar ahora</a>
+                            <a href="/cart" class="button button--cart"
+                                >Agregar al carrito</a
+                            >
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- products-detail -->
+        </main>
 
-        <div class="product-info">
-          <h3 class="product-title-desktop">
-            <%= product.name %>
-          </h3>
-          <div class="product-price">
-          <p>$<%= product.price %> <span class="product-discount">-<%= product.discount %>%</span></p>
-          </div>
-          <div class="product-buttons">
-            <a href="/shop" class="button">Comprar ahora</a>
-            <a href="/cart" class="button button--cart">Agregar al carrito</a>
-          </div>
-          <div class="product-description">
-              <h4 class="features-title">Características de <%= product.name %></h4>
-              <ul class="product-features">
-                  <li>
-                      <strong>Marca: </strong><%= product.brand %>
-                  </li>
-                  <li>
-                      <strong>Categoría: </strong><%= product.category %>
-                  </li>
-              </ul>
-              <h4 class="description-title">Descripción del producto</h4>
-              <p><%= product.description %></p>
-          </div>
-          <div class="product-buttons-desktop">
-            <a href="/shop" class="button">Comprar ahora</a>
-            <a href="/cart" class="button button--cart">Agregar al carrito</a>
-          </div>
-        </div>
-      </article>
-    </section>
-    <!-- products-detail -->
-
-  </main>
-
-  <footer class="footer-catalogo">
-    <%- include('../partials/footer') %>
-  </footer>
-</body>
-
+        <footer class="footer-catalogo">
+            <%- include('../partials/footer') %>
+        </footer>
+    </body>
 </html>

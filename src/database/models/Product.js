@@ -28,7 +28,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         image_id: {
             type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false,
         },
     };
     let config = {
@@ -48,10 +47,6 @@ module.exports = function (sequelize, DataTypes) {
         Product.belongsTo(models.brands, {
             as: "brand",
             foreignKey: "brand_id",
-        });
-        Product.hasMany(models.images, {
-            as: "images",
-            foreignKey: "product_id",
         });
     };
 

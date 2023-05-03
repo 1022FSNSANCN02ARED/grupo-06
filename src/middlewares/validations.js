@@ -84,18 +84,13 @@ const validations = {
             .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
             .withMessage("Solo se admiten letras y números."),
         body("price").notEmpty().withMessage("Ingresa el precio del producto"),
-        body("brand")
-            .notEmpty()
-            .withMessage("Ingresa la marca del producto.")
-            .bail()
-            .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
-            .withMessage("Solo se admiten letras y números."),
-        body("category").notEmpty().withMessage("Selecciona una categoría."),
+
+        body("category_id").notEmpty().withMessage("Selecciona una categoría."),
         body("discount")
             .optional()
             .custom((value, { req }) => {
                 discount = req.body.discount;
-                if (!value) {
+                if (discount == 0) {
                     return true;
                 } else if (discount >= 1 && discount <= 100) {
                     return true;

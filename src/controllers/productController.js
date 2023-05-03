@@ -5,58 +5,85 @@ const db = require("../database/models");
 
 module.exports = {
     catalogue: async (req, res) => {
-        let products = await db.Product.findAll();
-        console.log(products);
+        const products = await db.Product.findAll();
 
-        const ofertas = products.filter((product) => product.discount >= 15);
-        const arrayVacio = [];
-        function x() {
+        products.forEach(async (product) => {
+            const productBrand = await db.brands.findByPk(product.brand_id);
+            const productImage = await db.images.findByPk(product.image_id);
+            const productCategories = await product.getCategories();
+
+            product.category = productCategories[0].name;
+            product.image = productImage.fileRoute;
+            product.brand = productBrand.name;
+
+            const ofertas = products.filter(
+                (product) => product.discount >= 15
+            );
+
+            const arrayVacio = [];
             while (arrayVacio.length < 3) {
                 let randomProduct = Math.floor(Math.random() * products.length);
                 if (!arrayVacio.includes(randomProduct)) {
                     arrayVacio.push(randomProduct);
                 }
             }
-        }
-        x();
-        res.render("pages/catalogue", { products, ofertas, arrayVacio });
+
+            return res.render("pages/catalogue", {
+                products,
+                ofertas,
+                arrayVacio,
+            });
+        });
     },
+
     cart: (req, res) => {
-        res.render("pages/carrito");
+        return res.render("pages/carrito");
     },
-    details: (req, res) => {
-        let product = {};
-        let productsFile = fs.readFileSync(
-            path.resolve(__dirname, "../data/productsDataBase.json"),
-            "utf-8"
-        );
-        let products = JSON.parse(productsFile);
+    details: async (req, res) => {
+        let product = await db.Product.findByPk(req.params.id);
+        const productBrand = await db.brands.findByPk(product.brand_id);
+        const productImage = await db.images.findByPk(product.image_id);
+        const productCategories = await product.getCategories();
 
-        let productId = req.params.id;
+        product.category = productCategories[0].name;
+        product.image = productImage.fileRoute;
+        product.brand = productBrand.name;
 
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].id == productId) {
-                product = products[i];
-            }
-        }
-        res.render("pages/details", { product: product });
+        return res.render("pages/details", { product: product });
     },
     create: async (req, res) => {
-        let brand = await db.brands.findAll();
-        res.render("pages/create", { brand: brand });
+        const [brands, categories] = await Promise.all([
+            db.brands.findAll(),
+            db.Category.findAll(),
+        ]);
+        return res.render("pages/create", {
+            brand: brands,
+            categories: categories,
+        });
     },
 
     store: async (req, res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
+            const [brands, categories] = await Promise.all([
+                db.brands.findAll(),
+                db.Category.findAll(),
+            ]);
+
             return res.render("pages/create", {
+                brand: brands,
+                categories: categories,
                 errors: resultValidation.mapped(),
                 oldData: req.body,
             });
         }
 
         let product = req.body;
+
+        if (product.addbrand === "") {
+            delete product.addbrand;
+        }
 
         if (!product.discount) {
             product.discount = 0;
@@ -70,54 +97,149 @@ module.exports = {
                 product.image.push(image);
             }
 
-            console.log(product);
-            db.Product.create(product);
-
-            res.redirect("/products/" + product.id);
-        } else {
-            product.image_id = 1;
-
-            await db.Product.create(product).then(
-                res.redirect("/products/" + product.id)
+            const images = Promise.all(
+                product.image.map((image) =>
+                    db.images.create({
+                        fileRoute: image,
+                    })
+                )
             );
+
+            let imageId = images.map((image) => image.id);
+            product.image = imageId;
+
+            const createdProduct = await db.Product.create({
+                name: product.name,
+                price: product.price,
+                brand_id: product.brand_id,
+                discount: product.discount,
+                description: product.description,
+                image_id: product.image,
+            });
+
+            await createdProduct.addCategory(product.category_id);
+            return res.redirect("/products/details/" + createdProduct.id);
+        } else {
+            const createdProduct = await db.Product.create({
+                name: product.name,
+                price: product.price,
+                brand_id: product.brand_id,
+                discount: product.discount,
+                description: product.description,
+                image_id: 1,
+            });
+
+            await createdProduct.addCategory(product.category_id);
+            return res.redirect("/products/details/" + createdProduct.id);
         }
     },
-    edit: (req, res) => {
-        let productToEdit = productsModel.find(req.params.id);
-        res.render("pages/edit", {
-            productToEdit: productToEdit,
+    edit: async (req, res) => {
+        let brands = db.brands.findAll();
+        let categories = db.Category.findAll();
+        let product = await db.Product.findByPk(req.params.id);
+        const productBrand = await db.brands.findByPk(product.brand_id);
+        const productImage = await db.images.findByPk(product.image_id);
+        const productCategories = await product.getCategories();
+
+        product.category = productCategories[0].name;
+        product.image = productImage.fileRoute;
+        product.brand = productBrand.name;
+
+        Promise.all([brands, categories]).then((resultado) => {
+            return res.render("pages/edit", {
+                brand: resultado[0],
+                categories: resultado[1],
+                productToEdit: product,
+            });
         });
     },
-    update: (req, res) => {
+    update: async (req, res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-            productToEdit = req.body;
-            if (!req.file) {
-                productToEdit.image = req.body.img_old;
-            }
-            productToEdit.id = req.params.id;
+            console.log(resultValidation.errors);
+            const [brands, categories] = await Promise.all([
+                db.brands.findAll(),
+                db.Category.findAll(),
+            ]);
+
+            console.log(req.body);
+
             return res.render("pages/edit", {
+                brand: brands,
+                categories: categories,
                 errors: resultValidation.mapped(),
+                productToEdit: req.body,
                 oldData: req.body,
-                productToEdit,
             });
         }
 
-        return res.send("Validaciones correctas");
-
-        /*
-        console.log(req.body);
         let product = req.body;
 
-        product.id = req.params.id;
+        if (product.addbrand === "") {
+            delete product.addbrand;
+        }
 
-        productId = productsModel.update(product);
+        if (!product.discount) {
+            product.discount = 0;
+        }
 
-        return res.render("pages/turns", {
-            productId,
-        });
-        */
+        if (req.files.length > 0) {
+            product.image = [];
+
+            for (let i = 0; i < req.files.length; i++) {
+                let image = "/images/products/" + req.files[i].filename;
+                product.image.push(image);
+            }
+
+            const images = Promise.all(
+                product.image.map((image) =>
+                    db.images.create({
+                        fileRoute: image,
+                    })
+                )
+            );
+
+            let imageId = images.map((image) => image.id);
+            product.image = imageId;
+
+            const createdProduct = await db.Product.update(
+                {
+                    name: product.name,
+                    price: product.price,
+                    brand_id: product.brand_id,
+                    discount: product.discount,
+                    description: product.description,
+                    image_id: product.image,
+                },
+                {
+                    where: {
+                        id: req.params.id,
+                    },
+                }
+            );
+
+            console.log(createdProduct);
+            await createdProduct.setCategory(product.category_id);
+            return res.redirect("/products/details/" + createdProduct.id);
+        } else {
+            const productToEdit = await db.Product.findByPk(req.params.id);
+
+            console.log(productToEdit);
+
+            productToEdit.name = product.name;
+            productToEdit.price = product.price;
+            productToEdit.brand_id = product.brand_id;
+            productToEdit.category_id = product.category_id;
+            productToEdit.discount = product.discount;
+            productToEdit.description = product.description;
+            productToEdit.image_id = 1;
+
+            await productToEdit.save();
+
+            await productToEdit.setCategory(productToEdit.category_id);
+            return res.redirect("/products/details/" + productToEdit.id);
+        }
     },
     delete: (req, res) => {
         let product = productsModel.find(req.params.id);

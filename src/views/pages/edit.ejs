@@ -57,55 +57,89 @@
                         <p class="text-danger text-start">
                             *<%= errors.price.msg %>
                         </p>
-                        <% } %> />
+                        <% } %> 
                     </div>
                     <div class="mb-3 text-center">
-                        <label
-                            for="productBrand"
-                            class="form-label text-primary"
-                            >Marca del producto:</label
+                    <label for="productBrand" class="form-label text-primary">Marca del producto:</label>
+                    <select type="text" name="brand_id" class="form-control text-primary bg-black border-primary <%= locals.errors && errors.brand
+                        ? " is-invalid" : null %>"
+                        id="productBrand"
+                        required
+                        > 
+                        <option value="" <% if (!locals.errors) { %>
+                            <%= "selected" %>
+                            <% } %> disabled>Seleccione una marca</option>
+                        <% for (let i = 0; i < brand.length; i++) { %>
+                            <option value="<%= brand[i].id %>" <% if (locals.errors && brand[i].id == oldData.brand_id || productToEdit.brand_id == brand[i].id ) { %> 
+                                <%="selected"%> 
+                                <% } %>> <%= brand[i].name %>
+                            </option>
+                            
+                            <% } %>
+                       
+                      </select>
+
+                      <% if (locals.errors && errors.brand) { %>
+                                <p class="text-danger text-start">
+                                    *<%= errors.brand.msg %>
+                                </p>
+                                <% } %>
+                </div>
+                <div class="my-4 text-center">
+                    <label for="newBrand" class="form-check-label text-primary mx-1">¿Desea agregar otra marca?</label>
+                    <input type="checkbox" class="form-check-input text-primary bg-black border-primary" id="newBrand"
+                        <%=locals.oldData && (oldData.inSale=="on" ) ? "checked" : null %>
+                    />
+                    <div class="mt-3 text-center" id="oferta">
+                        <label for="addBrand" class="form-label text-primary">Ingrese la nueva marca</label>
+                        <div class="d-flex">
+                            <input type="text" name="addbrand" class="form-control text-primary bg-black border-primary <%= locals.errors && errors.brand
+                        ? " is-invalid" : null %>"
+                            id="addBrand"
+                            placeholder="Ingrese nombre de la marca"
+                            value="<%= locals.oldData ? oldData.brand : "" %>"/>
+            
+                                <% if (locals.errors && errors.brand) { %>
+                                    <p class="text-danger text-start ">
+                                        *<%= errors.brand.msg %>
+                                    </p>
+                                    <% } %>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="mb-3 text-center">
+                    <label for="productCategory" class="form-label text-primary">Categoría:</label>
+                    <select class="form-select text-primary bg-black border-primary <%= locals.errors && errors.categories
+                        ? " is-invalid" : null %>"
+                        aria-label="Default select example"
+                        name="category_id"
+                        required
                         >
-                        <input type="text" name="brand" class="form-control
-                        text-primary bg-black border-primary <%= locals.errors
-                        && errors.brand ? "is-invalid" : null %>"
-                        id="productBrand" placeholder="Ingrese una marca"
-                        required value="<%= productToEdit.brand %>"/> <% if
-                        (locals.errors && errors.brand) { %>
+                        <option value="" <% if (!locals.errors) { %>
+                            <%= "selected" %>
+                            <% } %> disabled>
+                            Sin categoría
+                        </option>
+
+                        <<% for (let i = 0; i < categories.length; i++) { %>
+                            <option value="<%= categories[i].id %>" <% if (locals.errors && categories[i].id == oldData.category_id || productToEdit.category_id == categories[i].id) { %> 
+                                <%="selected"%> 
+                                <% } %> 
+                                ><%= categories[i].name %></option>
+                            
+                            <% } %>
+                                
+                    </select>
+
+                    <% if(locals.errors && errors.categories) { %>
                         <p class="text-danger text-start">
-                            *<%= errors.brand.msg %>
+                            *<%= errors.categories.msg %>
                         </p>
                         <% } %>
-                    </div>
-                    <div class="mb-3 text-center">
-                        <label
-                            for="productCategory"
-                            name="category"
-                            class="form-label text-primary"
-                            >Categoría:</label
-                        >
-                        <select
-                             class="form-select text-primary bg-black border-primary <%= locals.errors && errors.category
-                        ? "is-invalid" : null %>"
-                            aria-label="Default select example"
-                            name="category"
-                        >
-                            <option value="" selected disabled>
-                                Sin categoría
-                            </option>
 
-                             <% let categories = ["Gel", "Crema", "Pomada", "Tinte", "Shampoo", "Cera", "Laca"]; %> <%
-                            for (const oneCategory of categories) { %>
-                            <option <%= productToEdit && (oneCategory == productToEdit.category) ? "selected" : null %>
-                                > <%= oneCategory %></option>
-                            <% } %>
-                        </select>
 
-                        <% if(locals.errors && errors.category) { %>
-                            <p class="text-danger text-start">
-                                *<%= errors.category.msg %>
-                            </p>
-                        <% } %>
-                    </div>
+                </div>
                     <div class="my-4 text-center">
                         <label
                             for="enOferta"
