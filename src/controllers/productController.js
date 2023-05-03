@@ -225,19 +225,16 @@ module.exports = {
         } else {
             const productToEdit = await db.Product.findByPk(req.params.id);
 
-            console.log(productToEdit);
-
             productToEdit.name = product.name;
             productToEdit.price = product.price;
             productToEdit.brand_id = product.brand_id;
-            productToEdit.category_id = product.category_id;
             productToEdit.discount = product.discount;
             productToEdit.description = product.description;
             productToEdit.image_id = 1;
 
             await productToEdit.save();
 
-            await productToEdit.setCategory(productToEdit.category_id);
+            await productToEdit.setCategories(product.category_id);
             return res.redirect("/products/details/" + productToEdit.id);
         }
     },
