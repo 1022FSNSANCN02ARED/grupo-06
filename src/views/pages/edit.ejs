@@ -123,12 +123,14 @@
                         </option>
 
                         <<% for (let i = 0; i < categories.length; i++) { %>
-                            <option value="<%= categories[i].id %>" <% if (locals.errors && categories[i].id == oldData.category_id || productToEdit.category_id == categories[i].id) { %> 
+                            <option value="<%= categories[i].id %>" <% if (locals.errors && categories[i].id == oldData.category_id || productToEdit.category === categories[i].name ) { %> 
                                 <%="selected"%> 
-                                <% } %> 
-                                ><%= categories[i].name %></option>
+                                <% } %>> <%= categories[i].name %>
+                            </option>
                             
                             <% } %>
+
+                            
                                 
                     </select>
 
@@ -190,7 +192,7 @@
                             >Imagen del producto:</label
                         >
                         <div style="display: none;">
-                        <input type="text" name="img_old" value="<%=productToEdit.image%>">
+                        <input type="text" name="img_old" value="<%=productToEdit.image_id%>">
                         </div>
                         <input
                             type="file"
@@ -243,13 +245,17 @@
                         Limpiar
                     </button>
 
-                    <button
-                        type="reset"
-                        class="btn btn-outline-danger m-auto w-25 mt-3 d-block p-1"
-                    >
-                        Borrar
-                    </button>
-                </form>
+                    </form>
+
+                    <form action="/products/<%=productToEdit.id%>?_method=delete"
+                        method="POST"
+                        >
+                        <button
+                            class="btn btn-outline-danger m-auto w-25 mt-3 d-block p-1"
+                        >
+                            Borrar
+                        </button>
+                    </form>
             </div>
         </main>
         <footer class="footer-catalogo">

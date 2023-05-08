@@ -21,5 +21,6 @@ router.patch(
     validations.products,
     productController.update
 );
+router.delete("/:id", productController.delete);
 
 module.exports = router;

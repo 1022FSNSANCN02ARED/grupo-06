@@ -7,32 +7,33 @@ module.exports = {
     catalogue: async (req, res) => {
         const products = await db.Product.findAll();
 
-        products.forEach(async (product) => {
-            const productBrand = await db.brands.findByPk(product.brand_id);
-            const productImage = await db.images.findByPk(product.image_id);
-            const productCategories = await product.getCategories();
+        for (const product of products) {
+            const [productBrand, productImage, productCategories] =
+                await Promise.all([
+                    db.brands.findByPk(product.brand_id),
+                    db.images.findByPk(product.image_id),
+                    product.getCategories(),
+                ]);
 
             product.category = productCategories[0].name;
             product.image = productImage.fileRoute;
             product.brand = productBrand.name;
+        }
 
-            const ofertas = products.filter(
-                (product) => product.discount >= 15
-            );
+        const ofertas = products.filter((product) => product.discount > 0);
 
-            const arrayVacio = [];
-            while (arrayVacio.length < 3) {
-                let randomProduct = Math.floor(Math.random() * products.length);
-                if (!arrayVacio.includes(randomProduct)) {
-                    arrayVacio.push(randomProduct);
-                }
+        const arrayVacio = [];
+        while (arrayVacio.length < 3) {
+            let randomProduct = Math.floor(Math.random() * products.length);
+            if (!arrayVacio.includes(randomProduct)) {
+                arrayVacio.push(randomProduct);
             }
+        }
 
-            return res.render("pages/catalogue", {
-                products,
-                ofertas,
-                arrayVacio,
-            });
+        return res.render("pages/catalogue", {
+            products,
+            ofertas,
+            arrayVacio,
         });
     },
 
@@ -41,13 +42,19 @@ module.exports = {
     },
     details: async (req, res) => {
         let product = await db.Product.findByPk(req.params.id);
-        const productBrand = await db.brands.findByPk(product.brand_id);
-        const productImage = await db.images.findByPk(product.image_id);
-        const productCategories = await product.getCategories();
+
+        const [productBrand, productImage, productCategories] =
+            await Promise.all([
+                db.brands.findByPk(product.brand_id),
+                db.images.findByPk(product.image_id),
+                product.getCategories(),
+            ]);
 
         product.category = productCategories[0].name;
         product.image = productImage.fileRoute;
         product.brand = productBrand.name;
+
+        console.log(product);
 
         return res.render("pages/details", { product: product });
     },
@@ -97,7 +104,7 @@ module.exports = {
                 product.image.push(image);
             }
 
-            const images = Promise.all(
+            const images = await Promise.all(
                 product.image.map((image) =>
                     db.images.create({
                         fileRoute: image,
@@ -118,6 +125,7 @@ module.exports = {
             });
 
             await createdProduct.addCategory(product.category_id);
+            console.log(createdProduct);
             return res.redirect("/products/details/" + createdProduct.id);
         } else {
             const createdProduct = await db.Product.create({
@@ -143,6 +151,7 @@ module.exports = {
 
         product.category = productCategories[0].name;
         product.image = productImage.fileRoute;
+        product.image_id = productImage.id;
         product.brand = productBrand.name;
 
         Promise.all([brands, categories]).then((resultado) => {
@@ -192,7 +201,7 @@ module.exports = {
                 product.image.push(image);
             }
 
-            const images = Promise.all(
+            const images = await Promise.all(
                 product.image.map((image) =>
                     db.images.create({
                         fileRoute: image,
@@ -203,25 +212,21 @@ module.exports = {
             let imageId = images.map((image) => image.id);
             product.image = imageId;
 
-            const createdProduct = await db.Product.update(
-                {
-                    name: product.name,
-                    price: product.price,
-                    brand_id: product.brand_id,
-                    discount: product.discount,
-                    description: product.description,
-                    image_id: product.image,
-                },
-                {
-                    where: {
-                        id: req.params.id,
-                    },
-                }
-            );
+            const productToEdit = await db.Product.findByPk(req.params.id);
 
-            console.log(createdProduct);
-            await createdProduct.setCategory(product.category_id);
-            return res.redirect("/products/details/" + createdProduct.id);
+            productToEdit.name = product.name;
+            productToEdit.price = product.price;
+            productToEdit.brand_id = product.brand_id;
+            productToEdit.discount = product.discount;
+            productToEdit.description = product.description;
+            productToEdit.image_id = product.image;
+
+            await productToEdit.save();
+
+            console.log(productToEdit);
+
+            await productToEdit.setCategories(product.category_id);
+            return res.redirect("/products/details/" + productToEdit.id);
         } else {
             const productToEdit = await db.Product.findByPk(req.params.id);
 
@@ -230,7 +235,7 @@ module.exports = {
             productToEdit.brand_id = product.brand_id;
             productToEdit.discount = product.discount;
             productToEdit.description = product.description;
-            productToEdit.image_id = 1;
+            productToEdit.image_id = product.img_old;
 
             await productToEdit.save();
 
@@ -238,19 +243,19 @@ module.exports = {
             return res.redirect("/products/details/" + productToEdit.id);
         }
     },
-    delete: (req, res) => {
-        let product = productsModel.find(req.params.id);
-        let imagePath = path.join(
-            __dirname,
-            "../public/images/products/" + product.image
+    delete: async (req, res) => {
+        const productToDelete = req.params.id;
+
+        await db.sequelize.query(
+            `DELETE FROM category_product WHERE product_id = ${productToDelete}`
         );
 
-        productsModel.delete(req.params.id);
+        await db.Product.destroy({
+            where: {
+                id: productToDelete,
+            },
+        });
 
-        if (fs.existsSync(imagePath)) {
-            fs.unlinkSync(imagePath);
-        }
-
-        return res.redirect("pages/catalogo");
+        return res.redirect("/products/");
     },
 };
