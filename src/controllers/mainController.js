@@ -1,16 +1,13 @@
-const jsonDb = require("../data/models.js");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
-const path = require("path");
-const fs = require("fs");
-
-const usersModel = jsonDb("usersDataBase");
+const { uuid } = require("uuidv4");
+const db = require("../database/models");
 
 module.exports = {
     home: (req, res) => {
         return res.render("home");
     },
-    loginProcess: (req, res) => {
+    loginProcess: async (req, res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -20,20 +17,26 @@ module.exports = {
             });
         }
 
-        let emailToLogin = usersModel.findByField("email", req.body.login);
-        let usernameToLogin = usersModel.findByField(
-            "username",
-            req.body.login
-        );
+        let emailToLogin = await db.Users.findAll({
+            where: {
+                email: req.body.login,
+            },
+        });
 
-        if (emailToLogin) {
+        let usernameToLogin = await db.Users.findAll({
+            where: {
+                userName: req.body.login,
+            },
+        });
+
+        if (emailToLogin.length > 0) {
             let validationPassword = bcryptjs.compareSync(
                 req.body.loginPassword,
-                emailToLogin.password
+                emailToLogin[0].password
             );
             if (validationPassword) {
-                delete emailToLogin.password;
-                req.session.userLogged = emailToLogin;
+                delete emailToLogin[0].password;
+                req.session.userLogged = emailToLogin[0];
                 if (req.body.session || req.body.session2)
                     res.cookie("userCookie", req.body.login, {
                         maxAge: 60000 * 43200,
@@ -48,14 +51,14 @@ module.exports = {
                 },
                 oldData: req.body,
             });
-        } else if (usernameToLogin) {
+        } else if (usernameToLogin.length > 0) {
             let validationPassword = bcryptjs.compareSync(
                 req.body.loginPassword,
-                usernameToLogin.password
+                usernameToLogin[0].password
             );
             if (validationPassword) {
-                delete usernameToLogin.password;
-                req.session.userLogged = usernameToLogin;
+                delete usernameToLogin[0].password;
+                req.session.userLogged = usernameToLogin[0];
                 if (req.body.session || req.body.session2)
                     res.cookie("userCookie", req.body.login, {
                         maxAge: 60000 * 43200,
@@ -84,7 +87,7 @@ module.exports = {
     register: (req, res) => {
         return res.render("pages/register");
     },
-    registerProcess: (req, res) => {
+    registerProcess: async (req, res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -94,13 +97,18 @@ module.exports = {
             });
         }
 
-        let emailInDb = usersModel.findByField("email", req.body.email);
-        let usernameInDb = usersModel.findByField(
-            "username",
-            req.body.username
-        );
+        let emailInDb = await db.Users.findAll({
+            where: {
+                email: req.body.email,
+            },
+        });
+        let usernameInDb = await db.Users.findAll({
+            where: {
+                userName: req.body.username,
+            },
+        });
 
-        if (emailInDb) {
+        if (emailInDb.length > 0) {
             return res.render("pages/register", {
                 errors: {
                     email: {
@@ -109,7 +117,7 @@ module.exports = {
                 },
                 oldData: req.body,
             });
-        } else if (usernameInDb) {
+        } else if (usernameInDb.length > 0) {
             return res.render("pages/register", {
                 errors: {
                     username: {
@@ -128,8 +136,18 @@ module.exports = {
             user.avatar = "default.jpg";
         }
 
-        (user.password = bcryptjs.hashSync(req.body.password, 10)),
-            usersModel.create(user);
+        user.password = bcryptjs.hashSync(req.body.password, 10);
+
+        await db.Users.create({
+            id: uuid(),
+            firstName: user.name,
+            lastName: user.lastname,
+            userName: user.username,
+            email: user.email,
+            password: user.password,
+            cellphone: user.phone,
+            avatar: user.avatar,
+        });
 
         return res.redirect("/");
     },
@@ -163,19 +181,14 @@ module.exports = {
 
         return res.send("Validaciones correctas");
     },
-    userDelete: (req, res) => {
+    userDelete: async (req, res) => {
         let user = req.session.userLogged;
-        let userInModel = usersModel.find(user.id);
-        let imagePath = path.join(
-            __dirname,
-            "../public/images/avatars/" + userInModel.avatar
-        );
 
-        usersModel.delete(userInModel.id);
-
-        if (fs.existsSync(imagePath)) {
-            fs.unlinkSync(imagePath);
-        }
+        await db.Users.destroy({
+            where: {
+                email: user.email,
+            },
+        });
 
         res.clearCookie("userCookie");
         req.session.destroy();

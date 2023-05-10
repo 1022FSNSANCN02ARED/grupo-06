@@ -1,17 +1,33 @@
-const jsonDb = require("../data/models");
-const usersModel = jsonDb("usersDataBase");
+const db = require("../database/models");
 
-function userLogged(req, res, next) {
-    res.locals.isLogged = false;
-
-    let userInCookie = req.cookies.userCookie;
-    let userFromCookie = usersModel.findByField("email", userInCookie);
-    if (!userFromCookie) {
-        userFromCookie = usersModel.findByField("username", userInCookie);
+async function userLogged(req, res, next) {
+    if (res.locals.isLogged) {
+        localStorage.isLogged = true;
     }
 
-    if (userFromCookie) {
-        req.session.userLogged = userFromCookie;
+    let userInCookie = await req.cookies.userCookie;
+
+    if (userInCookie) {
+        let userFromCookie = await db.Users.findAll({
+            where: {
+                email: userInCookie,
+            },
+        });
+
+        if (!userFromCookie) {
+            userFromCookie = await db.Users.findAll({
+                where: {
+                    userName: userInCookie,
+                },
+            });
+        }
+
+        if (userFromCookie) {
+            userFromCookie = userFromCookie[0].dataValues;
+            delete userFromCookie.password;
+            req.session.userLogged = userFromCookie;
+            console.log(userFromCookie);
+        }
     }
 
     if (req.session.userLogged) {
