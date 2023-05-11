@@ -1,72 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('../partials/head') %>
-    </head>
 
-    <body>
-        <header class="header"><%- include('../partials/header') %></header>
+<head>
+    <%- include('../partials/head') %>
+</head>
 
-        <main class="product-main">
-            <!-- product-detail -->
-            <section class="products">
-                <article class="product-detail">
-                    <h3 class="product-title"><%= product.name %></h3>
+<body>
+    <header class="header">
+        <%- include('../partials/header') %>
+    </header>
 
-                    <div class="product-icon">
-                        <img src="<%= product.image %>" alt="product image" />
+    <main class="main-product">
+        <div class="product">
+            <div class="product-details">
+                <div class="product-image">
+                    <img src="<%= product.image %>" alt="Product icon">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand"><%= product.brand %></p>
+                    <h3 class="product-title"><%= product.title %></h3>
+                    <% if(product.discount && product.discount > 0) { %>
+                        <del class="product-old-price">$<%= product.price %></del> <small class="product-discount">-<%= product.discount %> OFF</small>
+                        <p class="product-new-price">$<%= product.price - (product.price * (100 / product.discount)) %></p>
+                    <% } else { %>
+                        <p class="product-new-price">$<%= product.price %></p>  
+                    <% } %>
+                    <div class="product-btns">
+                        <form class="product-cart-form">
+                            <input type="submit" value="Agregar al carrito">
+                        </form>
+                        <form class="product-buy-form">
+                            <input type="submit" value="Comprar ahora">
+                        </form>
                     </div>
-
-                    <div class="product-info">
-                        <h3 class="product-title-desktop">
-                            <%= product.name %>
-                        </h3>
-                        <div class="product-price">
-                            <p>
-                                $<%= product.price %>
-                                <span class="product-discount"
-                                    >-<%= product.discount %>%</span
-                                >
-                            </p>
-                        </div>
-                        <div class="product-buttons">
-                            <a href="/shop" class="button">Comprar ahora</a>
-                            <a href="/cart" class="button button--cart"
-                                >Agregar al carrito</a
-                            >
-                        </div>
-                        <div class="product-description">
-                            <h4 class="features-title">
-                                Características de <%= product.name %>
-                            </h4>
-                            <ul class="product-features">
-                                <li>
-                                    <strong>Marca: </strong><%= product.brand %>
-                                </li>
-                                <li>
-                                    <strong>Categoría: </strong><%=
-                                    product.category %>
-                                </li>
-                            </ul>
-                            <h4 class="description-title">
-                                Descripción del producto
-                            </h4>
+                    <hr class="division-bar">
+                    <div class="product-description">
+                        <h3>Descripción del producto</h3>
+                        <div class="product-textarea">
                             <p><%= product.description %></p>
                         </div>
-                        <div class="product-buttons-desktop">
-                            <a href="/shop" class="button">Comprar ahora</a>
-                            <a href="/cart" class="button button--cart"
-                                >Agregar al carrito</a
-                            >
-                        </div>
                     </div>
-                </article>
-            </section>
-            <!-- products-detail -->
-        </main>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        <footer class="footer-catalogo">
-            <%- include('../partials/footer') %>
-        </footer>
-    </body>
+    <footer class="footer-catalogo">
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+
 </html>
