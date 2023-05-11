@@ -26,7 +26,6 @@ async function userLogged(req, res, next) {
             userFromCookie = userFromCookie[0].dataValues;
             delete userFromCookie.password;
             req.session.userLogged = userFromCookie;
-            console.log(userFromCookie);
         }
     }
 

@@ -163,8 +163,17 @@ module.exports = {
     },
     turns: (req, res) => {
         return res.render("pages/turns");
+
+        // crear peluqueros en la db para que las opciones provengan de los datos recibidos de la db
+
+        // seguramente haya que modificar la db de peluqueros para eso
     },
     turnsProcess: (req, res) => {
+        if (!res.locals.isLogged) {
+            return res.redirect("/");
+        }
+        // Poner validación logging in antes de enviar form, de preferencia con js para front
+
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -178,6 +187,8 @@ module.exports = {
         if (!user.hairdresser) {
             user.hairdresser = "0";
         }
+
+        console.log(req.body);
 
         return res.send("Validaciones correctas");
     },
