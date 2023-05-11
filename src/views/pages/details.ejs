@@ -21,7 +21,7 @@
                     <h3 class="product-title"><%= product.title %></h3>
                     <% if(product.discount && product.discount > 0) { %>
                         <del class="product-old-price">$<%= product.price %></del> <small class="product-discount">-<%= product.discount %> OFF</small>
-                        <p class="product-new-price">$<%= product.price - (product.price * (100 / product.discount)) %></p>
+                        <p class="product-new-price">$<%= product.price - (product.price * (product.discount / 100)) %></p>
                     <% } else { %>
                         <p class="product-new-price">$<%= product.price %></p>  
                     <% } %>
