@@ -1,116 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
-  </head>
-  <body>
-    <header>
-      <%- include('./partials/header') %>
-    </header>
-    <main style="background-color: #3e3e3e;">
-      <section>
-        <div class="contenedor">
-          <img src="/images/backgraund-main.jpg" alt="backgraund-main" class="backgraund-main" />
-          <h1 class="h1-contenedor-main-home">HAIR CUT</h1>
-          <h2 class="h2-contenedor-main-home">Barber & Shop</h1>
+
+<head>
+  <%- include('./partials/head') %>
+</head>
+
+<body>
+  <header>
+    <%- include('./partials/header') %>
+  </header>
+  <main class="">
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="/turnos">
+            <img src="/images/servicios/corte-de-pelo.png" class="d-block w-100 custom-img" alt="...">
+            <div class="carousel-caption pie-img">
+              <p class="text-img">CORTES DE CABELLO</p>
+            </div>
+          </a>
         </div>
-  
-        <h2 class="titulo-h2">SOBRE NOSOTROS</h2>
-        <div class="sobrenosotros">
-          <img src="/images/img-sobrenosotros.jpg" alt="foto barberia" class="img-sobrenosotros">
-          <div>
-            <p class="descripcion-sobrenosotros">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-              praesentium
-              nesciunt minima id incidunt,
-              quaerat sunt vero dolore eos provident aperiam, vel nisi, enim quo eum laborum iste quasi optio.</p>
-            <button class="btn-sobrenosotros">Reservar Turno</button>
-          </div>
+        <div class="carousel-item">
+          <a href="/turnos">
+            <img src="/images/servicios/corte-de-barba.jpeg" class="d-block w-100 custom-img" alt="...">
+            <div class="carousel-caption pie-img">
+              <p class="text-img">AFEITADOS</p>
+            </div>
+          </a>
         </div>
-        <h2 class="titulo-h2">TURNOS ONLINE</h2>
-        <H3 class="h3">Ahora podés reservar con tu peluquero de confianza</H3>
-        <section class="peluqueros">
-          <div class="container">
-  
-            <ul class="slider">
-              <li id="slide1">
-                <img src="/images/peluquero1.jpg" alt="">
-              </li>
-              <li id="slide2">
-                <img src="/images/peluquero2.jpg" alt="">
-              </li>
-              <li id="slide3">
-                <img src="/images/peluquero4.jpg" alt="">
-              </li>
-            </ul>
-            <ul class="btn-slide">
-              <li>
-                <a href="#slide1">1</a>
-              </li>
-              <li>
-                <a href="#slide2">2</a>
-              </li>
-              <li>
-                <a href="#slide3">3</a>
-              </li>
-            </ul>
-  
-            <button class="btn-catcompl">Sacar Turno</button>
-  
-          </div>
-        </section>
-  
-        <%- include('./partials/oferta-semanal') %> 
-  
-        <button class="btn-catcompl">Catálogo completo</button>
-  
-  
-        <h2 class="titulo-h2">SERVICIOS</h2>
-        <section class="servicios-section">
-          <div class="servicio1">
-            <h3 class="servicios-h3">Corte</h3>
-            <p class="servicios-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="servicio2">
-            <h3 class="servicios-h3">Color</h3>
-            <p class="servicios-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="servicio3">
-            <h3 class="servicios-h3">Barba</h3>
-            <p class="servicios-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-        </section>
-        <section class="img-servicios-sect">
-          <div class="div-img-servicios w-serv-img1">
-            <img class="img-servicios" src="/images/servicios1.jpg" alt="">
-          </div>
-          <div class="div-img-servicios w-serv-img2">
-            <img class="img-servicios" src="/images/servicios2.jpg" alt="">
-          </div>
-          <div class="div-img-servicios w-serv-img3">
-            <img class="img-servicios" src="/images/servicios3.jpg" alt="">
-          </div>
-          <div class="div-img-servicios w-serv-img4">
-            <img class="img-servicios" src="/images/servicios4.jpg" alt="">
-          </div>
-        </section>
-        <h2 class="titulo-h2">CONTACTO</h2>
-        <div class="media-contacto">
-          <div class="margin-maps">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17572.23990533987!2d-60.22072156742301!3d-33.335377962635945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1672416834849!5m2!1ses-419!2sar"
-              width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div>
-            <p class="p-contacto-home">Calle De la Nación XX <br>
-              San Nicolás de los Arroyos<br>
-              Buenos Aires-Argentina<br>
-              336-4335555<br>
-              haircut@gmail.com</p>
-          </div>
+        <div class="carousel-item">
+          <a href="/products">
+            <img src="/images/servicios/venta-productos.jpg" class="d-block w-100 custom-img" alt="...">
+            <div class="carousel-caption pie-img">
+              <p class="text-img">VENTA DE PRODUCTOS</p>
+            </div>
+          </a>
         </div>
-    <footer class="footer">
-      <%- include('./partials/footer') %>
-    </footer>
-  </body>
+      </div>
+    </div>
+
+    <section>
+      <div class="info-barber">
+        <p class="p-info">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, ea quo. Rerum dolorum a, dignissimos rem
+        expedita, cum impedit neque nisi provident minima quasi adipisci sed minus corrupti alias suscipit!
+               __________________________________________________________________________________________
+                 !!!!!!!!!!!!!          AGREGAR DESCRICION DE LA BARBERIA              !!!!!!!!!!!!!!!
+               --------------------------------------------------------------------------------------------
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, ea quo. Rerum dolorum a, dignissimos rem
+        expedita, cum impedit neque nisi provident minima quasi adipisci sed minus corrupti alias suscipit!
+      </p>
+    </div>
+    </section>
+
+    </section>
+
+    <%- include('./partials/oferta-semanal') %>
+
+  <a href="/products" class="d-content">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#confirm"
+        class="btn btn-outline-primary m-auto mb-3 mt-5 w-50 d-block btn-cat" form="turns-form">
+        
+        Catálogo Completo
+      </button></a>
+
+
+
+      <h2 class="titulos-home">CONTACTO</h2>
+      <div class="media-contacto">
+        <div class="margin-maps">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17572.23990533987!2d-60.22072156742301!3d-33.335377962635945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1672416834849!5m2!1ses-419!2sar"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+          <p class="p-contacto-home">Calle De la Nación XX <br>
+            San Nicolás de los Arroyos<br>
+            Buenos Aires-Argentina<br>
+            336-4335555<br>
+            haircut@gmail.com</p>
+        </div>
+      </div>
+      <footer class="footer">
+        <%- include('./partials/footer') %>
+      </footer>
+</body>
+
 </html>

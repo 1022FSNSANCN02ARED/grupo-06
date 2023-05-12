@@ -4,8 +4,29 @@ const { uuid } = require("uuidv4");
 const db = require("../database/models");
 
 module.exports = {
-    home: (req, res) => {
-        return res.render("home");
+    home: async (req, res) => {
+        const products = await db.Product.findAll();
+
+        for (const product of products) {
+            const [productBrand, productImage, productCategories] =
+                await Promise.all([
+                    db.brands.findByPk(product.brand_id),
+                    db.images.findByPk(product.image_id),
+                    product.getCategories(),
+                ]);
+
+            product.category = productCategories[0].name;
+            product.image = productImage.fileRoute;
+            product.brand = productBrand.name;
+        }
+
+        products.sort((a, b) => b.discount - a.discount);
+
+        const topThreeProducts = products.slice(0, 3);
+
+        console.log(topThreeProducts)
+
+        return res.render("home", {topThreeProducts});
     },
     loginProcess: async (req, res) => {
         const resultValidation = validationResult(req);
