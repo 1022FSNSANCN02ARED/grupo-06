@@ -172,7 +172,7 @@ module.exports = {
     },
     turnsProcess: (req, res) => {
         if (!res.locals.isLogged) {
-            promp("Debes estar logueado.");
+            alert("Debes estar logueado.");
         }
         // Poner validación logging in antes de enviar form, de preferencia con js para front
 
