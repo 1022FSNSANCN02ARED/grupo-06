@@ -704,7 +704,7 @@ ul.slider li:target {
     outline: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.formulario_input:focus+.formulario_label {
+.formulario_input:focus + .formulario_label {
     margin-top: -130px;
 }
 
@@ -744,12 +744,14 @@ ul.slider li:target {
     width: 100%;
     margin: auto;
     background: rgb(0, 0, 0);
-    background: linear-gradient(180deg,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(20, 33, 61, 1) 25%,
-            rgba(229, 229, 229, 1) 50%,
-            rgba(20, 33, 61, 1) 75%,
-            rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(20, 33, 61, 1) 25%,
+        rgba(229, 229, 229, 1) 50%,
+        rgba(20, 33, 61, 1) 75%,
+        rgba(0, 0, 0, 1) 100%
+    );
     padding: 20px;
 }
 
@@ -818,11 +820,11 @@ ul.slider li:target {
     height: 0;
 }
 
-.radio+.turnos-img-peluquero {
+.radio + .turnos-img-peluquero {
     cursor: pointer;
 }
 
-.radio:checked+.turnos-img-peluquero {
+.radio:checked + .turnos-img-peluquero {
     outline: 2px solid #f00;
 }
 
@@ -1031,7 +1033,7 @@ ul.slider li:target {
     height: 100vh;
     margin-top: 5rem;
     margin-bottom: 5rem;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     position: relative;
 }
 
@@ -1051,7 +1053,7 @@ ul.slider li:target {
 
 .product-title {
     font-size: 1.4rem;
-    margin: .4rem 0 1rem 0;
+    margin: 0.4rem 0 1rem 0;
 }
 
 .product-image {
@@ -1071,7 +1073,7 @@ ul.slider li:target {
 .product-discount {
     color: green;
     font-size: 1.2rem;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
 }
 
 .product-new-price {
@@ -1096,8 +1098,8 @@ ul.slider li:target {
 .product-cart-form input {
     width: 100%;
     text-transform: uppercase;
-    font-size: .8rem;
-    border-radius: .2rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
     padding: 1rem;
     cursor: pointer;
 }
@@ -1109,7 +1111,7 @@ ul.slider li:target {
 }
 
 .product-cart-form input {
-    border: .1rem solid rgb(224, 196, 158);
+    border: 0.1rem solid rgb(224, 196, 158);
     background-color: transparent;
     color: rgb(224, 196, 158);
 }
@@ -1226,7 +1228,6 @@ al soltar el click */
 /* Media Query's */
 
 @media (min-width: 481px) {
-
     /* Catalogo */
     .articulo-venta-catalogo {
         width: 48%;
@@ -1311,7 +1312,7 @@ al soltar el click */
     /* cierre catalogo */
 }
 
-@media(min-width: 930px) {
+@media (min-width: 930px) {
     .main-product {
         display: grid;
         place-items: center;
@@ -1345,7 +1346,7 @@ al soltar el click */
         height: 100vh;
         margin-top: 5rem;
         margin-bottom: 5rem;
-        border-radius: .8rem;
+        border-radius: 0.8rem;
         position: relative;
     }
 
@@ -1369,7 +1370,7 @@ al soltar el click */
     }
 
     .product-description {
-        display: block
+        display: block;
     }
 
     .product-description h3 {
@@ -1396,7 +1397,6 @@ al soltar el click */
 }
 
 @media (min-width: 1280px) {
-
     /* Catalogo */
     .articulo-venta-catalogo {
         width: 25%;
@@ -1557,7 +1557,7 @@ al soltar el click */
 
 .w-h-90 {
     width: 90%;
-    min-height: 1350px;
+    min-height: 1400px;
 }
 
 @media (min-width: 769px) {
@@ -1575,16 +1575,16 @@ al soltar el click */
     }
 }
 
-.peluqueros-check+#frank,
-.peluqueros-check+#ashley,
-.peluqueros-check+#sam {
+.peluqueros-check + #frank,
+.peluqueros-check + #ashley,
+.peluqueros-check + #sam {
     display: none;
     transition: all 0.4s;
 }
 
-.peluqueros-check:checked+#frank,
-.peluqueros-check:checked+#ashley,
-.peluqueros-check:checked+#sam {
+.peluqueros-check:checked + #frank,
+.peluqueros-check:checked + #ashley,
+.peluqueros-check:checked + #sam {
     display: block;
     transition: all 0.4s;
     border-radius: 5%;
@@ -1710,12 +1710,12 @@ al soltar el click */
     min-height: 1100px;
 }
 
-#enOferta+#oferta {
+#enOferta + #oferta {
     display: none;
     transition: all 0.4s;
 }
 
-#enOferta:checked+#oferta {
+#enOferta:checked + #oferta {
     display: block;
     transition: all 0.4s;
     border-radius: 5%;

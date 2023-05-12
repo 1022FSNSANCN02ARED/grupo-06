@@ -161,16 +161,18 @@ module.exports = {
         req.session.destroy();
         return res.redirect("/");
     },
-    turns: (req, res) => {
-        return res.render("pages/turns");
+    turns: async (req, res) => {
+        const hairdressers = await db.peluqueros.findAll();
 
-        // crear peluqueros en la db para que las opciones provengan de los datos recibidos de la db
+        console.log(hairdressers);
 
-        // seguramente haya que modificar la db de peluqueros para eso
+        return res.render("pages/turns", {
+            hairdressers: hairdressers,
+        });
     },
     turnsProcess: (req, res) => {
         if (!res.locals.isLogged) {
-            return res.redirect("/");
+            promp("Debes estar logueado.");
         }
         // Poner validación logging in antes de enviar form, de preferencia con js para front
 

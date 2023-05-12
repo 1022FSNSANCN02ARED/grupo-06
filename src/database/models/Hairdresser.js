@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "hairdressers";
+    let alias = "peluqueros";
 
     let cols = {
         id: {
@@ -8,6 +8,12 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         nombre: {
+            type: DataTypes.STRING,
+        },
+        avatar: {
+            type: DataTypes.STRING,
+        },
+        descripcion: {
             type: DataTypes.STRING,
         },
     };
@@ -20,11 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     const Hairdresser = sequelize.define(alias, cols, config);
 
     Hairdresser.associate = (models) => {
-        Hairdresser.hasMany(models.turns,
-            {
-                as: "turns",
-                foreignKey: "peluquero_id",
-            });
+        Hairdresser.hasMany(models.turns, {
+            as: "turns",
+            foreignKey: "peluquero_id",
+        });
     };
 
     return Hairdresser;
