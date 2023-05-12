@@ -19,6 +19,7 @@
   "homepage": "https://github.com/1022FSNSANCN02ARED/grupo-06#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.0-alpha1",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",
@@ -33,7 +34,8 @@
     "node-modules": "^0.0.1",
     "npm": "^9.4.2",
     "sequelize": "^6.29.3",
-    "sequelize-cli": "^6.6.0"
+    "sequelize-cli": "^6.6.0",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

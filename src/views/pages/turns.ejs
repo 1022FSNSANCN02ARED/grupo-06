@@ -72,19 +72,20 @@
                     <div
                         class="row row-cols-1 row-cols-md-3 g-4 mb-3 justify-content-center"
                     >
+                    <% for (const oneHairdresser of hairdressers) { %>
                         <div class="col-6">
                             <div class="card w-100 border-primary bg-black">
                                 <label
-                                    for="peluquero1"
+                                    for="peluquero<%= oneHairdresser.id %>"
                                     class="container-fluid w-100 m-0 p-0"
                                 >
                                     <div
                                         class="hover hover-1 text-white rounded"
                                     >
                                         <img
-                                            src="/images/barbers/barber1.png"
+                                            src="<%= oneHairdresser.avatar%>"
                                             class="card-img-top"
-                                            alt="Peluquero 1"
+                                            alt="Peluquero <%= hairdressers.nombre %>"
                                         />
                                         <div
                                             class="hover-1-content px-4 py-1 bg-opacity-50 w-100 bg-black"
@@ -92,31 +93,30 @@
                                             <h3
                                                 class="hover-1-title text-uppercase font-weight-bold mb-0 text-primary"
                                             >
-                                                Frank
+                                                <%= oneHairdresser.nombre %>
                                             </h3>
                                             <p
                                                 class="hover-1-description font-weight-light mb-0"
                                             >
-                                                Nuestro peluquero experto en
-                                                rulos.
+                                                <%= oneHairdresser.descripcion %>
                                             </p>
                                         </div>
                                     </div>
                                 </label>
                                 <input
                                     type="radio"
-                                    id="peluquero1"
+                                    id="peluquero<%= oneHairdresser.id %>"
                                     name="hairdresser"
                                     class="btn-check peluqueros-check"
-                                    value="1"
-                                    <%= locals.oldData && (oldData.hairdresser == "1") ? "checked" : null %>
+                                    value="<%= oneHairdresser.id %>"
+                                    <%= locals.oldData && (oldData.hairdresser == oneHairdresser.id) ? "checked" : null %>
                                 />
                                 <div class="card-body bg-black" id="frank">
                                     <h5 class="card-title text-primary" id="q">
-                                        Frank
+                                        <%= oneHairdresser.nombre %>
                                     </h5>
                                     <p class="card-text text-white" id="w">
-                                        Nuestro peluquero experto en rulos.
+                                        <%= oneHairdresser.descripcion %>
                                     </p>
                                     <span
                                         class="badge rounded-circle text-dark bg-primary"
@@ -125,124 +125,19 @@
                                 </div>
                             </div>
                         </div>
+                    <% } %>
 
-                        <div class="col-6">
-                            <div class="card w-100 border-primary bg-black">
-                                <label
-                                    for="peluquero2"
-                                    class="container-fluid w-100 m-0 p-0"
-                                >
-                                    <div
-                                        class="hover hover-1 text-white rounded"
-                                    >
-                                        <img
-                                            src="/images/barbers/barber2.png"
-                                            class="card-img-top"
-                                            alt="Peluquero 2"
-                                        />
-                                        <div
-                                            class="hover-1-content px-4 py-1 bg-opacity-50 w-100 bg-black"
-                                        >
-                                            <h3
-                                                class="hover-1-title text-uppercase font-weight-bold mb-0 text-primary"
-                                            >
-                                                Clara
-                                            </h3>
-                                            <p
-                                                class="hover-1-description font-weight-light mb-0"
-                                            >
-                                                Nuestra peluquera experta en
-                                                alisados.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </label>
-                                <input
-                                    type="radio"
-                                    id="peluquero2"
-                                    name="hairdresser"
-                                    class="btn-check peluqueros-check"
-                                    value="2"
-                                    <%= locals.oldData && (oldData.hairdresser == "2") ? "checked" : null %>
-                                />
-                                <div class="card-body bg-black" id="frank">
-                                    <h5 class="card-title text-primary">
-                                        Clara
-                                    </h5>
-                                    <p class="card-text text-white">
-                                        Nuestra peluquera experta en alisados.
-                                    </p>
-                                    <span
-                                        class="badge rounded-circle text-dark bg-primary"
-                                        >✓</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                            <div class="card w-100 border-primary bg-black">
-                                <label
-                                    for="peluquero3"
-                                    class="container-fluid w-100 m-0 p-0"
-                                >
-                                    <div
-                                        class="hover hover-1 text-white rounded"
-                                    >
-                                        <img
-                                            src="/images/barbers/barber3.png"
-                                            class="card-img-top"
-                                            alt="Peluquero 3"
-                                        />
-                                        <div
-                                            class="hover-1-content px-4 py-1 bg-opacity-50 w-100 bg-black"
-                                        >
-                                            <h3
-                                                class="hover-1-title text-uppercase font-weight-bold mb-0 text-primary"
-                                            >
-                                                Cinthia
-                                            </h3>
-                                            <p
-                                                class="hover-1-description font-weight-light mb-0"
-                                            >
-                                                Nuestra peluquera experta en
-                                                tinturas.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </label>
-                                <input
-                                    type="radio"
-                                    id="peluquero3"
-                                    name="hairdresser"
-                                    class="btn-check peluqueros-check"
-                                    value="3"
-                                    <%= locals.oldData && (oldData.hairdresser == "3") ? "checked" : null %>
-                                />
-                                <div class="card-body bg-black" id="frank">
-                                    <h5 class="card-title text-primary" id="q">
-                                        Cinthia
-                                    </h5>
-                                    <p class="card-text text-white" id="w">
-                                        Nuestra peluquera experta en tinturas.
-                                    </p>
-                                    <span
-                                        class="badge rounded-circle text-dark bg-primary"
-                                        >✓</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
+                    <div class="w-100">
+                        <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#confirm"
+                            class="btn btn-outline-primary m-auto mb-3 mt-5 w-50"
+                            form="turns-form"
+                        >
+                            RESERVAR
+                        </button>
                     </div>
-                    <button
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#confirm"
-                        class="btn btn-outline-primary m-auto mb-3 mt-5 w-50 d-block"
-                        form="turns-form"
-                    >
-                        RESERVAR
-                    </button>
 
                     <div
                         class="modal fade"
@@ -288,7 +183,7 @@
 
                     <button
                         type="reset"
-                        class="btn btn-outline-primary m-auto w-25 d-block p-1"
+                        class="btn btn-outline-primary m-auto mb-3 w-25 d-block p-1"
                     >
                         Limpiar
                     </button>

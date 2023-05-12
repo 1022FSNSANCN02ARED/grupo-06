@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
@@ -125,7 +123,6 @@ module.exports = {
             });
 
             await createdProduct.addCategory(product.category_id);
-            console.log(createdProduct);
             return res.redirect("/products/details/" + createdProduct.id);
         } else {
             const createdProduct = await db.Product.create({
