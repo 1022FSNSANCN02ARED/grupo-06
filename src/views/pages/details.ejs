@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+    </head>
 
-<head>
-    <%- include('../partials/head') %>
-</head>
+    <body>
+        <header class="header"><%- include('../partials/header') %></header>
 
-<body>
-    <header class="header">
-        <%- include('../partials/header') %>
-    </header>
-
-    <main class="main-product">
-        <div class="product">
-            <div class="product-details">
-                <div class="product-image">
-                    <img src="<%= product.image %>" alt="Product icon">
-                </div>
-                <div class="product-info">
-                    <p class="product-brand"><%= product.brand %></p>
-                    <h3 class="product-title"><%= product.title %></h3>
-                    <% if(product.discount && product.discount > 0) { %>
-                        <del class="product-old-price">$<%= product.price %></del> <small class="product-discount">-<%= product.discount %> OFF</small>
-                        <p class="product-new-price">$<%= product.price - (product.price * (product.discount / 100)) %></p>
-                    <% } else { %>
-                        <p class="product-new-price">$<%= product.price %></p>  
-                    <% } %>
-                    <div class="product-btns">
-                        <form class="product-cart-form">
-                            <input type="submit" value="Agregar al carrito">
-                        </form>
-                        <form class="product-buy-form">
-                            <input type="submit" value="Comprar ahora">
-                        </form>
+        <main class="main-product">
+            <div class="product">
+                <div class="product-details">
+                    <div class="product-image">
+                        <img src="<%= product.image %>" alt="Product icon" />
                     </div>
-                    <hr class="division-bar">
-                    <div class="product-description">
-                        <h3>Descripción del producto</h3>
-                        <div class="product-textarea">
-                            <p><%= product.description %></p>
+                    <div class="product-info">
+                        <p class="product-brand"><%= product.brand %></p>
+                        <h3 class="product-title"><%= product.name %></h3>
+                        <% if(product.discount && product.discount > 0) { %>
+                        <del class="product-old-price"
+                            >$<%= product.price %></del
+                        >
+                        <small class="product-discount"
+                            >-<%= product.discount %> OFF</small
+                        >
+                        <p class="product-new-price">
+                            $<%= product.price - (product.price *
+                            (product.discount / 100)) %>
+                        </p>
+                        <% } else { %>
+                        <p class="product-new-price">$<%= product.price %></p>
+                        <% } %>
+                        <div class="product-btns">
+                            <form class="product-cart-form">
+                                <input
+                                    type="submit"
+                                    value="Agregar al carrito"
+                                />
+                            </form>
+                            <form class="product-buy-form">
+                                <input type="submit" value="Comprar ahora" />
+                            </form>
+                        </div>
+                        <hr class="division-bar" />
+                        <div class="product-description">
+                            <h3>Descripción del producto</h3>
+                            <div class="product-textarea">
+                                <p><%= product.description %></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <footer class="footer-catalogo">
-        <%- include('../partials/footer') %>
-    </footer>
-</body>
-
+        <footer class="footer-catalogo">
+            <%- include('../partials/footer') %>
+        </footer>
+    </body>
 </html>
