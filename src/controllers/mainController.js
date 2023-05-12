@@ -24,8 +24,6 @@ module.exports = {
 
         const topThreeProducts = products.slice(0, 3);
 
-        console.log(topThreeProducts)
-
         return res.render("home", {topThreeProducts});
     },
     loginProcess: async (req, res) => {
