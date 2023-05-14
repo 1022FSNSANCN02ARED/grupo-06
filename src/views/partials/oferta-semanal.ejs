@@ -3,12 +3,22 @@
    
 <div class="home-ofertas"> 
   <% for(const oneProduct of topThreeProducts){ %>
-    <a href="/products/details/<%= oneProduct.id %>">
-  <div class="article-block">
-    <img class="img-catalogo img-left1" src="<%= oneProduct.image %>" alt="">
-    <p class="description1"><%= oneProduct.description %></p>
-  </div></a>
 
-  
+  <article class="articulo-venta-catalogo">
+    <a href=" /products/details/<%= oneProduct.id %>">
+    <img src="<%= oneProduct.image %>" alt="" class="imagen-articulo-catalogo" />
+    <div class="info-catalogo">
+      <p class="precio-ctlgo">
+        <%= oneProduct.price %>
+      </p>
+      <p class="descuento-ctlgo">
+        <%= oneProduct.discount %>
+      </p>
+      <p class="descripcion-ctlgo">
+        <%= oneProduct.description %>
+      </p>
+    </div>
+  </a>
+  </article>
 <% } %>
 </div>

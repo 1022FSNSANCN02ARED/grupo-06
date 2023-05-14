@@ -219,7 +219,10 @@ ul {
   .text-img{
     color: #fca211;
     font-size: 20px;
+    font-weight: bold;
   }
+
+  .btn-cat{background-color: black;}
 
   .d-content{
     display:contents;
