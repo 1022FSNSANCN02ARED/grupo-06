@@ -24,9 +24,7 @@ module.exports = {
 
         const topThreeProducts = products.slice(0, 3);
 
-        console.log(topThreeProducts)
-
-        return res.render("home", {topThreeProducts});
+        return res.render("home", { topThreeProducts });
     },
     loginProcess: async (req, res) => {
         const resultValidation = validationResult(req);
@@ -168,6 +166,7 @@ module.exports = {
             password: user.password,
             cellphone: user.phone,
             avatar: user.avatar,
+            isAdmin: false,
         });
 
         return res.redirect("/");
@@ -185,23 +184,23 @@ module.exports = {
     turns: async (req, res) => {
         const hairdressers = await db.peluqueros.findAll();
 
-        console.log(hairdressers);
+        const isLogged = res.locals.isLogged;
 
         return res.render("pages/turns", {
             hairdressers: hairdressers,
+            isLogged: isLogged,
         });
     },
-    turnsProcess: (req, res) => {
-        if (!res.locals.isLogged) {
-            alert("Debes estar logueado.");
-        }
-        // Poner validación logging in antes de enviar form, de preferencia con js para front
+    turnsProcess: async (req, res) => {
+        const hairdressers = await db.peluqueros.findAll();
 
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.errors);
             return res.render("pages/turns", {
                 errors: resultValidation.mapped(),
+                hairdressers: hairdressers,
                 oldData: req.body,
             });
         }

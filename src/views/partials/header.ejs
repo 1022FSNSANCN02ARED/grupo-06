@@ -127,7 +127,13 @@
                     aria-label="Close"
                 ></button>
             </div>
-            <form role="login" action="/login" method="post" id="login-form">
+            <form
+                role="login"
+                action="/login"
+                method="post"
+                id="login-form"
+                onsubmit="saveUsername()"
+            >
                 <div class="offcanvas-body">
                     <ul class="navbar-nav nav-labels flex-grow-1 pe-3">
                         <% if (locals.isLogged) { %>
@@ -155,7 +161,10 @@
                                     >My profile</a
                                 >
                                 <li><hr class="dropdown-divider" /></li>
-                                <a class="dropdown-item" href="/logout"
+                                <a
+                                    class="dropdown-item"
+                                    href="/logout"
+                                    onclick="deleteUsername()"
                                     >Logout</a
                                 >
                             </ul>
@@ -245,3 +254,4 @@
     </div>
 </nav>
 <div style="margin-bottom: 85px"></div>
+<script src="/scripts/isLogged.js"></script>
