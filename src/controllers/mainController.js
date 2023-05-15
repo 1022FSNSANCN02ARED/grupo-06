@@ -230,4 +230,55 @@ module.exports = {
 
         return res.redirect("/");
     },
-};
+    editProfile: async(req, res) => {
+        
+        console.log(req.session.userLogged)
+    
+        const resultValidation = validationResult(req);
+
+        const UserToEdit = await db.Users.findByPk(req.session.userLogged.id);
+
+        
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.mapped())
+            return res.render("pages/profile", {
+                
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                user: req.session.userLogged
+            });
+        }
+        
+
+        
+        if (UserToEdit) {
+            let validationPassword = bcryptjs.compareSync(
+                req.body.oldPass,
+                UserToEdit.password
+            );
+            if (validationPassword && req.body.newPass) {
+                let newPassword = bcryptjs.hashSync(req.body.newPass, 10)
+                    UserToEdit.password= newPassword;
+                }}
+
+        
+                const User = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            userName: req.body.userName,
+            email: req.body.email,
+            cellphone: req.body.cell,
+            password: UserToEdit.password
+        }
+                
+                
+            await UserToEdit.update(User);
+
+            
+            res.clearCookie("userCookie");
+            req.session.destroy();
+
+    return res.redirect("/");
+
+    }
+}
