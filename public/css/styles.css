@@ -244,7 +244,7 @@ ul {
 
 
 .info-barber{
-    background-color:rgba(0, 0, 0, 0.5);
+    background-image: url("../images/patron/patron-barber-2.png");
     min-height: 300px;
 }
 
@@ -1759,4 +1759,53 @@ al soltar el click */
 
 .border-product {
     border: 3px solid #fca311;
+}
+
+
+/* 404 */
+.img-nf {
+    width: 35%;
+}
+.container-nf{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
+   background-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 33, 61, 1) 25%,
+    rgba(91 104 133) 50%,
+    rgba(20, 33, 61, 1) 75%,
+    rgba(0, 0, 0, 1) 100%
+   );
+   background-size: 200% 200%;
+   animation: movimiento 5s linear infinite alternate;
+}
+@keyframes movimiento {
+    from {
+background-position: 0 0;
+    }
+    to{
+background-position: 100% 100%;
+    }
+}
+.h1-nf{
+    font-family: 'Shadows Into Light', cursive;
+     color: rgb(233, 238, 245);
+    font-size: 30px;
+    padding: 20px;
+}
+.btn-nf{
+    padding: 13px 30px;
+    border-radius: 15px;
+    border: none;
+    background: rgb(5, 129, 245);
+    color: white;
+}
+@media screen and (max-width:630px){
+    .h1-nf{        
+        font-size: 16px;        
+    }
 }
