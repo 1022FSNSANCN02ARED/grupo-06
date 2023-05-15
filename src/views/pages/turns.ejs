@@ -13,7 +13,7 @@
                     Reserva tu turno:
                 </h1>
                 <form
-                    action=""
+                    action="/turnos"
                     method="post"
                     class="container flex-column bg-5"
                     id="turns-form"
@@ -181,12 +181,14 @@
                         </div>
                     </div>
 
-                    <button
-                        type="reset"
-                        class="btn btn-outline-primary m-auto mb-3 w-25 d-block p-1"
-                    >
-                        Limpiar
-                    </button>
+                    <div class="w-100">
+                        <button
+                            type="reset"
+                            class="btn btn-outline-primary m-auto mb-3 w-25 d-block p-1"
+                        >
+                            Limpiar
+                        </button>
+                    </div>
                 </form>
                 <div class="container bg-5 rounded-bottom-3">
                     <p class="text-primary">¿Cómo llegar?</p>
@@ -202,4 +204,5 @@
         </main>
         <footer><%- include('../partials/footer') %></footer>
     </body>
+    <script src="/scripts/turnsProcess.js"></script>
 </html>

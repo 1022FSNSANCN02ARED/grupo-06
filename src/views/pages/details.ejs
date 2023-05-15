@@ -21,7 +21,7 @@
                             >$<%= product.price %></del
                         >
                         <small class="product-discount"
-                            >-<%= product.discount %> OFF</small
+                            >-<%= product.discount %>% OFF</small
                         >
                         <p class="product-new-price">
                             $<%= product.price - (product.price *
@@ -33,6 +33,7 @@
                         <div class="product-btns">
                             <form class="product-cart-form" method="POST" action="/carrito/add/<%=product.id%>">
                                 <input
+                                    class="product-cart-button"
                                     type="submit"
                                     value="Agregar al carrito"
                                 />

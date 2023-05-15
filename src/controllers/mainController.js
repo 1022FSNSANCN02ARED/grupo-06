@@ -24,7 +24,7 @@ module.exports = {
 
         const topThreeProducts = products.slice(0, 3);
 
-        return res.render("home", {topThreeProducts});
+        return res.render("home", { topThreeProducts });
     },
     loginProcess: async (req, res) => {
         const resultValidation = validationResult(req);
@@ -60,6 +60,7 @@ module.exports = {
                     res.cookie("userCookie", req.body.login, {
                         maxAge: 60000 * 43200,
                     });
+                delete res.locals.password;
                 return res.redirect("/profile");
             }
             return res.render("pages/register", {
@@ -82,6 +83,7 @@ module.exports = {
                     res.cookie("userCookie", req.body.login, {
                         maxAge: 60000 * 43200,
                     });
+                delete res.locals.password;
                 return res.redirect("/profile");
             }
             return res.render("pages/register", {
@@ -166,6 +168,7 @@ module.exports = {
             password: user.password,
             cellphone: user.phone,
             avatar: user.avatar,
+            isAdmin: false,
         });
 
         return res.redirect("/");
@@ -183,23 +186,23 @@ module.exports = {
     turns: async (req, res) => {
         const hairdressers = await db.peluqueros.findAll();
 
-        console.log(hairdressers);
+        const isLogged = res.locals.isLogged;
 
         return res.render("pages/turns", {
             hairdressers: hairdressers,
+            isLogged: isLogged,
         });
     },
-    turnsProcess: (req, res) => {
-        if (!res.locals.isLogged) {
-            alert("Debes estar logueado.");
-        }
-        // Poner validación logging in antes de enviar form, de preferencia con js para front
+    turnsProcess: async (req, res) => {
+        const hairdressers = await db.peluqueros.findAll();
 
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.errors);
             return res.render("pages/turns", {
                 errors: resultValidation.mapped(),
+                hairdressers: hairdressers,
                 oldData: req.body,
             });
         }
@@ -211,7 +214,7 @@ module.exports = {
 
         console.log(req.body);
 
-        return res.send("Validaciones correctas");
+        return res.redirect("/");
     },
     userDelete: async (req, res) => {
         let user = req.session.userLogged;
@@ -227,4 +230,55 @@ module.exports = {
 
         return res.redirect("/");
     },
-};
+    editProfile: async(req, res) => {
+        
+        console.log(req.session.userLogged)
+    
+        const resultValidation = validationResult(req);
+
+        const UserToEdit = await db.Users.findByPk(req.session.userLogged.id);
+
+        
+        if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.mapped())
+            return res.render("pages/profile", {
+                
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                user: req.session.userLogged
+            });
+        }
+        
+
+        
+        if (UserToEdit) {
+            let validationPassword = bcryptjs.compareSync(
+                req.body.oldPass,
+                UserToEdit.password
+            );
+            if (validationPassword && req.body.newPass) {
+                let newPassword = bcryptjs.hashSync(req.body.newPass, 10)
+                    UserToEdit.password= newPassword;
+                }}
+
+        
+                const User = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            userName: req.body.userName,
+            email: req.body.email,
+            cellphone: req.body.cell,
+            password: UserToEdit.password
+        }
+                
+                
+            await UserToEdit.update(User);
+
+            
+            res.clearCookie("userCookie");
+            req.session.destroy();
+
+    return res.redirect("/");
+
+    }
+}

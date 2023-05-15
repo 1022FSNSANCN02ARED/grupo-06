@@ -127,7 +127,13 @@
                     aria-label="Close"
                 ></button>
             </div>
-            <form role="login" action="/login" method="post" id="login-form">
+            <form
+                role="login"
+                action="/login"
+                method="post"
+                id="login-form"
+                onsubmit="saveUsername()"
+            >
                 <div class="offcanvas-body">
                     <ul class="navbar-nav nav-labels flex-grow-1 pe-3">
                         <% if (locals.isLogged) { %>
@@ -145,18 +151,21 @@
                                     width="40"
                                     style="border-radius: 100%"
                                 />
-                                Hi <%= userLogged.name %>
+                                Hi <%= userLogged.userName %>
                             </a>
                             <ul
                                 class="dropdown-menu"
                                 aria-labelledby="navbarDropdown"
                             >
                                 <a class="dropdown-item" href="/profile"
-                                    >My profile</a
+                                    ><p class="text-primary">Perfil</p></a
                                 >
                                 <li><hr class="dropdown-divider" /></li>
-                                <a class="dropdown-item" href="/logout"
-                                    >Logout</a
+                                <a
+                                    class="dropdown-item"
+                                    href="/logout"
+                                    onclick="deleteUsername()"
+                                    ><p class="text-primary">Logout</p></a
                                 >
                             </ul>
                         </li>
@@ -165,14 +174,15 @@
                             <input class="form-control me-2 p-1 navbar-input
                             bg-black text-primary <%= locals.errors &&
                             errors.login ? "is-invalid" : null %>" type="text"
-                            placeholder="Email/Usuario" aria-label="login"
-                            name="login" required value="<%= locals.oldData ?
-                            oldData.login : null %>"/> <input
+                            placeholder="Email/Usuario" id= "login"
+                            aria-label="login" name="login" required value="<%=
+                            locals.oldData ? oldData.login : null %>"/> <input
                             class="form-control me-2 p-1 navbar-input bg-black
                             text-primary <%= locals.errors &&
                             errors.loginPassword ? "is-invalid" : null %>"
-                            type="password" required placeholder="Contraseña"
-                            aria-label="login" name="loginPassword" />
+                            type="password" id="loginPassword" required
+                            placeholder="Contraseña" aria-label="login"
+                            name="loginPassword" />
                             <button
                                 class="btn btn-outline-primary"
                                 type="submit"
@@ -200,8 +210,15 @@
                                 <span class="text-danger d-block">
                                     *<%= errors.login.msg %>
                                 </span>
-                                <% } %> <% if (locals.errors &&
-                                errors.loginPassword) { %>
+                                <% } %>
+                                <p
+                                    class="invalid-feedback text-danger"
+                                    id="loginp"
+                                >
+                                    * Ingresa un usuario o email válido.
+                                </p>
+                                <% if (locals.errors && errors.loginPassword) {
+                                %>
                                 <span class="text-danger d-block">
                                     *<%= errors.loginPassword.msg %>
                                 </span>
@@ -245,3 +262,5 @@
     </div>
 </nav>
 <div style="margin-bottom: 85px"></div>
+<script src="/scripts/isLogged.js"></script>
+<script src="/scripts/loginForm.js"></script>
