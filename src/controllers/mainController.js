@@ -214,7 +214,7 @@ module.exports = {
 
         console.log(req.body);
 
-        return res.send("Validaciones correctas");
+        return res.redirect("/");
     },
     userDelete: async (req, res) => {
         let user = req.session.userLogged;
