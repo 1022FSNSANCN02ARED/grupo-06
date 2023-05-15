@@ -118,6 +118,47 @@ const validations = {
             .notEmpty()
             .withMessage("Ingresa la descripción del producto."),
     ],
+    editProfile:[
+        body("firstName")
+            .notEmpty()
+            .withMessage("Debes escribir un nombre.")
+            .bail()
+            .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
+            .withMessage("Solo se admiten letras y números.")
+            .bail()
+            .isLength({ max: 20 })
+            .withMessage("Debe tener como máximo 20 caracteres."),
+        body("lastName")
+            .notEmpty()
+            .withMessage("Debes escribir un apellido.")
+            .bail()
+            .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
+            .withMessage("Solo se admiten letras y números.")
+            .bail()
+            .isLength({ max: 20 })
+            .withMessage("Debe tener como máximo 20 caracteres."),
+        body("userName")
+            .notEmpty()
+            .withMessage("Debes escribir un nombre de usuario.")
+            .bail()
+            .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
+            .withMessage("Solo se admiten letras y números.")
+            .bail()
+            .isLength({ max: 20 })
+            .withMessage("Debe tener como máximo 20 caracteres."),
+        body("email")
+            .notEmpty()
+            .withMessage("Debes escribir un email válido.")
+            .bail()
+            .isEmail()
+            .withMessage("Debes escribir un email en formato válido."),
+        body("cellphone")
+            .notEmpty()
+            .withMessage("Debes escribir un numero de celular.")
+            .bail()
+            .isLength({ min: 6, max: 20 })
+            .withMessage("Debe tener entre 6 y 20 dígitos."),   
+    ]
 };
 
 module.exports = validations;

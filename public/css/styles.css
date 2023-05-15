@@ -214,41 +214,43 @@ ul {
 
 .carousel-item img.custom-img {
     height: 500px;
-  }
+}
 
-  .text-img{
+.text-img {
     color: #fca211;
     font-size: 20px;
     font-weight: bold;
-  }
+}
 
-  .btn-cat{background-color: black;}
+.btn-cat {
+    background-color: black;
+}
 
-  .d-content{
-    display:contents;
-  }
+.d-content {
+    display: contents;
+}
 
-  .pie-img{
+.pie-img {
     background-color: rgba(0, 0, 0, 0.500);
     max-height: 80px;
-  }
+}
 
-.backgraund-home{
-    
-        background-image: url("../images/backgrounds/background-turns.jpg");
-        background-size: cover;
-        background-position: center;
-        animation: fadeIn 1.5s ease;
-    
+.backgraund-home {
+
+    background-image: url("../images/backgrounds/background-turns.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1.5s ease;
+
 }
 
 
-.info-barber{
-    background-color:rgba(0, 0, 0, 0.5);
+.info-barber {
+    background-color: rgba(0, 0, 0, 0.5);
     min-height: 300px;
 }
 
-.p-info{
+.p-info {
     font-size: 18px;
     padding: 30px;
     color: #e5e5e5;
@@ -309,6 +311,7 @@ ul {
     font-size: 30px;
     text-shadow: -1px 0 #14213d, 0 1px #14213d, 1px 0 #14213d, 0 -1px #14213d;
 }
+
 .titulos-home {
     width: 100%;
     text-align: center;
@@ -343,6 +346,86 @@ ul {
 }
 
 /*---------------------------------------------------------------------------------*/
+.main-pf{
+background-color: rgba(20, 33, 61, 0.507);
+}
+
+.cont-Profile {
+    width: 60%;
+    height: 600px;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 40px;
+    border: 5px ridge rgb(252, 162, 17);
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.501);
+}
+
+.rounded-circle{
+    width: 100px; height: 100px
+}
+
+.div-profile{
+    width: 30%;
+    background-color: rgb(252, 162, 17);
+    height: 31%;
+    padding: 5px;
+    border: 5px ridge black;
+    border-radius: 10px;
+}
+.p-pf{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.info-profile{
+    width: 70%;
+    padding-left: 30px;
+}
+
+.div-inf-profile{
+    padding: 20px;
+ background-color: rgba(229, 229, 229, 0.5);
+}
+
+.div-inf-profile ul{
+    list-style: none;
+    padding: 0;
+  }
+
+.div-inf-profile ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .btn-edit{
+    flex: 0.25;
+    margin: 20px;
+  }
+
+  .span-item {
+    width: 80px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+  .span-item + input {
+    flex: 0.75;
+    
+  }
+
+.item-info{
+    margin: 20px;
+}
+
+
+
+  
+
+/*---------------------------------------------------------------------------------*/
 
 .btn-sobrenosotros:hover {
     color: rgb(255, 255, 255);
@@ -374,15 +457,6 @@ ul {
     transition: all 0.35s;
 }
 
-/*carrousel*/
-.container {
-    background-color: white;
-    width: 100%;
-    padding: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
 
 ul,
 li {
@@ -447,6 +521,7 @@ ul.slider li:target {
     font-size: 30px;
     border-radius: 100%;
 }
+
 /*Catalogo Home*/
 
 
@@ -458,6 +533,7 @@ ul.slider li:target {
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .btn-catcompl {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -611,6 +687,7 @@ ul.slider li:target {
     font-family: "Lato", sans-serif;
     font-size: 22px;
 }
+
 .servicio1 {
     background: antiquewhite;
     border-left-style: dotted;
@@ -635,6 +712,7 @@ ul.slider li:target {
     border-top-style: dotted;
     margin-left: 16px;
 }
+
 .servicios-p {
     text-align: center;
     font-family: Papyrus;
@@ -647,13 +725,16 @@ ul.slider li:target {
     height: 149px;
     display: inline;
 }
+
 .img-servicios-sect {
     text-align: center;
     margin-top: 20px;
 }
+
 .div-img-servicios {
     display: inline-block;
 }
+
 .w-serv-img1 {
     width: 35%;
     height: 100px;
@@ -666,6 +747,7 @@ ul.slider li:target {
 .w-serv-img3 {
     width: 55%;
 }
+
 .w-serv-img4 {
     width: 35%;
 }
@@ -727,7 +809,7 @@ ul.slider li:target {
     outline: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.formulario_input:focus + .formulario_label {
+.formulario_input:focus+.formulario_label {
     margin-top: -130px;
 }
 
@@ -767,14 +849,12 @@ ul.slider li:target {
     width: 100%;
     margin: auto;
     background: rgb(0, 0, 0);
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(20, 33, 61, 1) 25%,
-        rgba(229, 229, 229, 1) 50%,
-        rgba(20, 33, 61, 1) 75%,
-        rgba(0, 0, 0, 1) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(20, 33, 61, 1) 25%,
+            rgba(229, 229, 229, 1) 50%,
+            rgba(20, 33, 61, 1) 75%,
+            rgba(0, 0, 0, 1) 100%);
     padding: 20px;
 }
 
@@ -843,11 +923,11 @@ ul.slider li:target {
     height: 0;
 }
 
-.radio + .turnos-img-peluquero {
+.radio+.turnos-img-peluquero {
     cursor: pointer;
 }
 
-.radio:checked + .turnos-img-peluquero {
+.radio:checked+.turnos-img-peluquero {
     outline: 2px solid #f00;
 }
 
@@ -1251,6 +1331,7 @@ al soltar el click */
 /* Media Query's */
 
 @media (min-width: 481px) {
+
     /* Catalogo */
     .articulo-venta-catalogo {
         width: 48%;
@@ -1420,6 +1501,7 @@ al soltar el click */
 }
 
 @media (min-width: 1280px) {
+
     /* Catalogo */
     .articulo-venta-catalogo {
         width: 25%;
@@ -1598,16 +1680,16 @@ al soltar el click */
     }
 }
 
-.peluqueros-check + #frank,
-.peluqueros-check + #ashley,
-.peluqueros-check + #sam {
+.peluqueros-check+#frank,
+.peluqueros-check+#ashley,
+.peluqueros-check+#sam {
     display: none;
     transition: all 0.4s;
 }
 
-.peluqueros-check:checked + #frank,
-.peluqueros-check:checked + #ashley,
-.peluqueros-check:checked + #sam {
+.peluqueros-check:checked+#frank,
+.peluqueros-check:checked+#ashley,
+.peluqueros-check:checked+#sam {
     display: block;
     transition: all 0.4s;
     border-radius: 5%;
@@ -1733,12 +1815,12 @@ al soltar el click */
     min-height: 1100px;
 }
 
-#enOferta + #oferta {
+#enOferta+#oferta {
     display: none;
     transition: all 0.4s;
 }
 
-#enOferta:checked + #oferta {
+#enOferta:checked+#oferta {
     display: block;
     transition: all 0.4s;
     border-radius: 5%;
