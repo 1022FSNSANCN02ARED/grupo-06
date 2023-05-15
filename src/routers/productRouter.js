@@ -5,7 +5,7 @@ const upload = require("../middlewares/multer");
 const validations = require("../middlewares/validations");
 
 router.get("/", productController.catalogue);
-router.get("/carrito", productController.cart);
+
 router.get("/create", productController.create);
 router.post(
     "/create",

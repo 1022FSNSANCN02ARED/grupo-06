@@ -31,13 +31,13 @@
                         <p class="product-new-price">$<%= product.price %></p>
                         <% } %>
                         <div class="product-btns">
-                            <form class="product-cart-form">
+                            <form class="product-cart-form" method="POST" action="/carrito/add/<%=product.id%>">
                                 <input
                                     type="submit"
                                     value="Agregar al carrito"
                                 />
                             </form>
-                            <form class="product-buy-form">
+                            <form class="product-buy-form" method="POST" action="/carrito/buy/<%=product.id%>">
                                 <input type="submit" value="Comprar ahora" />
                             </form>
                         </div>

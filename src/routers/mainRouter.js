@@ -8,4 +8,8 @@ router.use("/", usersRouter);
 const productRouter = require("./productRouter");
 router.use("/products", productRouter);
 
+const cartRouter = require("./cartRouter");
+router.use("/carrito", cartRouter);
+
+
 module.exports = router;
