@@ -40,6 +40,8 @@ ul {
     gap: 10px;
 }
 
+.navbar{width: 100vw;}
+
 .logo img {
     height: 60px;
 }
@@ -280,11 +282,21 @@ ul {
     background-position: center;
     animation: fadeIn 1.5s ease;
 }
-
+.body-home{
+    width: 100vw;
+}
 .info-barber {
-    background-image: url("../images/patron/patron-barber-2.png");
     min-height: 300px;
 }
+
+.background-main-home{
+
+    background-image: url("../images/patron/patron-barber-2.png");
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1.5s ease;
+}
+
 
 /*.info-barber{
     background-image: url("../images/patron/patron-barber-2.png");
@@ -295,6 +307,7 @@ ul {
     font-size: 18px;
     padding: 30px;
     color: #e5e5e5;
+    text-align: center;
 }
 
 .backgraund-main {
@@ -1040,6 +1053,7 @@ ul.slider li:target {
     place-items: center;
     margin: 0 auto;
     gap: 2rem;
+    width: 75%;
 }
 
 .week-product-image {
