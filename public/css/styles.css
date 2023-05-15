@@ -94,8 +94,6 @@ ul {
     font-size: 22px;
 }
 
-<<<<<<< HEAD
-=======
 /* utilizados - catalogo*/
 
 .body-catalogo {
@@ -247,7 +245,6 @@ ul {
 
 /* utilizados - catalogo*/
 
->>>>>>> fd56ba3372bb0c2627b42f658b57646837456d62
 /* Body */
 
 /*main Home*/
@@ -1357,80 +1354,7 @@ ul.slider li:target {
     display: none;
 }
 
-/* pie de página */
-/*
-.footer {
-    background-color: var(--black);
-    padding: 10px;
-    width: 100%;
-    margin-top: 50px;
-}
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.ftr-copy p {
-    margin: 0;
-    text-align: center;
-    color: var(--white);
-    font-size: 20px;
-}
-
-.ftr-logo img {
-    max-width: 80px;
-}
-
-.ftr-nav-ul {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.ftr-nav-a i {
-    color: var(--white);
-    font-size: 20px;
-}
-*/
-/* .product-footer {
-    background-color: var(--oxford-blue);
-    padding: 20px;
-}
-
-.product-footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.copyright {
-    color: var(--white);
-    text-align: center;
-}
-
-.ftr-nav-ul {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.ftr-nav-li-a {
-    color: var(--white);
-} */
-
-/* Partials */
-
-/* Header */
-
-/* Footer */
-
-/* Animaciones */
-
-/* Medias hover */
 
 /* Al tener (hover: hover), el mismo no actuará
 a menos que haya un cursor. */
@@ -1546,97 +1470,6 @@ al soltar el click */
     }
 }
 
-/* MEDIA QUERY'S A REVISAR */
-/*
-@media (min-width: 550px) {
-    .search-bar form {
-        width: 400px;
-    }
-}
-
-@media (min-width: 960px) {
-    .menu-options {
-        display: none;
-    }
-}
-
-@media (max-width: 586px) {
-    .article-block3 {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .sobrenosotros {
-        display: block;
-        background-blend-mode: normal;
-        margin-right: auto;
-        margin-left: auto;
-    }
-}
-
-@media (min-width: 769px) {
-    .media-contacto {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-bottom: 30px;
-    }
-    .sobrenosotros {
-        display: flex;
-        align-items: center;
-    }
-
-    .img-sobrenosotros {
-        width: 45%;
-        margin-left: 20px;
-    }
-    .backgraund-main:hover {
-        filter: opacity(0.5);
-    }
-    .img-catalogo:hover {
-        -webkit-transform: scale(1.3);
-        transform: scale(1.3);
-    }
-}
-
-@media (max-width: 990px) {
-    .promotions {
-        display: none;
-    }
-}
-
-@media (min-width: 550px) {
-    .search-bar form {
-        width: 400px;
-    }
-}
-
-@media (min-width: 960px) {
-    .menu-options {
-        display: none;
-    }
-}
-
-@media (min-width: 960px) {
-    .products {
-        display: grid;
-        grid-template-columns: 0.5fr 2.5fr;
-        padding: 20px;
-    }
-}
-
-@media (min-width: 960px) {
-    .categories {
-        display: block;
-    }
-
-    .filters {
-        display: block;
-    }
-}
-
-*/
-
-/* Turns */
 
 .bg-image-turns {
     background-image: url("../images/backgrounds/background-turns.jpg");
