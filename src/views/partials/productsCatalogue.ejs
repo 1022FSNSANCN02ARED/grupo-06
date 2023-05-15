@@ -10,7 +10,7 @@
             <% if(products[arrayVacio[i]].discount) { %>
               <div class="features-product-info">
                 <del><p class="features-product-old-price">$<%= products[arrayVacio[i]].price%></p></del>
-                <span class="features-product-new-price">$<%= products[arrayVacio[i]].price - (products[arrayVacio[i]].price * (products[arrayVacio[i]].discount / 100)) %></span> <small class="features-product-discount">-<%= products[arrayVacio[i]].discount %>% OFF</small>
+                <span class="features-product-new-price">$<%= products[arrayVacio[i]].price - products[arrayVacio[i]].price * products[arrayVacio[i]].discount / 100 %></span> <small class="features-product-discount">-<%= products[arrayVacio[i]].discount %>% OFF</small>
                 <h3 class="features-product-title"><%= products[arrayVacio[i]].name %></h3>
               </div>
               <% } else { %>
@@ -34,7 +34,7 @@
             <img class="in-offer-product-image" src="<%= ofertas[i].image %>" alt="Product icon">
             <div class="in-offer-product-info">
               <del><p class="in-offer-product-old-price">$<%= ofertas[i].price%></p></del>
-              <span class="in-offer-product-new-price">$<%= ofertas[i].price - (ofertas[i].price * (ofertas[i].price / 100)) %></span> <small class="in-offer-product-discount">-<%= ofertas[i].discount %>% OFF</small>
+              <span class="in-offer-product-new-price">$<%= ofertas[i].price - ofertas[i].price * ofertas[i].discount / 100 %></span> <small class="in-offer-product-discount">-<%= ofertas[i].discount %>% OFF</small>
               <h3 class="in-offer-product-title"><%= ofertas[i].name %></h3>
             </div>
           </article>
@@ -53,7 +53,7 @@
             <% if(products[i].discount) { %>
             <div class="catalogue-product-info">
               <del><p class="catalogue-product-old-price">$<%= products[i].price%></p></del>
-              <span class="catalogue-product-new-price">$<%= products[i].price - (products[i].price * (products[i].price / 100)) %></span> <small class="catalogue-product-discount">-<%= products[i].discount %>% OFF</small>
+              <span class="catalogue-product-new-price">$<%= products[i].price - products[i].price * products[i].discount / 100 %></span> <small class="catalogue-product-discount">-<%= products[i].discount %>% OFF</small>
               <h3 class="catalogue-product-title"><%= products[i].name %></h3>
             </div>
             <% } else { %>
