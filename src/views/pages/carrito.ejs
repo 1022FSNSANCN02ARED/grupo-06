@@ -11,46 +11,53 @@
         <div class="w-h-90 text-center mt-5 mb">
             <section class="rounded-top-3 text-center container bg-5 mb-0 text-primary">
                 <article> 
-                    <h2 >Carrito <i class="fa-solid fa-cart-shopping" ></i></h2>
+                    <h2>Carrito <i class="fa-solid fa-cart-shopping"></i></h2>
                 </article>
+                <% if (cartProducts.length > 0) { %>
+                <% cartProducts.forEach(cartProduct => { %>
                 <article class="container flex-column bg-5">
-                    <div class="form-control text-primary
-                    bg-black border-primary">
+                    <div class="form-control text-primary bg-black border-primary">
                         <div>
                             <img
-                            src="/images/logo-letra-negro.svg"
-                            alt="Logo barberia"
+                            src="<%= cartProduct.product.image %>"
+                            alt="Imagen del producto"
                             class="card-img-top"
                             />
-                            <span>Nombre del producto</span>
-                            <span class="price">Precio: $4000</span>
+                            <span><%= cartProduct.product.name %></span>
+                            <span class="price">Precio: $<%= cartProduct.product.price %></span>
                         </div>
                         <div>
-                            <button type="reset">
-                                <i class="fa-solid fa-trash-can"></i>Eliminar
-                            </button>
                             <!--Boton de sumar/restar cantidad-->
-                            <button type="button" data-quantity="minus" data-field="quantity">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <input type="number" name="quantity" value="0" class="cantidad">
-                            <button type="button" data-quantity="plus" data-field="quantity">
+                            <form action="/carrito/remove/<%= cartProduct.product.id %>?_method=DELETE" method="POST">
+                                <button type="submit" name="operation" value="decrease">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </form>
+                            <input type="number" name="quantity" value="<%= cartProduct.quantity %>" class="cantidad">
+                            <form action="/carrito/increase/<%= cartProduct.product.id %>" method="POST">
+                                <button type="submit" name="operation" value="increase">
                                     <i class="fa fa-plus"></i>
-                            </button>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </article>
+                <% }); %>
+                <% } else { %>
                 <article class="container flex-column bg-5">
-                    <div class="form-control text-primary
-                    bg-black border-primary">
-                        <p>Tu carrito esta vacío</p>
+                    <div class="form-control text-primary bg-black border-primary">
+                        <p>Tu carrito está vacío</p>
                     </div>
                 </article>
+                <% } %>
                 <article class="container flex-column bg-5">
-                    <div class="form-control text-primary
-                    bg-black border-primary">
-                        <p>Total: $4000</p>
-                        <button class="turnos-button">Comprar</button>
+                    <div class="form-control text-primary bg-black border-primary">
+                        <p>Total: $<%= total %></p>
+                        <% if (cartProducts.length > 0) { %>
+                        <form action="/carrito" method="POST">
+                            <button type="submit">Comprar</button>
+                        </form>
+                        <% } %>
                     </div>
                 </article>
             </section>

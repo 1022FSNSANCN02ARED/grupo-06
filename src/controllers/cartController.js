@@ -1,71 +1,123 @@
-const CartProduct = require('../models/cartProduct');
+const db = require("../database/models");
 
 module.exports = {
     getCart: async (req, res) => {
-        const cartProducts = await CartProduct.findAll({
-        where: {
-            user_id: req.user.id,
-        },
-        include: ['product'],
+        const cartProducts = await db.CartProduct.findAll({
+            where: {
+                user_id: res.locals.userLogged.id,
+            },
+            include: ["product"],
         });
-
-        const total = cartProducts.reduce((acc, product) => {
-            return acc + product.quantity * product.product.price;
+    
+        const total = await cartProducts.reduce((acc, product) => {
+            return acc + (product.quantity * product.product.price);
         }, 0);
-        
-        res.render('pages/carrito', { cartProducts, total });
+    
+        return res.render('pages/carrito', { cartProducts, total });
     },
     addToCart: async (req, res) => {
-        const existingCartProduct = await CartProduct.findOne({
+        const existingCartProduct = await db.CartProduct.findOne({
         where: {
-            user_id: req.user.id,
-            product_id: req.body.productId,
+            user_id: res.locals.userLogged.id,
+            product_id: req.params.id,
         },
         });
-
         if (existingCartProduct) {
         existingCartProduct.quantity++;
         await existingCartProduct.save();
         } else {
-            await CartProduct.create({
-                user_id: req.user.id, 
-                product_id: req.body.productId,
+            await db.CartProduct.create({
+                user_id: res.locals.userLogged.id, 
+                product_id: req.params.id,
                 quantity: 1,
         });
         }
-        res.redirect('pages/carrito');
+       return res.redirect('/products/');
+    },
+    buyNow: async (req, res) => {
+        const existingCartProduct = await db.CartProduct.findOne({
+        where: {
+            user_id: res.locals.userLogged.id,
+            product_id: req.params.id,
+        },
+        });
+        if (existingCartProduct) {
+        existingCartProduct.quantity++;
+        await existingCartProduct.save();
+        } else {
+            await db.CartProduct.create({
+                user_id: res.locals.userLogged.id, 
+                product_id: req.params.id,
+                quantity: 1,
+        });
+        }
+       return res.redirect('/carrito');
+    },
+    increaseProduct: async (req, res) => {
+        const existingCartProduct = await db.CartProduct.findOne({
+        where: {
+            user_id: res.locals.userLogged.id,
+            product_id: req.params.id,
+        },
+        });
+        if (existingCartProduct) {
+        existingCartProduct.quantity++;
+        await existingCartProduct.save();
+        } else {
+            await db.CartProduct.create({
+                user_id: res.locals.userLogged.id, 
+                product_id: req.params.id,
+                quantity: 1,
+        });
+        }
+        const cartProducts = await db.CartProduct.findAll({
+            where: {
+                user_id: res.locals.userLogged.id,
+            },
+            include: ["product"],
+        });
+    
+        const total = await cartProducts.reduce((acc, product) => {
+            return acc + (product.quantity * product.product.price);
+        }, 0);
+        return res.render('pages/carrito', { cartProducts, total });
     },
     removeFromCart: async (req, res) => {
         const productId = req.params.id;
-
-        const cartProduct = await CartProduct.findOne({
+        console.log(productId)
+        const productToDelete = await db.CartProduct.findOne({
             where: {
-                userId: req.currentUser.id,
-                productId: productId,
+                user_id: res.locals.userLogged.id,
+                product_id: productId,
             },
         });
-
-        if (!cartProduct) {
-            res.status(404).send('Producto no encontrado');
-            return;
+        if (productToDelete) {
+            if (productToDelete.quantity == 1) {
+                await productToDelete.destroy();
+            } else {
+                productToDelete.quantity--;
+                await productToDelete.save();
+            }
         }
-
-        if (cartProduct.quantity === 1) {
-            await cartProduct.destroy();
-        } else {
-            cartProduct.quantity--;
-            await cartProduct.save();
-        }
-
-        res.redirect('pages/carrito');
+        const cartProducts = await db.CartProduct.findAll({
+            where: {
+                user_id: res.locals.userLogged.id,
+            },
+            include: ["product"],
+        });
+    
+        const total = await cartProducts.reduce((acc, product) => {
+            return acc + (product.quantity * product.product.price);
+        }, 0);
+        return res.render('pages/carrito', { cartProducts, total });
     },
     clearCart: async (req, res) => {
-        await CartProduct.destroy({
+        await db.CartProduct.destroy({
             where: {
-                user_id: req.user.id,
+                user_id: res.locals.userLogged.id,
             },
         });
-        res.redirect('pages/carrito');
+       return res.redirect('/carrito');
     }
 }
   
