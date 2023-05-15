@@ -1,7 +1,7 @@
 
-    <h2 class="titulos-home">OFERTAS SEMANAL</h2>
+<h2 class="titulos-home">OFERTAS SEMANAL</h2>
    
-<div class="home-ofertas"> 
+<!-- <div class="home-ofertas"> 
   <% for(const oneProduct of topThreeProducts){ %>
 
   <article class="articulo-venta-catalogo">
@@ -21,4 +21,19 @@
   </a>
   </article>
 <% } %>
+</div> -->
+
+<div class="week-content">
+  <% for(oneProduct of topThreeProducts) { %>
+    <a class="week-product" href="/products/details/<%= oneProduct.id %>">
+      <article class="week-product-description">
+        <img class="week-product-image" src="<%= oneProduct.image %>" alt="Product icon">
+        <div class="week-product-info">
+          <del><p class="week-product-old-price">$<%= oneProduct.price%></p></del>
+          <span class="week-product-new-price">$<%= oneProduct.price - (oneProduct.price * (100 / oneProduct.price)) %></span> <small class="catalogue-product-discount">-<%= oneProduct.discount %>% OFF</small>
+          <h3 class="week-product-title"><%= oneProduct.name %></h3>
+        </div>
+      </article>
+    </a>
+  <% } %>
 </div>
