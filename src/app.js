@@ -26,9 +26,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(mainRouter);
-app.use((req, res) => {
+app.use((req, res, next) => {
     res.status(404).render("pages/notFound");
 });
+
 
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs");
