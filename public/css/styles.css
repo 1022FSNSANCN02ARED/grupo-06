@@ -158,6 +158,42 @@ ul {
     padding-top: 5px;
     gap: 20px;
 }
+@media (min-width: 769px){
+.of-semanal-home {
+    width: 32%;
+}}
+@media (min-width: 481px){
+.of-semanal-home {
+    width: 48%;
+    margin-bottom:5px;
+}}
+
+.of-semanal-home {
+    min-height: 400px;
+    background-color: #b3b0b0b5;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.of-semanal-home:hover {
+    box-shadow: 0px 0px 10px #14213d;
+}
+.of-semanal-home {
+    width: 32%;
+}
+
+@media (min-width: 1280px) {
+/* Catalogo */
+.of-semanal-home {
+    width: 25%;
+}
+ }
+.descuento-ctlgo-home{
+    font-size: 16px;
+    color: #0e6c0b;
+    width: 68%;
+}
 
 .articulo-venta-catalogo {
     min-height: 400px;
@@ -241,12 +277,15 @@ ul {
         animation: fadeIn 1.5s ease;
     
 }
-
-
-.info-barber{
+.background-main-home{
     background-image: url("../images/patron/patron-barber-2.png");
     min-height: 300px;
 }
+
+/*.info-barber{
+    background-image: url("../images/patron/patron-barber-2.png");
+    min-height: 300px;
+}*/
 
 .p-info{
     font-size: 18px;
@@ -255,6 +294,7 @@ ul {
 }
 
 .backgraund-main {
+    
     width: 100%;
     opacity: 70%;
 }
