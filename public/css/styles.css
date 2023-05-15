@@ -159,15 +159,17 @@ ul {
     padding-top: 5px;
     gap: 20px;
 }
-@media (min-width: 769px){
-.of-semanal-home {
-    width: 32%;
-}}
-@media (min-width: 481px){
-.of-semanal-home {
-    width: 48%;
-    margin-bottom:5px;
-}}
+@media (min-width: 769px) {
+    .of-semanal-home {
+        width: 32%;
+    }
+}
+@media (min-width: 481px) {
+    .of-semanal-home {
+        width: 48%;
+        margin-bottom: 5px;
+    }
+}
 
 .of-semanal-home {
     min-height: 400px;
@@ -185,12 +187,12 @@ ul {
 }
 
 @media (min-width: 1280px) {
-/* Catalogo */
-.of-semanal-home {
-    width: 25%;
+    /* Catalogo */
+    .of-semanal-home {
+        width: 25%;
+    }
 }
- }
-.descuento-ctlgo-home{
+.descuento-ctlgo-home {
     font-size: 16px;
     color: #0e6c0b;
     width: 68%;
@@ -268,19 +270,18 @@ ul {
 }
 
 .pie-img {
-    background-color: rgba(0, 0, 0, 0.500);
+    background-color: rgba(0, 0, 0, 0.5);
     max-height: 80px;
 }
 
 .backgraund-home {
-
     background-image: url("../images/backgrounds/background-turns.jpg");
     background-size: cover;
     background-position: center;
     animation: fadeIn 1.5s ease;
-
 }
-.background-main-home{
+
+.info-barber {
     background-image: url("../images/patron/patron-barber-2.png");
     min-height: 300px;
 }
@@ -290,14 +291,13 @@ ul {
     min-height: 300px;
 }*/
 
-.p-info{
+.p-info {
     font-size: 18px;
     padding: 30px;
     color: #e5e5e5;
 }
 
 .backgraund-main {
-    
     width: 100%;
     opacity: 70%;
 }
@@ -387,8 +387,8 @@ ul {
 }
 
 /*---------------------------------------------------------------------------------*/
-.main-pf{
-background-color: rgba(20, 33, 61, 0.507);
+.main-pf {
+    background-color: rgba(20, 33, 61, 0.507);
 }
 
 .cont-Profile {
@@ -404,11 +404,12 @@ background-color: rgba(20, 33, 61, 0.507);
     background-color: rgba(128, 128, 128, 0.501);
 }
 
-.rounded-circle{
-    width: 100px; height: 100px
+.rounded-circle {
+    width: 100px;
+    height: 100px;
 }
 
-.div-profile{
+.div-profile {
     width: 30%;
     background-color: rgb(252, 162, 17);
     height: 31%;
@@ -416,55 +417,50 @@ background-color: rgba(20, 33, 61, 0.507);
     border: 5px ridge black;
     border-radius: 10px;
 }
-.p-pf{
+.p-pf {
     font-size: 20px;
     font-weight: bold;
 }
 
-.info-profile{
+.info-profile {
     width: 70%;
     padding-left: 30px;
 }
 
-.div-inf-profile{
+.div-inf-profile {
     padding: 20px;
- background-color: rgba(229, 229, 229, 0.5);
+    background-color: rgba(229, 229, 229, 0.5);
 }
 
-.div-inf-profile ul{
+.div-inf-profile ul {
     list-style: none;
     padding: 0;
-  }
+}
 
 .div-inf-profile ul li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-  }
+}
 
-  .btn-edit{
+.btn-edit {
     flex: 0.25;
-    margin: 20px;
-  }
-
-  .span-item {
-    width: 80px;
-    margin-right: 10px;
-    display: inline-block;
-  }
-
-  .span-item + input {
-    flex: 0.75;
-    
-  }
-
-.item-info{
     margin: 20px;
 }
 
+.span-item {
+    width: 80px;
+    margin-right: 10px;
+    display: inline-block;
+}
 
+.span-item + input {
+    flex: 0.75;
+}
 
-  
+.item-info {
+    margin: 20px;
+}
 
 /*---------------------------------------------------------------------------------*/
 
@@ -497,7 +493,6 @@ background-color: rgba(20, 33, 61, 0.507);
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
 }
-
 
 ul,
 li {
@@ -562,6 +557,7 @@ ul.slider li:target {
     font-size: 30px;
     border-radius: 100%;
 }
+/*Catalogo Home*/
 
 .home-ofertas {
     display: flex;
@@ -716,7 +712,6 @@ ul.slider li:target {
     box-shadow: 0px 8px 4px rgb(100 100 100 / 50%);
 }
 
-
 .servicios-h3 {
     text-align: center;
     font-style: normal;
@@ -846,7 +841,7 @@ ul.slider li:target {
     outline: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.formulario_input:focus+.formulario_label {
+.formulario_input:focus + .formulario_label {
     margin-top: -130px;
 }
 
@@ -886,12 +881,14 @@ ul.slider li:target {
     width: 100%;
     margin: auto;
     background: rgb(0, 0, 0);
-    background: linear-gradient(180deg,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(20, 33, 61, 1) 25%,
-            rgba(229, 229, 229, 1) 50%,
-            rgba(20, 33, 61, 1) 75%,
-            rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(20, 33, 61, 1) 25%,
+        rgba(229, 229, 229, 1) 50%,
+        rgba(20, 33, 61, 1) 75%,
+        rgba(0, 0, 0, 1) 100%
+    );
     padding: 20px;
 }
 
@@ -960,11 +957,11 @@ ul.slider li:target {
     height: 0;
 }
 
-.radio+.turnos-img-peluquero {
+.radio + .turnos-img-peluquero {
     cursor: pointer;
 }
 
-.radio:checked+.turnos-img-peluquero {
+.radio:checked + .turnos-img-peluquero {
     outline: 2px solid #f00;
 }
 
@@ -1064,7 +1061,7 @@ ul.slider li:target {
     border-radius: 0.8rem;
     max-width: 30rem;
     max-height: 40rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     padding: 2rem;
     width: 100%;
     height: 100%;
@@ -1102,7 +1099,7 @@ ul.slider li:target {
     padding: 4rem;
 }
 
-@media(min-width: 930px) {
+@media (min-width: 930px) {
     .week-content {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
@@ -1140,7 +1137,7 @@ ul.slider li:target {
     border-radius: 0.8rem;
     max-width: 30rem;
     max-height: 40rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     padding: 2rem;
     width: 100%;
     height: 100%;
@@ -1192,7 +1189,7 @@ ul.slider li:target {
 
 .in-offer-product-description,
 .features-product-description,
-.catalogue-product-description{
+.catalogue-product-description {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1338,7 +1335,7 @@ ul.slider li:target {
 .product-cart-button {
     transition: all 0.5s ease;
     border: 0.1rem solid var(--beige);
-    background-color: transparent;  
+    background-color: transparent;
     color: var(--beige);
 }
 
@@ -1353,8 +1350,6 @@ ul.slider li:target {
 .division-bar {
     display: none;
 }
-
-
 
 /* Al tener (hover: hover), el mismo no actuará
 a menos que haya un cursor. */
@@ -1470,7 +1465,6 @@ al soltar el click */
     }
 }
 
-
 .bg-image-turns {
     background-image: url("../images/backgrounds/background-turns.jpg");
     background-size: cover;
@@ -1537,16 +1531,16 @@ al soltar el click */
     }
 }
 
-.peluqueros-check+#frank,
-.peluqueros-check+#ashley,
-.peluqueros-check+#sam {
+.peluqueros-check + #frank,
+.peluqueros-check + #ashley,
+.peluqueros-check + #sam {
     display: none;
     transition: all 0.4s;
 }
 
-.peluqueros-check:checked+#frank,
-.peluqueros-check:checked+#ashley,
-.peluqueros-check:checked+#sam {
+.peluqueros-check:checked + #frank,
+.peluqueros-check:checked + #ashley,
+.peluqueros-check:checked + #sam {
     display: block;
     transition: all 0.4s;
     border-radius: 5%;
@@ -1652,6 +1646,7 @@ al soltar el click */
 
 .w-90 {
     width: 90%;
+    min-height: 1100px;
 }
 
 /* Create and edit product */
@@ -1664,7 +1659,7 @@ al soltar el click */
 
 .w-h-edit {
     width: 90%;
-    min-height: 1600px;
+    min-height: 1700px;
 }
 
 .w-h-create {
@@ -1672,12 +1667,12 @@ al soltar el click */
     min-height: 1100px;
 }
 
-#enOferta+#oferta {
+#enOferta + #oferta {
     display: none;
     transition: all 0.4s;
 }
 
-#enOferta:checked+#oferta {
+#enOferta:checked + #oferta {
     display: block;
     transition: all 0.4s;
     border-radius: 5%;
@@ -1700,51 +1695,50 @@ al soltar el click */
     border: 3px solid #fca311;
 }
 
-
 /* 404 */
 .img-nf {
     width: 35%;
 }
-.container-nf{
+.container-nf {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
     align-items: center;
-   background-image: linear-gradient(
-    to bottom right,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(20, 33, 61, 1) 25%,
-    rgba(91 104 133) 50%,
-    rgba(20, 33, 61, 1) 75%,
-    rgba(0, 0, 0, 1) 100%
-   );
-   background-size: 200% 200%;
-   animation: movimiento 5s linear infinite alternate;
+    background-image: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(20, 33, 61, 1) 25%,
+        rgba(91 104 133) 50%,
+        rgba(20, 33, 61, 1) 75%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    background-size: 200% 200%;
+    animation: movimiento 5s linear infinite alternate;
 }
 @keyframes movimiento {
     from {
-background-position: 0 0;
+        background-position: 0 0;
     }
-    to{
-background-position: 100% 100%;
+    to {
+        background-position: 100% 100%;
     }
 }
-.h1-nf{
-    font-family: 'Shadows Into Light', cursive;
-     color: rgb(233, 238, 245);
+.h1-nf {
+    font-family: "Shadows Into Light", cursive;
+    color: rgb(233, 238, 245);
     font-size: 30px;
     padding: 20px;
 }
-.btn-nf{
+.btn-nf {
     padding: 13px 30px;
     border-radius: 15px;
     border: none;
     background: rgb(5, 129, 245);
     color: white;
 }
-@media screen and (max-width:630px){
-    .h1-nf{        
-        font-size: 16px;        
+@media screen and (max-width: 630px) {
+    .h1-nf {
+        font-size: 16px;
     }
 }

@@ -41,6 +41,12 @@
                             *<%= errors.name.msg %>
                         </p>
                         <% } %>
+                        <p
+                            class="invalid-feedback text-danger text-start"
+                            id="productNamep"
+                        >
+                            * Ingresa un nombre de producto válido.
+                        </p>
                     </div>
                     <div class="mb-3 text-center">
                         <label
@@ -58,6 +64,12 @@
                             *<%= errors.price.msg %>
                         </p>
                         <% } %> 
+                        <p
+                            class="invalid-feedback text-danger text-start"
+                            id="productPricep"
+                        >
+                            * Ingresa un precio válido.
+                        </p>
                     </div>
                     <div class="mb-3 text-center">
                     <label for="productBrand" class="form-label text-primary">Marca del producto:</label>
@@ -262,4 +274,6 @@
             <%- include('../partials/footer') %>
         </footer>
     </body>
+        <script src="/scripts/editForm.js"></script>
+
 </html>
