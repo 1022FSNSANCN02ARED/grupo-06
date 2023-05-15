@@ -214,41 +214,40 @@ ul {
 
 .carousel-item img.custom-img {
     height: 500px;
-  }
+}
 
-  .text-img{
+.text-img {
     color: #fca211;
     font-size: 20px;
     font-weight: bold;
-  }
-
-  .btn-cat{background-color: black;}
-
-  .d-content{
-    display:contents;
-  }
-
-  .pie-img{
-    background-color: rgba(0, 0, 0, 0.500);
-    max-height: 80px;
-  }
-
-.backgraund-home{
-    
-        background-image: url("../images/backgrounds/background-turns.jpg");
-        background-size: cover;
-        background-position: center;
-        animation: fadeIn 1.5s ease;
-    
 }
 
+.btn-cat {
+    background-color: black;
+}
 
-.info-barber{
-    background-color:rgba(0, 0, 0, 0.5);
+.d-content {
+    display: contents;
+}
+
+.pie-img {
+    background-color: rgba(0, 0, 0, 0.5);
+    max-height: 80px;
+}
+
+.backgraund-home {
+    background-image: url("../images/backgrounds/background-turns.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.info-barber {
+    background-color: rgba(0, 0, 0, 0.5);
     min-height: 300px;
 }
 
-.p-info{
+.p-info {
     font-size: 18px;
     padding: 30px;
     color: #e5e5e5;
@@ -449,8 +448,6 @@ ul.slider li:target {
 }
 /*Catalogo Home*/
 
-
-
 .home-ofertas {
     display: flex;
     justify-content: space-evenly;
@@ -602,7 +599,6 @@ ul.slider li:target {
     background-blend-mode: normal;
     box-shadow: 0px 8px 4px rgb(100 100 100 / 50%);
 }
-
 
 .servicios-h3 {
     text-align: center;
@@ -1713,6 +1709,7 @@ al soltar el click */
 
 .w-90 {
     width: 90%;
+    min-height: 1000px;
 }
 
 /* Create and edit product */

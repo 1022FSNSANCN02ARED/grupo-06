@@ -52,8 +52,6 @@ module.exports = {
         product.image = productImage.fileRoute;
         product.brand = productBrand.name;
 
-        console.log(product);
-
         return res.render("pages/details", { product: product });
     },
     create: async (req, res) => {
@@ -169,8 +167,6 @@ module.exports = {
                 db.Category.findAll(),
             ]);
 
-            console.log(req.body);
-
             return res.render("pages/edit", {
                 brand: brands,
                 categories: categories,
@@ -219,8 +215,6 @@ module.exports = {
             productToEdit.image_id = product.image;
 
             await productToEdit.save();
-
-            console.log(productToEdit);
 
             await productToEdit.setCategories(product.category_id);
             return res.redirect("/products/details/" + productToEdit.id);

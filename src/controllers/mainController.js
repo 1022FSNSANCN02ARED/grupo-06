@@ -60,6 +60,7 @@ module.exports = {
                     res.cookie("userCookie", req.body.login, {
                         maxAge: 60000 * 43200,
                     });
+                delete res.locals.password;
                 return res.redirect("/profile");
             }
             return res.render("pages/register", {
@@ -82,6 +83,7 @@ module.exports = {
                     res.cookie("userCookie", req.body.login, {
                         maxAge: 60000 * 43200,
                     });
+                delete res.locals.password;
                 return res.redirect("/profile");
             }
             return res.render("pages/register", {

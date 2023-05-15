@@ -10,8 +10,8 @@ const validations = {
             .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
             .withMessage("Solo se admiten letras y números.")
             .bail()
-            .isLength({ max: 20 })
-            .withMessage("Debe tener como máximo 20 caracteres."),
+            .isLength({ min: 3, max: 20 })
+            .withMessage("Debe tener de 3 a 20 caracteres."),
         body("lastname")
             .notEmpty()
             .withMessage("Debes escribir un apellido.")
@@ -19,8 +19,8 @@ const validations = {
             .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
             .withMessage("Solo se admiten letras y números.")
             .bail()
-            .isLength({ max: 20 })
-            .withMessage("Debe tener como máximo 20 caracteres."),
+            .isLength({ min: 3, max: 20 })
+            .withMessage("Debe tener de 6 a 20 caracteres."),
         body("username")
             .notEmpty()
             .withMessage("Debes escribir un nombre de usuario.")
@@ -28,8 +28,8 @@ const validations = {
             .matches(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\d]+$/)
             .withMessage("Solo se admiten letras y números.")
             .bail()
-            .isLength({ max: 20 })
-            .withMessage("Debe tener como máximo 20 caracteres."),
+            .isLength({ min: 6, max: 20 })
+            .withMessage("Debe tener de 6 a 20 caracteres."),
         body("email")
             .notEmpty()
             .withMessage("Debes escribir un email válido.")
@@ -44,7 +44,7 @@ const validations = {
             .withMessage("Debe tener como mínimo 6 caracteres."),
         body("phone")
             .notEmpty()
-            .withMessage("Debes escribir un numero de celular.")
+            .withMessage("Debes escribir un número de celular.")
             .bail()
             .isLength({ min: 6, max: 20 })
             .withMessage("Debe tener entre 6 y 20 dígitos."),
