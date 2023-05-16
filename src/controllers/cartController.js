@@ -2,9 +2,13 @@ const db = require("../database/models");
 
 module.exports = {
     getCart: async (req, res) => {
+
+        if(!req.session || !req.session.userLogged){
+            return res.redirect("/")
+        }
         const cartProducts = await db.CartProduct.findAll({
             where: {
-                user_id: res.locals.userLogged.id,
+                user_id: req.session.userLogged.id,
             },
             include: ["product"],
         });
@@ -16,9 +20,12 @@ module.exports = {
         return res.render('pages/carrito', { cartProducts, total });
     },
     addToCart: async (req, res) => {
+        if(!req.session || !req.session.userLogged){
+            return res.redirect("/register")
+        }
         const existingCartProduct = await db.CartProduct.findOne({
         where: {
-            user_id: res.locals.userLogged.id,
+            user_id: req.session.userLogged.id,
             product_id: req.params.id,
         },
         });
@@ -27,7 +34,7 @@ module.exports = {
         await existingCartProduct.save();
         } else {
             await db.CartProduct.create({
-                user_id: res.locals.userLogged.id, 
+                user_id: req.session.userLogged.id, 
                 product_id: req.params.id,
                 quantity: 1,
         });
@@ -35,9 +42,12 @@ module.exports = {
        return res.redirect('/products/');
     },
     buyNow: async (req, res) => {
+        if(!req.session || !req.session.userLogged){
+            return res.redirect("/register")
+        }
         const existingCartProduct = await db.CartProduct.findOne({
         where: {
-            user_id: res.locals.userLogged.id,
+            user_id: req.session.userLogged.id,
             product_id: req.params.id,
         },
         });
@@ -46,7 +56,7 @@ module.exports = {
         await existingCartProduct.save();
         } else {
             await db.CartProduct.create({
-                user_id: res.locals.userLogged.id, 
+                user_id: req.session.userLogged.id, 
                 product_id: req.params.id,
                 quantity: 1,
         });
@@ -56,7 +66,7 @@ module.exports = {
     increaseProduct: async (req, res) => {
         const existingCartProduct = await db.CartProduct.findOne({
         where: {
-            user_id: res.locals.userLogged.id,
+            user_id: req.session.userLogged.id,
             product_id: req.params.id,
         },
         });
@@ -65,14 +75,14 @@ module.exports = {
         await existingCartProduct.save();
         } else {
             await db.CartProduct.create({
-                user_id: res.locals.userLogged.id, 
+                user_id: req.session.userLogged.id, 
                 product_id: req.params.id,
                 quantity: 1,
         });
         }
         const cartProducts = await db.CartProduct.findAll({
             where: {
-                user_id: res.locals.userLogged.id,
+                user_id: req.session.userLogged.id,
             },
             include: ["product"],
         });
@@ -87,7 +97,7 @@ module.exports = {
         console.log(productId)
         const productToDelete = await db.CartProduct.findOne({
             where: {
-                user_id: res.locals.userLogged.id,
+                user_id: req.session.userLogged.id,
                 product_id: productId,
             },
         });
@@ -101,7 +111,7 @@ module.exports = {
         }
         const cartProducts = await db.CartProduct.findAll({
             where: {
-                user_id: res.locals.userLogged.id,
+                user_id: req.session.userLogged.id,
             },
             include: ["product"],
         });
@@ -114,10 +124,18 @@ module.exports = {
     clearCart: async (req, res) => {
         await db.CartProduct.destroy({
             where: {
-                user_id: res.locals.userLogged.id,
+                user_id: req.session.userLogged.id,
             },
         });
        return res.redirect('/carrito');
+    },
+    brought: async (req, res) => {
+        await db.CartProduct.destroy({
+            where: {
+                user_id: req.session.userLogged.id,
+            },
+        });
+    return res.redirect('/');
     }
 }
   

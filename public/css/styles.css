@@ -1566,6 +1566,16 @@ al soltar el click */
 
 /* Header */
 
+.hidden{
+    display: none;
+}
+
+#cartLogged{
+    
+}
+
+#cartNoLog{}
+
 .header-user {
     color: #e5e5e5;
     font-size: 25px;

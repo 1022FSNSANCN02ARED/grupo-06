@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <%- include('../partials/head') %>
+        <script src="/scripts/detailsP.js"></script>
     </head>
 
     <body>
@@ -31,15 +32,16 @@
                         <p class="product-new-price">$<%= product.price %></p>
                         <% } %>
                         <div class="product-btns">
-                            <form class="product-cart-form" method="POST" action="/carrito/add/<%=product.id%>">
+                            <form class="product-cart-form" id="addCart" method="POST" action="/carrito/add/<%=product.id%>">
                                 <input
+                                    
                                     class="product-cart-button"
                                     type="submit"
                                     value="Agregar al carrito"
                                 />
                             </form>
-                            <form class="product-buy-form" method="POST" action="/carrito/buy/<%=product.id%>">
-                                <input type="submit" value="Comprar ahora" />
+                            <form class="product-buy-form" id="buyCart" method="POST" action="/carrito/buy/<%=product.id%>">
+                                <input type="submit" id="buyCart" value="Comprar ahora" />
                             </form>
                         </div>
                         <hr class="division-bar" />
