@@ -1,70 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('../partials/head') %> 
-    </head>
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
 <body>
-    <header class="header">
-      <%- include('../partials/header') %>
-    </header>
+    <header class="header"><%- include('../partials/header') %></header>
     <main class="d-flex justify-content-center bg-image-turns w-100">
         <div class="w-h-90 text-center mt-5 mb">
             <section class="rounded-top-3 text-center container bg-5 mb-0 text-primary">
-                <article> 
-                    <h2>Carrito <i class="fa-solid fa-cart-shopping"></i></h2>
+                <article>
+                    <h2>
+                        Carrito <i class="fa-solid fa-cart-shopping"></i>
+                    </h2>
                 </article>
-                <% if (cartProducts.length > 0) { %>
-                <% cartProducts.forEach(cartProduct => { %>
-                <article class="container flex-column bg-5">
-                    <div class="form-control text-primary bg-black border-primary">
-                        <div>
-                            <!--<img
+                <% if (cartProducts.length> 0) { %> <% cartProducts.forEach(cartProduct=> { %>
+                        <article class="container flex-column bg-5">
+                            <div class="form-control text-primary bg-black border-primary">
+                                <div>
+                                    <!--<img
                             src="<%= cartProduct.product.image %>"
                             alt="Imagen del producto"
                             class="card-img-top"
                             />-->
-                            <span><%= cartProduct.product.name %></span>
-                            <span class="price">Precio: $<%= cartProduct.product.price %></span>
-                        </div>
-                        <div>
-                            <!--Boton de sumar/restar cantidad-->
-                            <form action="/carrito/remove/<%= cartProduct.product.id %>?_method=DELETE" method="POST">
-                                <button type="submit" name="operation" value="decrease">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </form>
-                            <input type="number" name="quantity" value="<%= cartProduct.quantity %>" class="cantidad">
-                            <form action="/carrito/increase/<%= cartProduct.product.id %>" method="POST">
-                                <button type="submit" name="operation" value="increase">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </article>
-                <% }); %>
-                <% } else { %>
-                <article class="container flex-column bg-5">
-                    <div class="form-control text-primary bg-black border-primary">
-                        <p>Tu carrito está vacío</p>
-                    </div>
-                </article>
-                <% } %>
-                <article class="container flex-column bg-5">
-                    <div class="form-control text-primary bg-black border-primary">
-                        <p>Total: $<%= total %></p>
-                        <% if (cartProducts.length > 0) { %>
-                        <form action="/carrito" method="POST">
-                            <button type="submit">Comprar</button>
-                        </form>
-                        <% } %>
-                    </div>
-                </article>
+                                    <span>
+                                        <%= cartProduct.product.name %>
+                                    </span>
+                                    <span class="price">Precio: $<%= cartProduct.product.price %></span>
+                                </div>
+                                <div>
+                                    <!--Boton de sumar/restar cantidad-->
+                                    <form action="/carrito/remove/<%= cartProduct.product.id %>?_method=DELETE"
+                                        method="POST">
+                                        <button type="submit" name="operation" value="decrease">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </form>
+                                    <input type="number" name="quantity" value="<%= cartProduct.quantity %>"
+                                        class="cantidad" />
+                                    <form action="/carrito/increase/<%= cartProduct.product.id %>" method="POST">
+                                        <button type="submit" name="operation" value="increase">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </article>
+                        <% }); %>
+                            <% } else { %>
+                                <article class="container flex-column bg-5">
+                                    <div class="form-control text-primary bg-black border-primary">
+                                        <p>Tu carrito está vacío</p>
+                                    </div>
+                                </article>
+                                <% } %>
+                                    <article class="container flex-column bg-5">
+                                        <div class="form-control text-primary bg-black border-primary">
+                                            <p>Total: $<%= total %>
+                                            </p>
+                                            <% if (cartProducts.length> 0) { %>
+                                                <form action="/carrito" method="POST">
+                                                    <button type="button" data-bs-toggle="modal"
+                                                        data-bs-target="#confirm">Comprar</button>
+                                                </form>
+                                                <form action="/carrito/clear?_method=DELETE" method="POST">
+                                                    <button type="submit">Eliminar Carrito</button>
+                                                </form>
+                                                <% } %>
+                                        </div>
+                                        <div class="modal fade" id="confirm" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content bg-black">
+                                                    <div class="modal-header align-self-center">
+                                                        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
+                                                            ¡Confirma tu compra!
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body text-white">
+                                                        ¡Gracias por confiar en nosotros!
+                                                    </div>
+                                                    <div class="modal-body text-white">
+                                                        ¡En breve te estará llegando un
+                                                        email/WhatsApp con tu codigo de seguimiento!
+                                                    </div>
+                                                    <div class="modal-footer align-self-center">
+                                                        <form action="/carrito/brought?_method=DELETE" method="POST">
+                                                        <button type="submit" class="btn btn-outline-primary">
+                                                            Confirmar
+                                                        </button></form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
             </section>
         </div>
-   </main>
-   <footer class="footer-catalogo">
-    <%- include('../partials/footer') %> 
-  </footer>
+    </main>
+    <footer class="footer-catalogo">
+        <%- include('../partials/footer') %>
+    </footer>
 </body>
+
 </html>

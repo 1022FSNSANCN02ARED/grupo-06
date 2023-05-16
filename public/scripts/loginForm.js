@@ -1,4 +1,5 @@
 window.addEventListener("load", function () {
+    if(document.getElementById("login")){
     document.getElementById("login").addEventListener("input", (e) => {
         if (e.target.value.length < 3 || e.target.value.length > 20) {
             document.querySelector("#loginp").style.display = "block";
@@ -9,5 +10,5 @@ window.addEventListener("load", function () {
             document.getElementById("login").classList.remove("border-danger");
             document.getElementById("login").classList.remove("is-invalid");
         }
-    });
+    });}
 });
