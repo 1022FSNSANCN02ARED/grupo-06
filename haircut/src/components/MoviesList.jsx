@@ -26,7 +26,7 @@ class MoviesList extends Component {
     }
 
     deleteMovie(movie) {
-        fetch("http://localhost:3001/api/movies/delete/" + movie.id, {
+        fetch("http://localhost:3000/product/" + movie.id, {
             method: "delete",
         }).then(() => {
             this.fetchAllMovies();

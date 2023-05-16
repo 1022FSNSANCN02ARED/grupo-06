@@ -160,6 +160,14 @@
                                 <a class="dropdown-item" href="/profile"
                                     ><p class="text-primary">Perfil</p></a
                                 >
+                                <% if (userLogged.isAdmin == true) { %>
+                                <a
+                                    class="dropdown-item"
+                                    href="http://localhost:3001"
+                                    target="_blank"
+                                    ><p class="text-primary">Dashboard</p></a
+                                >
+                                <% } %>
                                 <li><hr class="dropdown-divider" /></li>
                                 <a
                                     class="dropdown-item"
