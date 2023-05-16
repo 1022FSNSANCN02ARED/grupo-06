@@ -5,7 +5,6 @@ module.exports = {
         database: "grupo6-db_g6",
         host: "mysql-grupo6-db.alwaysdata.net",
         dialect: "mysql",
-       
     },
     test: {
         username: "root",

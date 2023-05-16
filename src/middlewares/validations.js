@@ -1,5 +1,6 @@
 const path = require("path");
 const { body } = require("express-validator");
+const multer = require("multer");
 
 const validations = {
     register: [
@@ -105,11 +106,12 @@ const validations = {
             }),
 
         body("image").custom((value, { req }) => {
-            let file = req.file;
+            let file = req.files[0];
             let acceptedExtensions = [".jpg", ".png"];
 
             if (file) {
                 let fileExtension = path.extname(file.originalname);
+                console.log(fileExtension);
                 if (!acceptedExtensions.includes(fileExtension)) {
                     throw new Error(
                         "Las extensiones de imágenes permitidas son .jpg o .png."
@@ -123,7 +125,7 @@ const validations = {
             .notEmpty()
             .withMessage("Ingresa la descripción del producto."),
     ],
-    editProfile:[
+    editProfile: [
         body("firstName")
             .notEmpty()
             .withMessage("Debes escribir un nombre.")
@@ -162,8 +164,8 @@ const validations = {
             .withMessage("Debes escribir un numero de celular.")
             .bail()
             .isLength({ min: 6, max: 20 })
-            .withMessage("Debe tener entre 6 y 20 dígitos."),   
-    ]
+            .withMessage("Debe tener entre 6 y 20 dígitos."),
+    ],
 };
 
 module.exports = validations;

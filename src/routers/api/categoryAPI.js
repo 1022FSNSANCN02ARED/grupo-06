@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const router = Router();
-const productAPIController = require("../controllers/api/productAPI");
+const categoryAPIController = require("../../controllers/api/categoryAPI");
 
 //Rutas
 //Listado de todos los generos
-router.get("/", productAPIController.list);
+router.get("/", categoryAPIController.list);
 
 module.exports = router;

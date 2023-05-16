@@ -26,11 +26,8 @@ class MoviesList extends Component {
     }
 
     deleteMovie(movie) {
-        fetch("http://localhost:3000/product/" + movie.id, {
-            method: "delete",
-        }).then(() => {
-            this.fetchAllMovies();
-        });
+        const url = "http://localhost:3000/products/" + movie.id + "/edit";
+        window.open(url, "_blank");
     }
 
     render() {

@@ -1,4 +1,3 @@
-// Podemos usar Express como const, pero en éste caso solo requerimos el Router de Express.
 const { Router } = require("express");
 const router = Router();
 
@@ -11,5 +10,7 @@ router.use("/products", productRouter);
 const cartRouter = require("./cartRouter");
 router.use("/carrito", cartRouter);
 
+const apisRouter = require("./apiRouter");
+router.use("/api", apisRouter);
 
 module.exports = router;
