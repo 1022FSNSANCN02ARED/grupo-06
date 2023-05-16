@@ -8,14 +8,14 @@ async function userLogged(req, res, next) {
     let userInCookie = await req.cookies.userCookie;
 
     if (userInCookie) {
-        let userFromCookie = await db.Users.findAll({
+        let userFromCookie = await db.Users.findOne({
             where: {
                 email: userInCookie,
             },
         });
 
         if (!userFromCookie) {
-            userFromCookie = await db.Users.findAll({
+            userFromCookie = await db.Users.findOne({
                 where: {
                     userName: userInCookie,
                 },
@@ -23,8 +23,9 @@ async function userLogged(req, res, next) {
         }
 
         if (userFromCookie) {
-            userFromCookie = userFromCookie[0].dataValues;
+            userFromCookie = userFromCookie.dataValues;
             delete userFromCookie.password;
+            console.log(userFromCookie);
             req.session.userLogged = userFromCookie;
         }
     }
