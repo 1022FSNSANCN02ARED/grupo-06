@@ -8,7 +8,7 @@
                 <a href="/products/details/<%= products[arrayVacio[i]].id %>">
                   <div class="catalogue-product-content">
                       <div class="catalogue-product-image">
-                          <img src="<%= products[arrayVacio[i]].image %>" alt="product icon">
+                          <img class="img-w100" src="<%= products[arrayVacio[i]].image %>" alt="product icon">
                       </div>
                       <% if(products[arrayVacio[i]].discount) { %>
                         <div class="catalogue-product-info">
@@ -39,7 +39,7 @@
                 <a href="/products/details/<%= ofertas[i].id %>">
                   <div class="catalogue-product-content">
                       <div class="catalogue-product-image">
-                          <img src="<%= ofertas[i].image %>" alt="product icon">
+                          <img class="img-w100" src="<%= ofertas[i].image %>" alt="product icon">
                       </div>
                       <div class="catalogue-product-info">
                           <del><p class="catalogue-product-old-price">$<%= ofertas[i].price %></p></del>
@@ -62,7 +62,7 @@
                   <a href="/products/details/<%= products[i].id %>">
                     <div class="catalogue-product-content">
                         <div class="catalogue-product-image">
-                            <img src="<%= products[i].image %>" alt="product icon">
+                            <img class="img-w100" src="<%= products[i].image %>" alt="product icon">
                         </div>
                         <% if(products[i].discount) { %>
                             <div class="catalogue-product-info">

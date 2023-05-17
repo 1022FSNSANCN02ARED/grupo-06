@@ -28,7 +28,7 @@ ul {
     list-style: none;
 }
 
-img {
+.img-w100 {
     width: 100%;
 }
 
@@ -1272,6 +1272,10 @@ ul.slider li:target {
     border-radius: 10px;
 }
 
+.catalogue{
+    text-align: center;
+}
+
 @media(min-width: 768px) {
     .buy-form-btns {
         display: flex;
@@ -1282,6 +1286,7 @@ ul.slider li:target {
         gap: 20px;
     }
 }
+
 
 .catalogue-products-container {
     display: grid;
