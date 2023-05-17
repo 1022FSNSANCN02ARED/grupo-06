@@ -42,6 +42,7 @@ module.exports = {
        return res.redirect('/products/');
     },
     buyNow: async (req, res) => {
+        
         if(!req.session || !req.session.userLogged){
             return res.redirect("/register")
         }

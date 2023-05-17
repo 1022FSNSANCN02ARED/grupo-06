@@ -18,57 +18,57 @@
 
             </div>
 
-            <div class="info-profile">
-                <form action="/editProfile?_method=put" method="POST">
+            
+                <form class="info-profile" action="/editProfile?_method=put" method="POST">
                     <div class="div-inf-profile">
                     <ul>
-                        <li class="item-info"><span class="span-item">Nombre:</span> <input type="text" disabled name="firstName" class="inputI" value="<%= user.firstName %>">
+                        <li class="item-info d-block"><span class="span-item">Nombre:</span> <input type="text" disabled name="firstName" class="inputI" value="<%= user.firstName %>">
                             <% if (locals.errors && errors.firstName) { %>
                                 <p class="text-danger text-start">
                                     *<%= errors.firstName.msg %>
                                 </p>
                                 <% } %>
                         </li>
-                        <li class="item-info"><span class="span-item">Apellido:</span> <input type="text" disabled name="lastName" class="inputI" value="<%= user.lastName %>">
+                        <li class="item-info d-block"><span class="span-item">Apellido:</span> <input type="text" disabled name="lastName" class="inputI" value="<%= user.lastName %>">
                             <% if (locals.errors && errors.lastName) { %>
                                 <p class="text-danger text-start">
                                     *<%= errors.lastName.msg %>
                                 </p>
                                 <% } %>
                         </li>
-                        <li class="item-info"><span class="span-item">Nombre de Usuario:</span> <input type="text" disabled name="userName" class="inputI" value="<%= user.userName %>">
+                        <li class="item-info d-block"><span class="span-item">Nombre de Usuario:</span> <input type="text" disabled name="userName" class="inputI" value="<%= user.userName %>">
                             <% if (locals.errors && errors.userName) { %>
                                 <p class="text-danger text-start">
                                     *<%= errors.userName.msg %>
                                 </p>
                                 <% } %>
                         </li>
-                        <li class="item-info"><span class="span-item">Correo: </span><input type="text" disabled name="email" class="inputI" value="<%= user.email %>">
+                        <li class="item-info d-block"><span class="span-item">Correo: </span><input type="text" disabled name="email" class="inputI" value="<%= user.email %>">
                             <% if (locals.errors && errors.email) { %>
                                 <p class="text-danger text-start">
                                     *<%= errors.email.msg %>
                                 </p>
                                 <% } %>
                         </li>
-                        <li class="item-info"><span class="span-item">Telefono:</span> <input type="text" disabled name="cellphone" class="inputI" value="<%= user.cellphone %>">
+                        <li class="item-info d-block"><span class="span-item">Telefono:</span> <input type="text" disabled name="cellphone" class="inputI" value="<%= user.cellphone %>">
                             <% if (locals.errors && errors.cellphone) { %>
                                 <p class="text-danger text-start">
                                     *<%= errors.cellphone.msg %>
                                 </p>
                                 <% } %>
                         </li>
-                         <li class="item-info "><span class="span-item">Nueva Contraseña:</span> <input type="password" disabled name="newPass"  class="inputI" placeholder="******">
+                         <li class="item-info d-block "><span class="span-item">Nueva Contraseña:</span> <input type="password" disabled name="newPass"  class="inputI" placeholder="******">
                             <% if (locals.errors && errors.newPass) { %>
                                 <p class="text-danger text-start">
                                     *<%= errors.newPass.msg %>
                                 </p>
                                 <% } %>
                         </li>
-                        <li class="item-info old-Pass"><span class="span-item">Contraseña Anterior:</span> <input type="password"  disabled name="oldPass" class="inputI " placeholder="******">
+                        <li class="item-info d-block old-Pass"><span class="span-item">Contraseña Anterior:</span> <input type="password"  disabled name="oldPass" class="inputI " placeholder="******">
 
                         </li>
                     </ul>
-
+                </div>
                 <div class="d-flex justify-content-center align-items-end">
 
                     <button type="reset" disabled onclick="deshabilitarInputs()" class="btn btn-danger btn-edit desac">Cancelar</button>
@@ -77,9 +77,9 @@
 
                             <button type="submit" disabled class="btn btn-success btn-edit desac">Confirmar</button>
                 </div>
-                </div>
+                
             </form> 
-            </div>
+            
 
 
         </div>
