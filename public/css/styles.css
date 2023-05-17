@@ -1308,7 +1308,7 @@ ul.slider li:target {
 .catalogue-product {
     border-radius: .6rem; 
     background-color: white;
-    max-width: 280px;
+    width: 220px;
     height: 420px;
 }
 
@@ -1424,6 +1424,13 @@ al soltar el click */
         place-items: center;
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem;
+    }
+
+    .catalogue-product {
+        border-radius: .6rem; 
+        background-color: white;
+        width: 280px;
+        height: 420px;
     }
 
     .cart-quantity {
