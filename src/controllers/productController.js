@@ -13,7 +13,7 @@ module.exports = {
                     product.getCategories(),
                 ]);
 
-            product.category = productCategories[0].name;
+            product.category = productCategories.name;
             product.image = productImage.fileRoute;
             product.brand = productBrand.name;
         }
@@ -48,7 +48,7 @@ module.exports = {
                 product.getCategories(),
             ]);
 
-        product.category = productCategories[0].name;
+        product.category = productCategories.name;
         product.image = productImage.fileRoute;
         product.brand = productBrand.name;
 
@@ -144,7 +144,7 @@ module.exports = {
         const productImage = await db.images.findByPk(product.image_id);
         const productCategories = await product.getCategories();
 
-        product.category = productCategories[0].name;
+        product.category = productCategories.name;
         product.image = productImage.fileRoute;
         product.image_id = productImage.id;
         product.brand = productBrand.name;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class MoviesList extends Component {
     constructor(props) {
@@ -22,11 +23,12 @@ class MoviesList extends Component {
                 this.setState({
                     movies: result.data,
                 });
+                console.log("[MOVIES LIST] Cambió el estado");
             });
     }
 
     deleteMovie(movie) {
-        const url = "http://localhost:3000/products/" + movie.id + "/edit";
+        const url = "http://localhost:3000/products/" + movie.id + "/edit/";
         window.open(url, "_blank");
     }
 
@@ -37,8 +39,12 @@ class MoviesList extends Component {
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Id de Marca</th>
+                        <th>Precio</th>
+                        <th>Marca</th>
+                        <th>Categoria</th>
                         <th>Descripción</th>
+                        <th>Descuento</th>
+                        <th>Imagen</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,9 +53,18 @@ class MoviesList extends Component {
                             <tr key={movie.id}>
                                 <th>{movie.id}</th>
                                 <th>{movie.name}</th>
-                                <th>{movie.brand_id}</th>
+                                <th>{movie.price}</th>
+                                <th>{movie.brand}</th>
+                                <th>{movie.category}</th>
                                 <th>{movie.description}</th>
+                                <th>{movie.discount}</th>
+                                <th>{movie.image}</th>
                                 <th>
+                                    <Link to={`/movies/${movie.id}`}>
+                                        <button className="btn text-success">
+                                            <i className="fas fa-eye"></i>
+                                        </button>
+                                    </Link>
                                     <button
                                         className="btn text-danger"
                                         onClick={() => this.deleteMovie(movie)}

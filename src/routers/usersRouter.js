@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const mainController = require("../controllers/mainController");
-const uploadUser = require("../middlewares/multerUser");
+const multerUser = require("../middlewares/multerUser");
 const validations = require("../middlewares/validations");
 const guest = require("../middlewares/guest");
 const auth = require("../middlewares/auth");
@@ -11,10 +11,11 @@ router.post("/login", validations.login, mainController.loginProcess);
 router.get("/register", guest, mainController.register);
 router.post(
     "/register",
-    uploadUser.single("avatar"),
+    multerUser.upload.single("avatar"),
     validations.register,
     mainController.registerProcess
 );
+
 router.get("/profile", auth, mainController.profile);
 router.get("/logout", mainController.logout);
 router.get("/turnos", mainController.turns);
