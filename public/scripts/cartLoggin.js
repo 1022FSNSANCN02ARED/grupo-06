@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         const cartNoLog = document.getElementById("cartNoLog");
 
-        console.log("if de ruta");
         cartLged.classList.remove("hidden")
         cartNoLog.classList.add("hidden")
     }

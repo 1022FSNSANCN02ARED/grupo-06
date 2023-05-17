@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%- include('../partials/head') %>
-        <script src="/scripts/detailsP.js"></script>
+        <script src="/scripts/detailsVisit.js"></script>
     </head>
 
     <body>
@@ -31,7 +31,7 @@
                         <% } else { %>
                         <p class="product-new-price">$<%= product.price %></p>
                         <% } %>
-                        <div class="product-btns">
+                        <div class="product-btns" id="buttonLged">
                             <form class="product-cart-form" id="addCart" method="POST" action="/carrito/add/<%=product.id%>">
                                 <input
                                     
@@ -44,6 +44,24 @@
                                 <input type="submit" id="buyCart" value="Comprar ahora" />
                             </form>
                         </div>
+                        <!-- los botones del div de abajo se muestran solo al usuario no logeado
+                             y los del div de arriva se muestran a los usuarios logeados -->
+                        <div class="product-btns hidden" id="buttonNoLged">
+                            <form class="product-cart-form" id="addCart" method="POST" action="/carrito/add/<%=product.id%>">
+                                <input
+                                data-bs-toggle="modal"
+                                data-bs-target="#confirm"
+                                    class="product-cart-button"
+                                    type="button"
+                                    value="Agregar al carrito"
+                                />
+                            </form>
+                            <form class="product-buy-form" id="buyCart" method="POST" action="/carrito/buy/<%=product.id%>">
+                                <input type="button" data-bs-toggle="modal"
+                                data-bs-target="#confirm" id="buyCart" value="Comprar ahora" />
+                            </form>
+                        </div>
+
                         <hr class="division-bar" />
                         <div class="product-description">
                             <h3>Descripción del producto</h3>
@@ -54,6 +72,33 @@
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="confirm" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content bg-black">
+                                                    <div class="modal-header align-self-center">
+                                                        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
+                                                            ¡Logueate!
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body text-white">
+                                                        ¡Ingresa a tu cuenta o creala si no tienes!
+                                                    </div>
+                                                    <div class="modal-body text-white">
+                                                        ¡Para acceder al carrito debes estar logueado!
+                                                    </div>
+                                                    <div class="modal-footer align-self-center">
+                                                        <form action="/register" method="get">
+                                                            <button type="submit" class="btn btn-outline-primary">
+                                                                Confirmar
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
         </main>
 
         <footer class="footer-catalogo">

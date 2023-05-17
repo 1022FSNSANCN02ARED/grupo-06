@@ -274,9 +274,8 @@ module.exports = {
                 
             await UserToEdit.update(User);
 
-            
-            res.clearCookie("userCookie");
-            req.session.destroy();
+          res.clearCookie("userCookie");
+          req.session.destroy();
 
     return res.redirect("/");
 
