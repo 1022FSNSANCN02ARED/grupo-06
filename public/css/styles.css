@@ -1056,12 +1056,6 @@ ul.slider li:target {
     width: 75%;
 }
 
-.week-product-image {
-    width: 100%;
-    object-fit: fill;
-    padding: 4rem;
-}
-
 .week-title {
     text-align: center;
     margin: 5rem 0;
@@ -1110,7 +1104,7 @@ ul.slider li:target {
 .week-product-image {
     width: 100%;
     object-fit: fill;
-    padding: 4rem;
+    padding: 2rem;
 }
 
 @media (min-width: 930px) {
@@ -1198,7 +1192,7 @@ ul.slider li:target {
 .catalogue-product-image {
     width: 100%;
     object-fit: fill;
-    padding: 4rem;
+    padding: 2rem;
 }
 
 .in-offer-product-description,
@@ -1365,6 +1359,77 @@ ul.slider li:target {
     display: none;
 }
 
+/* cart-quantity */
+
+.cart-quantity {
+    display: grid;
+    gap: 20px;
+    max-width: 100%;
+    place-items: center;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.cart-quantity-input {
+    max-width: 100px;
+    text-align: center;
+    outline: none;
+}
+
+.cart-form-btns {
+    display: flex;
+    align-items: center;
+}
+
+.cart-btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-btn {
+    background-color: red;
+    border-radius: 5px;
+    width: 40px;
+    border: none;
+    color: var(--white);
+}
+
+.cart-btn--increase {
+    background-color: green;
+}
+
+/* buy-form-btns */
+
+.buy-form-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.buy-btns {
+    width: 180px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+@media(min-width: 768px) {
+    .buy-form-btns {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+        gap: 20px;
+    }
+}
+
 /* Al tener (hover: hover), el mismo no actuará
 a menos que haya un cursor. */
 
@@ -1388,6 +1453,82 @@ al soltar el click */
 /* Animations */
 
 /* Media Query's */
+
+.bg-image-turns {
+    background-image: url("../images/backgrounds/background-turns.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.hover {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.hover img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.hover-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hover-1-content {
+    position: absolute;
+    bottom: -200%;
+    z-index: 2;
+    transition: all 0.4s;
+}
+
+.w-h-90 {
+    width: 90%;
+    min-height: 1400px;
+}
+
+@media (min-width: 769px) {
+    .cart-quantity {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rem;
+    }
+    
+    .cart-btns {
+        gap: 10px;
+    }
+
+    .ads-banner {
+        display: block;
+    }
+
+    .features-content,
+    .in-offer-content,
+    .catalogue-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap: 2rem;
+    }
+
+    .hover-1:hover .hover-1-content {
+        bottom: 0;
+    }
+
+    .hover-1:hover .hover-1-description {
+        opacity: 1;
+        transform: none;
+    }
+
+    .hover-1:hover .hover-overlay {
+        opacity: 0;
+    }
+}
 
 @media (min-width: 930px) {
     .main-product {
@@ -1473,75 +1614,9 @@ al soltar el click */
     .in-offer-content,
     .catalogue-content {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        place-items: center;
-        gap: 2rem;
-    }
-}
-
-.bg-image-turns {
-    background-image: url("../images/backgrounds/background-turns.jpg");
-    background-size: cover;
-    background-position: center;
-    animation: fadeIn 1.5s ease;
-}
-
-.hover {
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 100%;
-}
-
-.hover img {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-}
-
-.hover-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hover-1-content {
-    position: absolute;
-    bottom: -200%;
-    z-index: 2;
-    transition: all 0.4s;
-}
-
-.w-h-90 {
-    width: 90%;
-    min-height: 1400px;
-}
-
-@media (min-width: 769px) {
-    .ads-banner {
-        display: block;
-    }
-
-    .features-content,
-    .in-offer-content,
-    .catalogue-content {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
         place-items: center;
         gap: 2rem;
-    }
-
-    .hover-1:hover .hover-1-content {
-        bottom: 0;
-    }
-
-    .hover-1:hover .hover-1-description {
-        opacity: 1;
-        transform: none;
-    }
-
-    .hover-1:hover .hover-overlay {
-        opacity: 0;
     }
 }
 
@@ -1569,12 +1644,6 @@ al soltar el click */
 .hidden{
     display: none;
 }
-
-#cartLogged{
-    
-}
-
-#cartNoLog{}
 
 .header-user {
     color: #e5e5e5;

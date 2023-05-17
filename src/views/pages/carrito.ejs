@@ -29,22 +29,27 @@
                                     </span>
                                     <span class="price">Precio: $<%= cartProduct.product.price %></span>
                                 </div>
-                                <div>
-                                    <!--Boton de sumar/restar cantidad-->
-                                    <form action="/carrito/remove/<%= cartProduct.product.id %>?_method=DELETE"
-                                        method="POST">
-                                        <button type="submit" name="operation" value="decrease">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </form>
-                                    <input type="number" name="quantity" value="<%= cartProduct.quantity %>"
+                                <!-- cart-quantity -->
+                                <div class="cart-quantity">
+                                    <div></div>
+                                    <input class="cart-quantity-input" type="number" name="quantity" value="<%= cartProduct.quantity %>"
                                         class="cantidad" />
-                                    <form action="/carrito/increase/<%= cartProduct.product.id %>" method="POST">
-                                        <button type="submit" name="operation" value="increase">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </form>
+                                    <!--Boton de sumar/restar cantidad-->
+                                    <div class="cart-btns">
+                                        <form class="cart-form-btn" action="/carrito/increase/<%= cartProduct.product.id %>" method="POST">
+                                            <button class="cart-btn cart-btn--increase" type="submit" name="operation" value="increase">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </form>
+                                        <form class="cart-form-btn" action="/carrito/remove/<%= cartProduct.product.id %>?_method=DELETE"
+                                            method="POST">
+                                            <button class="cart-btn cart-btn--decrease" type="submit" name="operation" value="decrease">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
+                                <!-- cart-quantity -->
                             </div>
                         </article>
                         <% }); %>
@@ -60,13 +65,15 @@
                                             <p>Total: $<%= total %>
                                             </p>
                                             <% if (cartProducts.length> 0) { %>
-                                                <form action="/carrito" method="POST">
-                                                    <button type="button" data-bs-toggle="modal"
-                                                        data-bs-target="#confirm">Comprar</button>
-                                                </form>
-                                                <form action="/carrito/clear?_method=DELETE" method="POST">
-                                                    <button type="submit">Eliminar Carrito</button>
-                                                </form>
+                                                <div class="buy-form-btns">
+                                                    <form action="/carrito" method="POST">
+                                                        <button class="buy-btns buy-btns--buy" type="button" data-bs-toggle="modal"
+                                                            data-bs-target="#confirm">Comprar</button>
+                                                    </form>
+                                                    <form action="/carrito/clear?_method=DELETE" method="POST">
+                                                        <button class="buy-btns buy-btns--add-cart" type="submit">Eliminar Carrito</button>
+                                                    </form>
+                                                </div>
                                                 <% } %>
                                         </div>
                                         <div class="modal fade" id="confirm" tabindex="-1"
