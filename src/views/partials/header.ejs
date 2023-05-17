@@ -1,54 +1,34 @@
-<nav
-    class="navbar navbar-dark navbar-expand-md bg-black fixed-top"
-    style="height: 90px"
->
+<nav class="navbar navbar-dark navbar-expand-md bg-black fixed-top" style="height: 90px">
     <div class="container-fluid">
-        <button
-            class="navbar-toggler border-1 border-primary"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#staticBackdrop"
-            aria-controls="staticBackdrop"
-        >
+        <button class="navbar-toggler border-1 border-primary" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-            class="offcanvas offcanvas-start bg-black"
-            data-bs-backdrop="static"
-            tabindex="-1"
-            id="staticBackdrop"
-            aria-labelledby="staticBackdropLabel"
-        >
+        <div class="offcanvas offcanvas-start bg-black" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+            aria-labelledby="staticBackdropLabel">
             <div class="offcanvas-header">
-                <h5
-                    class="offcanvas-title row align-items-center text-white"
-                    id="staticBackdropLabel"
-                >
-                    <img
-                        src="/images/icons/logo-letra-negro.svg"
-                        alt="Logo Hair Cut"
-                        style="width: 75px"
-                    />
+                <h5 class="offcanvas-title row align-items-center text-white" id="staticBackdropLabel">
+                    <img src="/images/icons/logo-letra-negro.svg" alt="Logo Hair Cut" style="width: 75px" />
                     Hair Cut
                 </h5>
-                <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
             </div>
+
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
-                    
+
                     <li class="nav-item hidden" id="cartLogged">
                         <a class="nav-link" href="/carrito">Carrito</a>
                     </li>
-                   
+
                     <li class="nav-item" id="cartNoLog">
-                        <a class="nav-link" href="/">Carrito</a>
+                        <form class="nav-link" action="/">
+                            <input class="btn-cart-header" type="button" data-bs-toggle="modal"
+                                data-bs-target="#confirm" value="Carrito">
+                        </form>
                     </li>
-                  
+
                     <li class="nav-item">
                         <a class="nav-link" href="/products">Catálogo</a>
                     </li>
@@ -56,33 +36,22 @@
                         <a class="nav-link" href="/turnos">Turnos</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Productos
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Productos destacados</a
-                                >
+                                <a class="dropdown-item" href="/products">Productos destacados</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Productos en oferta</a
-                                >
+                                <a class="dropdown-item" href="/products">Productos en oferta</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Todos los productos</a
-                                >
+                                <a class="dropdown-item" href="/products">Todos los productos</a>
                             </li>
                         </ul>
                     </li>
@@ -90,191 +59,143 @@
             </div>
         </div>
         <a href="/">
-            <img
-                src="/images/icons/logo-letra-negro.svg"
-                alt="Logo barbería"
-                style="width: 75px"
-                class="position-absolute top-50 start-50 translate-middle"
-            />
+            <img src="/images/icons/logo-letra-negro.svg" alt="Logo barbería" style="width: 75px"
+                class="position-absolute top-50 start-50 translate-middle" />
         </a>
-        <button
-            class="navbar-toggler-2"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#loginButton"
-            aria-controls="staticBackdrop"
-        >
+        <button class="navbar-toggler-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#loginButton"
+            aria-controls="staticBackdrop">
             <i class="fa-solid fa-user header-user active-icons"></i>
         </button>
-        <div
-            class="offcanvas-xl offcanvas-end bg-black"
-            data-bs-backdrop="static"
-            tabindex="-1"
-            id="loginButton"
-            aria-labelledby="staticBackdropLabel"
-        >
+        <div class="offcanvas-xl offcanvas-end bg-black" data-bs-backdrop="static" tabindex="-1" id="loginButton"
+            aria-labelledby="staticBackdropLabel">
             <div class="offcanvas-header">
-                <h5
-                    class="offcanvas-title row align-items-center text-white"
-                    id="staticBackdropLabel"
-                >
-                    <img
-                        src="/images/icons/logo-letra-negro.svg"
-                        alt="Logo barbería"
-                        style="width: 75px"
-                    />
+                <h5 class="offcanvas-title row align-items-center text-white" id="staticBackdropLabel">
+                    <img src="/images/icons/logo-letra-negro.svg" alt="Logo barbería" style="width: 75px" />
                     Hair Cut
                 </h5>
-                <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="offcanvas"
-                    data-bs-target="#loginButton"
-                    aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    data-bs-target="#loginButton" aria-label="Close"></button>
             </div>
-            <form
-                role="login"
-                action="/login"
-                method="post"
-                id="login-form"
-                onsubmit="saveUsername()"
-            >
+            <form role="login" action="/login" method="post" id="login-form" onsubmit="saveUsername()">
                 <div class="offcanvas-body">
                     <ul class="navbar-nav nav-labels flex-grow-1 pe-3">
                         <% if (locals.isLogged) { %>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                id="dropUser"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <img
-                                    src="/images/avatars/<%= userLogged.avatar %>"
-                                    width="40"
-                                    style="border-radius: 100%"
-                                />
-                                Hi <%= userLogged.userName %>
-                            </a>
-                            <ul
-                                class="dropdown-menu"
-                                aria-labelledby="navbarDropdown"
-                            >
-                                <a class="dropdown-item" href="/profile"
-                                    ><p class="text-primary">Perfil</p></a
-                                >
-                                <% if (userLogged.isAdmin == true) { %>
-                                <a
-                                    class="dropdown-item"
-                                    href="http://localhost:3001"
-                                    target="_blank"
-                                    ><p class="text-primary">Dashboard</p></a
-                                >
-                                <% } %>
-                                <li><hr class="dropdown-divider" /></li>
-                                <a
-                                    class="dropdown-item"
-                                    href="/logout"
-                                    onclick="deleteUsername()"
-                                    ><p class="text-primary">Logout</p></a
-                                >
-                            </ul>
-                        </li>
-                        <% } else { %>
-                        <div class="navbar-form">
-                            <input class="form-control me-2 p-1 navbar-input
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="/images/avatars/<%= userLogged.avatar %>" width="40"
+                                        style="border-radius: 100%" />
+                                    Hi <%= userLogged.userName %>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/profile">
+                                        <p class="text-primary">Perfil</p>
+                                    </a>
+                                    <% if (userLogged.isAdmin==true) { %>
+                                        <a class="dropdown-item" href="http://localhost:3001" target="_blank">
+                                            <p class="text-primary">Dashboard</p>
+                                        </a>
+                                        <% } %>
+                                            <li>
+                                                <hr class="dropdown-divider" />
+                                            </li>
+                                            <a class="dropdown-item" href="/logout" onclick="deleteUsername()">
+                                                <p class="text-primary">Logout</p>
+                                            </a>
+                                </ul>
+                            </li>
+                            <% } else { %>
+                                <div class="navbar-form">
+                                    <input class="form-control me-2 p-1 navbar-input
                             bg-black text-primary <%= locals.errors &&
-                            errors.login ? "is-invalid" : null %>" type="text"
-                            placeholder="Email/Usuario" id= "login"
-                            aria-label="login" name="login" required value="<%=
-                            locals.oldData ? oldData.login : null %>"/> <input
-                            class="form-control me-2 p-1 navbar-input bg-black
+                            errors.login ? " is-invalid" : null %>" type="text"
+                                    placeholder="Email/Usuario" id= "login"
+                                    aria-label="login" name="login" required value="<%= locals.oldData ? oldData.login :
+                                        null %>"/> <input class="form-control me-2 p-1 navbar-input bg-black
                             text-primary <%= locals.errors &&
-                            errors.loginPassword ? "is-invalid" : null %>"
-                            type="password" id="loginPassword" required
-                            placeholder="Contraseña" aria-label="login"
-                            name="loginPassword" />
-                            <button
-                                class="btn btn-outline-primary"
-                                type="submit"
-                                form="login-form"
-                            >
-                                Ingresar
-                            </button>
-                            <div class="text-white mt-2 registrate">
-                                <input
-                                    id="RememberUser"
-                                    name="session"
-                                    type="checkbox"
-                                    class="form-check-input text-primary bg-black border-primary mt-1 p-2"
-                                />
-                                <label for="RememberUser"
-                                    >Recordar usuario</label
-                                >
-                                <p class="mt-3">
-                                    ¿No tenés cuenta?
-                                    <a href="/register" class="link-primary"
-                                        >Regístrate aquí</a
-                                    >
-                                </p>
-                                <% if (locals.errors && errors.login) { %>
-                                <span class="text-danger d-block">
-                                    *<%= errors.login.msg %>
-                                </span>
+                            errors.loginPassword ? " is-invalid" : null %>"
+                                        type="password" id="loginPassword" required
+                                        placeholder="Contraseña" aria-label="login"
+                                        name="loginPassword" />
+                                        <button class="btn btn-outline-primary" type="submit" form="login-form">
+                                            Ingresar
+                                        </button>
+                                        <div class="text-white mt-2 registrate">
+                                            <input id="RememberUser" name="session" type="checkbox"
+                                                class="form-check-input text-primary bg-black border-primary mt-1 p-2" />
+                                            <label for="RememberUser">Recordar usuario</label>
+                                            <p class="mt-3">
+                                                ¿No tenés cuenta?
+                                                <a href="/register" class="link-primary">Regístrate aquí</a>
+                                            </p>
+                                            <% if (locals.errors && errors.login) { %>
+                                                <span class="text-danger d-block">
+                                                    *<%= errors.login.msg %>
+                                                </span>
+                                                <% } %>
+                                                    <p class="invalid-feedback text-danger" id="loginp">
+                                                        * Ingresa un usuario o email válido.
+                                                    </p>
+                                                    <% if (locals.errors && errors.loginPassword) { %>
+                                                        <span class="text-danger d-block">
+                                                            *<%= errors.loginPassword.msg %>
+                                                        </span>
+                                                        <% } %>
+                                        </div>
+                                </div>
                                 <% } %>
-                                <p
-                                    class="invalid-feedback text-danger"
-                                    id="loginp"
-                                >
-                                    * Ingresa un usuario o email válido.
-                                </p>
-                                <% if (locals.errors && errors.loginPassword) {
-                                %>
-                                <span class="text-danger d-block">
-                                    *<%= errors.loginPassword.msg %>
-                                </span>
-                                <% } %>
-                            </div>
-                        </div>
-                        <% } %>
                     </ul>
                 </div>
                 <% if (!locals.isLogged) { %>
-                <div class="d-flex">
-                    <p class="text-white m-0 registrate-xl">
-                        <% if (locals.errors && errors.login) { %>
-                        <span class="text-danger d-block">
-                            *<%= errors.login.msg %></span
-                        >
-                        <% } %> <% if (locals.errors && errors.loginPassword) {
-                        %>
-                        <span class="text-danger d-block">
-                            *<%= errors.loginPassword.msg %></span
-                        >
-                        <% } %>
-                        <input
-                            id="RememberUser2"
-                            name="session2"
-                            type="checkbox"
-                            class="form-check-input text-primary bg-black border-primary mt-1 p-2"
-                        />
-                        <label for="RememberUser2">Recordar usuario</label>
-                    </p>
-                    <p class="text-white m-0 registrate-xl m-auto">
-                        ¿No tenés cuenta?
-                        <a href="/register" class="link-primary"
-                            >Regístrate aquí</a
-                        >
-                    </p>
-                </div>
-                <% } %>
+                    <div class="d-flex">
+                        <p class="text-white m-0 registrate-xl">
+                            <% if (locals.errors && errors.login) { %>
+                                <span class="text-danger d-block">
+                                    *<%= errors.login.msg %></span>
+                                <% } %>
+                                    <% if (locals.errors && errors.loginPassword) { %>
+                                        <span class="text-danger d-block">
+                                            *<%= errors.loginPassword.msg %></span>
+                                        <% } %>
+                                            <input id="RememberUser2" name="session2" type="checkbox"
+                                                class="form-check-input text-primary bg-black border-primary mt-1 p-2" />
+                                            <label for="RememberUser2">Recordar usuario</label>
+                        </p>
+                        <p class="text-white m-0 registrate-xl m-auto">
+                            ¿No tenés cuenta?
+                            <a href="/register" class="link-primary">Regístrate aquí</a>
+                        </p>
+                    </div>
+                    <% } %>
             </form>
         </div>
     </div>
 </nav>
+<div class="modal fade" id="confirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-black">
+            <div class="modal-header align-self-center">
+                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
+                    ¡Logueate!
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-white">
+                ¡Ingresa a tu cuenta o creala si no tienes!
+            </div>
+            <div class="modal-body text-white">
+                ¡Para acceder al carrito debes estar logueado!
+            </div>
+            <div class="modal-footer align-self-center">
+                <form action="/register" method="get">
+                    <button type="submit" class="btn btn-outline-primary">
+                        Confirmar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div style="margin-bottom: 85px"></div>
 <script src="/scripts/isLogged.js"></script>
 <script src="/scripts/loginForm.js"></script>

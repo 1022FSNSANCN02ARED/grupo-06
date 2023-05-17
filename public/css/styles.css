@@ -258,6 +258,15 @@ ul {
 
 /*main Home*/
 
+.btn-cart-header{
+    background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
 .carousel-item img.custom-img {
     height: 500px;
 }
@@ -1472,7 +1481,7 @@ al soltar el click */
     .catalogue-products-container {
         display: grid;
         place-items: center;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 4rem;
     }
     
