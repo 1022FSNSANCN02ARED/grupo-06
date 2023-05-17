@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import GenreItem from "./GenreItem.jsx";
 import BigCard from "./BigCard.jsx";
 
@@ -13,7 +14,7 @@ class GenresList extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/api/category")
+        fetch("http://localhost:3000/api/user/")
             .then((response) => {
                 return response.json();
             })
@@ -26,13 +27,18 @@ class GenresList extends Component {
 
     render() {
         return (
-            <BigCard title="Categories in Data Base">
-                <div className="row">
+            <BigCard title="Users in Data Base">
+                <div className="column">
                     {this.state.genres.length === 0
                         ? "Cargando..."
                         : this.state.genres.map((genre) => {
                               return (
-                                  <GenreItem key={genre.id} name={genre.name} />
+                                  <Link to={`/user/${genre.userName}`}>
+                                      <GenreItem
+                                          key={genre.id}
+                                          name={genre.userName}
+                                      />
+                                  </Link>
                               );
                           })}
                 </div>
