@@ -21,10 +21,15 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--black);
 }
 
 ul {
     list-style: none;
+}
+
+img {
+    width: 100%;
 }
 
 .detail-header {
@@ -1031,7 +1036,7 @@ ul.slider li:target {
 
 .container-120 {
     padding: 0 2rem;
-    max-width: 100rem;
+    max-width: 80rem;
     margin: 0 auto;
 }
 /* banner de publicidad / ofertas */
@@ -1043,167 +1048,6 @@ ul.slider li:target {
     background-attachment: fixed;
     height: 30rem;
     display: none;
-}
-
-/* week */
-
-.week-content {
-    display: grid;
-    max-width: 100rem;
-    place-items: center;
-    margin: 0 auto;
-    gap: 2rem;
-    width: 75%;
-}
-
-.week-title {
-    text-align: center;
-    margin: 5rem 0;
-}
-
-.week-product {
-    background-color: var(--white);
-    -webkit-box-shadow: 0px 0px 19px -8px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 19px -8px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 19px -8px rgba(0, 0, 0, 1);
-    border-radius: 0.8rem;
-    max-width: 30rem;
-    max-height: 40rem;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    width: 100%;
-    height: 100%;
-}
-
-.week-product-old-price {
-    font-size: 1.2rem;
-    color: gray;
-    margin: 0;
-}
-
-.week-product-new-price {
-    font-size: 1.3rem;
-    color: var(--black);
-}
-
-.week-product-price {
-    font-size: 1.5rem;
-    color: var(--black);
-}
-
-.week-product-title {
-    font-size: 1.5rem;
-    color: var(--black);
-}
-
-.week-product-discount {
-    font-size: 1.3rem;
-    color: green;
-}
-
-.week-product-image {
-    width: 100%;
-    object-fit: fill;
-    padding: 2rem;
-}
-
-@media (min-width: 930px) {
-    .week-content {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-}
-
-/* features */
-
-.catalogue {
-    margin-bottom: 5rem;
-}
-
-.features-content,
-.in-offer-content,
-.catalogue-content {
-    display: grid;
-    place-items: center;
-    gap: 2rem;
-}
-
-.features-title,
-.in-offer-title,
-.catalogue-title {
-    text-align: center;
-    margin: 5rem 0;
-}
-
-.features-product,
-.in-offer-product,
-.catalogue-product {
-    background-color: var(--white);
-    -webkit-box-shadow: 0px 0px 19px -8px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 19px -8px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 19px -8px rgba(0, 0, 0, 1);
-    border-radius: 0.8rem;
-    max-width: 30rem;
-    max-height: 40rem;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    width: 100%;
-    height: 100%;
-}
-
-.catalogue-product-old-price,
-.in-offer-product-old-price,
-.features-product-old-price {
-    font-size: 1.2rem;
-    color: gray;
-    margin: 0;
-}
-
-.catalogue-product-new-price,
-.in-offer-product-new-price,
-.features-product-new-price {
-    font-size: 1.3rem;
-    color: var(--black);
-}
-
-.catalogue-product-price,
-.in-offer-product-price,
-.features-product-price {
-    font-size: 1.5rem;
-    color: var(--black);
-}
-
-.catalogue-product-title,
-.in-offer-product-title,
-.features-product-title {
-    font-size: 1.5rem;
-    color: var(--black);
-}
-
-.catalogue-product-discount,
-.in-offer-product-discount,
-.features-product-discount {
-    font-size: 1.3rem;
-    color: green;
-}
-
-.features-product-image,
-.in-offer-product-image,
-.catalogue-product-image {
-    width: 100%;
-    object-fit: fill;
-    padding: 2rem;
-}
-
-.in-offer-product-description,
-.features-product-description,
-.catalogue-product-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    gap: 2rem;
 }
 
 /* catálogo de productos */
@@ -1430,6 +1274,65 @@ ul.slider li:target {
     }
 }
 
+.catalogue-products-container {
+    display: grid;
+    place-items: center;
+    margin: 5rem auto;
+    width: 100%;
+    gap: 2rem;
+}
+
+.catalogue-product {
+    border-radius: .6rem; 
+    background-color: white;
+    max-width: 280px;
+    height: 420px;
+}
+
+.catalogue-product-image {
+    border-bottom: 1px solid rgba(163, 163, 163, 0.2);
+    padding: 2rem;
+}
+
+.catalogue-product-info {
+    padding: 2rem;
+}
+
+.catalogue-product-old-price {
+    color: var(--black);
+    margin: 0;
+}
+
+.catalogue-product-price {
+    font-size: 1.6rem;
+    margin-right: 10px;
+    color: var(--black);
+}
+
+.catalogue-product-discount {
+    color: green;
+    font-weight: bold;
+}
+
+.catalogue-product-shipping {
+    color: green;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.catalogue-product-name {
+    font-weight: normal;
+    color: gray;
+    font-size: 1rem;
+}
+
+.catalogue-bg-shadow {
+    -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.31);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.31);  
+}
+
 /* Al tener (hover: hover), el mismo no actuará
 a menos que haya un cursor. */
 
@@ -1493,6 +1396,13 @@ al soltar el click */
 }
 
 @media (min-width: 769px) {
+    .catalogue-products-container {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+
     .cart-quantity {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1505,15 +1415,6 @@ al soltar el click */
 
     .ads-banner {
         display: block;
-    }
-
-    .features-content,
-    .in-offer-content,
-    .catalogue-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        place-items: center;
-        gap: 2rem;
     }
 
     .hover-1:hover .hover-1-content {
@@ -1531,6 +1432,13 @@ al soltar el click */
 }
 
 @media (min-width: 930px) {
+    .catalogue-products-container {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
+    
     .main-product {
         display: grid;
         place-items: center;
@@ -1608,15 +1516,6 @@ al soltar el click */
 
     .division-bar {
         display: block;
-    }
-
-    .features-content,
-    .in-offer-content,
-    .catalogue-content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        place-items: center;
-        gap: 2rem;
     }
 }
 

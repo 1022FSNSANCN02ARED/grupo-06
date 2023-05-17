@@ -1,39 +1,26 @@
 
-<h2 class="titulos-home">OFERTAS SEMANAL</h2>
-   
-<!-- <div class="home-ofertas"> 
-  <% for(const oneProduct of topThreeProducts){ %>
+<h2 class="titulos-home">OFERTA SEMANAL</h2>
 
-  <article class="of-semanal-home">
-    <a href=" /products/details/<%= oneProduct.id %>">
-    <img src="<%= oneProduct.image %>" alt="" class="imagen-articulo-catalogo" />
-    <div class="info-catalogo">
-      <p class="precio-ctlgo">
-        <%= oneProduct.price %>
-      </p>
-      <p class="descuento-ctlgo-home">
-        <%= oneProduct.discount %>
-      </p>
-      <p class="descripcion-ctlgo">
-        <%= oneProduct.description %>
-      </p>
-    </div>
-  </a>
-  </article>
-<% } %>
-</div> -->
-
-<div class="week-content">
-  <% for(oneProduct of topThreeProducts) { %>
-    <a class="week-product" href="/products/details/<%= oneProduct.id %>">
-      <article class="week-product-description">
-        <img class="week-product-image" src="<%= oneProduct.image %>" alt="Product icon">
-        <div class="week-product-info">
-          <del><p class="week-product-old-price">$<%= oneProduct.price%></p></del>
-          <span class="week-product-new-price">$<%= oneProduct.price - (oneProduct.price * (100 / oneProduct.price)) %></span> <small class="catalogue-product-discount">-<%= oneProduct.discount %>% OFF</small>
-          <h3 class="week-product-title"><%= oneProduct.name %></h3>
-        </div>
-      </article>
-    </a>
-  <% } %>
+<div class="container-120">
+  <section class="catalogue">
+      <div class="catalogue-products-container">
+        <% for(oneProduct of topThreeProducts) { %>
+              <article class="catalogue-product">
+                  <a href="/products/details/<%= oneProduct.id %>">
+                      <div class="catalogue-product-content">
+                          <div class="catalogue-product-image">
+                              <img src="<%= oneProduct.image %>" alt="product icon">
+                          </div>
+                          <div class="catalogue-product-info">
+                                  <del><p class="catalogue-product-old-price">$<%= oneProduct.price %></p></del>
+                                  <span class="catalogue-product-price">$<%= oneProduct.price - oneProduct.price * oneProduct.discount / 100%></span><small class="catalogue-product-discount"><%= oneProduct.discount %>% OFF</small>
+                                  <p class="catalogue-product-shipping">Envío gratis</p>
+                                  <h3 class="catalogue-product-name"><%= oneProduct.name %></h3>
+                          </div>
+                      </div>
+                  </a>
+              </article>
+        <% } %>
+      </div>
+  </section>
 </div>

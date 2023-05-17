@@ -1,70 +1,88 @@
 <div class="ads-banner"></div>
 <div class="container-120">
-  <section class="features">
-    <h2 class="features-title">Productos destacados</h2>
-    <div class="features-content">
+  <section class="catalogue">
+    <h2 style="font-size: 1.6rem; text-align: center; margin-top: 5rem; text-transform: uppercase">Productos destacados</h2>
+    <div class="catalogue-products-container">
       <% for(let i = 0; i < 3; i++) { %>
-        <a class="features-product" href="/products/details/<%= products[arrayVacio[i]].id %>">
-          <article class="features-product-description">
-            <img class="features-product-image" src="<%= products[arrayVacio[i]].image %>" alt="Product icon">
-            <% if(products[arrayVacio[i]].discount) { %>
-              <div class="features-product-info">
-                <del><p class="features-product-old-price">$<%= products[arrayVacio[i]].price%></p></del>
-                <span class="features-product-new-price">$<%= products[arrayVacio[i]].price - products[arrayVacio[i]].price * products[arrayVacio[i]].discount / 100 %></span> <small class="features-product-discount">-<%= products[arrayVacio[i]].discount %>% OFF</small>
-                <h3 class="features-product-title"><%= products[arrayVacio[i]].name %></h3>
-              </div>
-              <% } else { %>
-                <div class="features-product-info">
-                  <p class="features-product-price">$<%= products[arrayVacio[i]].price %></p>
-                  <h3 class="features-product-title"><%= products[arrayVacio[i]].name %></h3>
-                </div>
-              <% } %>
-          </article>
-        </a>
-      <% } %>
-    </div>
-  </section>
-
-  <section class="in-offer">
-    <h2 class="in-offer-title">Productos en oferta</h2>
-    <div class="in-offer-content">
-      <% for(let i = 0; i < ofertas.length; i++) { %>
-        <a class="in-offer-product" href="/products/details/<%= ofertas[i].id %>">
-          <article class="in-offer-product-description">
-            <img class="in-offer-product-image" src="<%= ofertas[i].image %>" alt="Product icon">
-            <div class="in-offer-product-info">
-              <del><p class="in-offer-product-old-price">$<%= ofertas[i].price%></p></del>
-              <span class="in-offer-product-new-price">$<%= ofertas[i].price - ofertas[i].price * ofertas[i].discount / 100 %></span> <small class="in-offer-product-discount">-<%= ofertas[i].discount %>% OFF</small>
-              <h3 class="in-offer-product-title"><%= ofertas[i].name %></h3>
-            </div>
-          </article>
-        </a>
+            <article class="catalogue-product">
+                <a href="/products/details/<%= products[arrayVacio[i]].id %>">
+                  <div class="catalogue-product-content">
+                      <div class="catalogue-product-image">
+                          <img src="<%= products[arrayVacio[i]].image %>" alt="product icon">
+                      </div>
+                      <% if(products[arrayVacio[i]].discount) { %>
+                        <div class="catalogue-product-info">
+                            <del><p class="catalogue-product-old-price">$<%= products[arrayVacio[i]].price %></p></del>
+                            <span class="catalogue-product-price">$<%= products[arrayVacio[i]].price - products[arrayVacio[i]].price * products[arrayVacio[i]].discount / 100%></span><small class="catalogue-product-discount"><%= products[arrayVacio[i]].discount %>% OFF</small>
+                            <p class="catalogue-product-shipping">Envío gratis</p>
+                            <h3 class="catalogue-product-name" style="text-transform: capitalize;"><%= products[arrayVacio[i]].name %></h3>
+                        </div>
+                      <% } else { %>
+                        <div class="catalogue-product-info">
+                            <span class="catalogue-product-price">$<%= products[arrayVacio[i]].price%></span>
+                            <p class="catalogue-product-shipping">Envío gratis</p>
+                            <h3 class="catalogue-product-name" style="text-transform: capitalize;"><%= products[arrayVacio[i]].name %></h3>
+                        </div>
+                      <% } %>
+                  </div>
+                </a>
+            </article>
       <% } %>
     </div>
   </section>
 
   <section class="catalogue">
-    <h2 class="catalogue-title">Todos los productos</h2>
-    <div class="catalogue-content">
-      <% for(let i = 0; i < products.length; i++) { %>
-        <a class="catalogue-product" href="/products/details/<%= products[i].id %>">
-          <article class="catalogue-product-description">
-            <img class="catalogue-product-image" src="<%= products[i].image %>" alt="Product icon">
-            <% if(products[i].discount) { %>
-            <div class="catalogue-product-info">
-              <del><p class="catalogue-product-old-price">$<%= products[i].price%></p></del>
-              <span class="catalogue-product-new-price">$<%= products[i].price - products[i].price * products[i].discount / 100 %></span> <small class="catalogue-product-discount">-<%= products[i].discount %>% OFF</small>
-              <h3 class="catalogue-product-title"><%= products[i].name %></h3>
-            </div>
-            <% } else { %>
-              <div class="catalogue-product-info">
-                <p class="catalogue-product-price">$<%= products[i].price %></p>
-                <h3 class="catalogue-product-title"><%= products[i].name %></h3>
-              </div>
-            <% } %>
-          </article>
-        </a>
+    <h2 style="font-size: 1.6rem; text-align: center; margin-top: 5rem; text-transform: uppercase">Productos en oferta</h2>
+    <div class="catalogue-products-container">
+      <% for(let i = 0; i < ofertas.length; i++) { %>
+            <article class="catalogue-product">
+                <a href="/products/details/<%= ofertas[i].id %>">
+                  <div class="catalogue-product-content">
+                      <div class="catalogue-product-image">
+                          <img src="<%= ofertas[i].image %>" alt="product icon">
+                      </div>
+                      <div class="catalogue-product-info">
+                          <del><p class="catalogue-product-old-price">$<%= ofertas[i].price %></p></del>
+                          <span class="catalogue-product-price">$<%= ofertas[i].price - ofertas[i].price * ofertas[i].discount / 100%></span><small class="catalogue-product-discount"><%= ofertas[i].discount %>% OFF</small>
+                          <p class="catalogue-product-shipping">Envío gratis</p>
+                          <h3 class="catalogue-product-name" style="text-transform: capitalize;"><%= ofertas[i].name %></h3>
+                      </div>
+                  </div>
+                </a>
+            </article>
       <% } %>
     </div>
+  </section>
+
+  <section class="catalogue">
+    <h2 style="font-size: 1.6rem; text-align: center; margin-top: 5rem; text-transform: uppercase">Todos los productos</h2>
+      <div class="catalogue-products-container">
+        <% for(let i = 0; i < products.length; i++) { %>
+              <article class="catalogue-product">
+                  <a href="/products/details/<%= products[i].id %>">
+                    <div class="catalogue-product-content">
+                        <div class="catalogue-product-image">
+                            <img src="<%= products[i].image %>" alt="product icon">
+                        </div>
+                        <% if(products[i].discount) { %>
+                            <div class="catalogue-product-info">
+                                <del><p class="catalogue-product-old-price">$<%= products[i].price %></p></del>
+                                <span class="catalogue-product-price">$<%= products[i].price - products[i].price * products[i].discount / 100%></span><small class="catalogue-product-discount"><%= products[i].discount %>% OFF</small>
+                                <p class="catalogue-product-shipping">Envío gratis</p>
+                                <h3 class="catalogue-product-name" style="text-transform: capitalize;"><%= products[i].name %></h3>
+                            </div>
+                        <% } else { %>
+                            <div class="catalogue-product-info">
+                                <p></p>
+                                <span class="catalogue-product-price">$<%= products[i].price%></span>
+                                <p class="catalogue-product-shipping">Envío gratis</p>
+                                <h3 class="catalogue-product-name" style="text-transform: capitalize;"><%= products[i].name %></h3>
+                            </div>
+                        <% } %>
+                    </div>
+                  </a>
+              </article>
+        <% } %>
+      </div>
   </section>
 </div>
