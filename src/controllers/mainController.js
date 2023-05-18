@@ -212,8 +212,6 @@ module.exports = {
             user.hairdresser = "0";
         }
 
-        console.log(req.body);
-
         return res.redirect("/");
     },
     userDelete: async (req, res) => {

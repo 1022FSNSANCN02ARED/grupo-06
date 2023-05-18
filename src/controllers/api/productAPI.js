@@ -94,7 +94,7 @@ const productAPIController = {
 
         const productData = {
             ...product.dataValues,
-            category: productCategories[0].name,
+            category: productCategories.name,
             image: productImage.fileRoute,
             brand: productBrand.name,
         };
